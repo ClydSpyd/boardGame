@@ -1,0 +1,449 @@
+body{
+    background-color: black;
+    background-size: 100%;
+    height:100vh;
+    /* zoom:100%; */
+}
+
+img{
+    margin: 0;
+}
+
+
+.hide{
+    display:none;
+}
+.flex{
+    display:flex;
+}
+hr{
+    margin:0;
+}
+
+#grid{
+    display: block;
+    z-index: 0;
+    text-align: center;
+    margin:20px;
+    /*background-image: url('assets/img/mov21.jpg');*/
+    background-color: rgb(63, 10, 10);
+    background-size: cover;
+    border: rgb(255, 51, 0) 3px solid;
+    display: block;
+    height:795px;
+    width:795px;
+}
+.grid{
+    opacity: 1;
+}
+
+h5{
+    font-size: 1rem;
+    margin:0px;
+}
+
+#gridBod{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#mainMsg{
+    height:0px;
+}
+.boom{
+    line-height: 130px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 10rem;
+    background-color: rgb(255, 0, 0);
+    margin:0 auto;
+    width:600px;
+    position: relative;
+    bottom:540px;
+}
+.power{
+    vertical-align: middle;
+    line-height: 600px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(255, 253, 253);
+    font-size: 5rem;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.693);
+    
+    margin:0 auto;
+    width:600px;
+    height:600px;
+    position: relative;
+    bottom:700px;
+}
+.battle{
+    vertical-align: middle;
+    border: 1px red solid;
+    line-height: 600px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(255, 253, 253);
+    font-size: 5rem;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.693);
+    opacity: 1;
+    margin:0 auto;
+    width:600px;
+    height:600px;
+    position: relative;
+    bottom:800px;
+}
+.battleBack{
+    background-size: cover;
+    border: 1px red solid;
+    opacity: 1;
+    margin:0 auto;
+    width:100%;
+    height:100%;
+    top:1px;
+    right:1px;
+    position: absolute;
+    background-image: url('assets/img/exp1.png')
+}
+.boom2{
+    padding:0px 0 10px 0;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    background-color: rgb(255, 0, 0);
+    margin:0 auto;
+    width:60%;
+    position: relative;
+    bottom:540px;
+}
+
+.deetsHead{
+    height:45px;
+    background-color: red;
+    margin:0;
+    color: whitesmoke;
+    font-size: 2rem;
+}
+.goTime{
+    margin:5px 0 5px 0;
+    height:200px;
+    background-color: rgb(34, 34, 34);
+    border:1px solid lightslategray;
+}
+
+/*//POSSIBLE CHANGE//*/
+/* #playerImg1{ 
+    margin:5px 0 5px 0;
+    height:200px;
+    background-color: rgb(34, 34, 34);
+}
+.goTime{
+    margin:5px 0 5px 0;
+    height:200px;
+    width:200px;
+    background-color: rgb(34, 34, 34);
+} */
+
+
+.goSpace{
+    height:45px;
+    font-size: 1.5rem;
+}
+.goSpace p{
+    color: red;
+    margin: 0;
+    line-height: 45px;
+}
+.stats{
+    font-size: 1.2rem;
+    margin:8px;
+}
+.axe1{
+    background-image: url('assets/img/faceOneAxe2.png');
+    background-size: cover;
+}
+.goActive1{
+    background-image: url('assets/img/skel1.png');
+    background-size: cover;
+}
+.inActive1{
+    opacity: .3;
+    background-image: url('assets/img/skel1.png');
+    background-size: cover;
+}
+.goActive2{
+    background-image: url('assets/img/skel2.png');
+    background-size: cover;
+}
+.inActive2{
+    opacity: .3;
+    background-image: url('assets/img/skel2.png');
+    background-size: cover;
+}
+.oneActive {
+    background-image: url('assets/img/skel1.png');
+    background-size: cover;
+    border:1px  crimson solid;
+}
+
+.twoActive {
+    background-image: url('assets/img/skel2.png');
+    background-size: cover;
+    border:1px  crimson solid;
+}
+
+.col{
+    box-sizing: border-box;
+    min-width:60px;
+    min-height:60px;
+    display:inline-block;
+    background-color: rgba(0, 0, 0, 0.97);
+    border: rgb(243, 58, 12) 2px solid;
+    border-radius: 0%;
+    margin:3px;
+}
+.mine{
+    /* border:3px pink solid; */
+}
+.rune1{
+    background-image: url('assets/img/rune1.png');
+    background-size: contain;
+}
+.rune2{
+    background-image: url('assets/img/rune2.png');
+    background-size: contain;
+}
+.rune3{
+    background-image: url('assets/img/rune3.png');
+    background-size: contain;
+}
+.weapon1{
+    background-image: url('assets/img/potion5.png');
+    background-size: contain;
+}
+.weapon2{
+    background-image: url('assets/img/potion4.png');
+    background-size: contain;
+}
+.weapon3{
+    background-image: url('assets/img/potion3.png');
+    background-size: contain;
+}
+.weaponG{
+    opacity:0;
+    transform: scale(10);
+    transition: all 1s linear;
+}
+
+.weapon4{
+    background-image: url('assets/img/potion1.png');
+    background-size: contain;
+}
+.hex1{
+    background-image: url('assets/img/hex1.png');
+    background-size: contain;
+}
+.hex2{
+    background-image: url('assets/img/hex2.png');
+    background-size: contain;
+}
+.powerup{
+    
+}
+
+.hover{
+    background-color: rgba(0, 0, 0, 0.66);
+}
+
+.possible{
+    background-image: url('assets/img/skel1.png');
+    opacity: 0.5;
+    background-size: cover;
+    border: rgba(255, 255, 255, 0.534) 1px solid;
+}
+.possible2{
+    background-image: url('assets/img/skel2.png');
+    opacity: 0.3;
+    background-size: cover;
+    border: rgba(255, 255, 255, 0.534) 1px solid;
+}
+.viable{
+   /* border:2px rgb(0, 153, 255) solid;*/
+}
+.adjacent{
+    /*border:2px chartreuse solid;*/
+}
+.myTurn{
+    background-color: rgb(250, 7, 7);
+}
+.red{
+    background-color: darkred;
+border:1px  crimson solid;
+}
+.noAccess{
+    background-color: rgb(129, 21, 21);
+    /* background-image: url('assets/img/x.png');
+    background-size: cover; */
+    border:4px rgb(0, 0, 0) solid;
+    box-sizing: border-box;
+    min-width:60px;
+    min-height:60px;
+    display:inline-block;
+margin:3px;
+}
+#hexFlex,
+#hexFlexB{
+    margin:10px 0;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+#hexFlex2,
+#hexFlexB2{    
+    padding:10px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#hexPanel,
+#hexPanel2{
+   position: relative;
+   top:135px;
+}
+.hex{
+    height:75px;
+    width:75px;
+    background-size: contain;
+    /* border: 1px blue solid; */
+}
+/* #hex1{
+   background-image: url('assets/img/hex1.png') 
+}
+#hex2{
+   background-image: url('assets/img/hex2.png') 
+}
+#hex3{
+   background-image: url('assets/img/hex1.png') ;
+}
+#hex4{
+   background-image: url('assets/img/hex1.png') 
+}
+#hex5{
+   background-image: url('assets/img/hex2.png') 
+}
+#hex6{
+   background-image: url('assets/img/hex1.png') ;
+} */
+.combatButt{
+    margin: 5px;
+    line-height: 30px;
+    height:30px;
+    width: 240px;
+    border-radius: 2px;
+}
+.attack{
+    color: white;
+    background-color: red;
+}
+.block{
+    background-color: rgb(82, 82, 82);
+}
+#go{
+    cursor: crosshair;
+    line-height: 25px;
+    text-align: center;
+    width:50px;
+    height:25px;
+    background-color: rgb(48, 3, 3);
+    color: white;
+    border:2px black solid;
+}
+#blo{
+    cursor: crosshair;
+    line-height: 25px;
+    text-align: center;
+    width:50px;
+    height:25px;
+    background-color: rgb(114, 22, 22);
+    color: white;
+    border:2px black solid;
+}
+#Flo{
+    cursor: crosshair;
+    line-height: 25px;
+    text-align: center;
+    width:50px;
+    height:25px;
+    background-color: rgb(167, 20, 20);
+    color: white;
+    border:2px black solid;
+}
+#mlo{
+    cursor: crosshair;
+    line-height: 25px;
+    text-align: center;
+    width:50px;
+    height:25px;
+    background-color: rgb(134, 15, 15);
+    color: white;
+    border:2px black solid;
+}
+
+
+.hx1{
+    background-image: url('assets/img/hexes/hex1.png');
+    background-size: contain;
+    transition: transform .1s linear;
+}
+.hx2{
+    background-image: url('assets/img/hexes/hex2.png');
+    background-size: contain;
+    transition: transform .1s linear;
+}
+.hx3{
+    background-image: url('assets/img/hexes/hex3.png');
+    background-size: contain;
+    transition: transform .1s linear;
+}
+.hx4{
+    background-image: url('assets/img/hexes/hex4.png');
+    background-size: contain;
+    transition: transform .1s linear;
+}
+.hx5{
+    background-image: url('assets/img/hexes/hex5.png');
+    background-size: contain;
+    transition: transform .1s linear;
+}
+.hx6{
+    background-image: url('assets/img/hexes/hex6.png');
+    background-size: contain;
+    transition: transform .1s linear;
+}
+.hx7{
+    background-image: url('assets/img/hexes/hex7.png');
+    background-size: contain;
+    transition: transform .1s linear;
+}
+.hx8{
+    background-image: url('assets/img/hexes/hex8.png');
+    background-size: contain;
+    transition: transform .1s linear;
+}
+.hx8:hover{
+    background-image: url('assets/img/hexes/hex8b.png');
+    background-size: contain;
+}
+.hHover{
+    transform: scale(1.1);
+}
+.hx9{
+    background-image: url('assets/img/hexes/hex9.png');
+    background-size: contain;
+    transition: transform .1s linear;
+}

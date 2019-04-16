@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title><script src="jquery-3.3.1.min.js"></script>
+
+    <style>
+    .flex{
+    display:flex;
+}
+
+#glo{
+    cursor: crosshair;
+    line-height: 25px;
+    text-align: center;
+    width:50px;
+    height:25px;
+    background-color: rgb(51, 255, 0);
+    color: white;
+    border:2px black solid;
+}
+#mlo{
+    cursor: crosshair;
+    line-height: 25px;
+    text-align: center;
+    width:50px;
+    height:25px;
+    background-color: rgb(134, 15, 15);
+    color: white;
+    border:2px black solid;
+}
+
+    </style>
+</head>
+<body>
+    <div id="container" class="container">
+        <!-- <img src="assets/img/C+C2.jpg" alt="" srcset=""> -->
+        <canvas class='canvas2' id='canvas2'></canvas>
+    </div>
+    <div class="flex">
+        <div id='glo'></div>
+        <div id='mlo'></div>
+    </div>
+    <script src="scripts/animation.js"></script>
+    <script>
+        
+        $('#glo').on('click', function () {
+            jumpAttack();
+        })
+        $('#mlo').on('click', function () {
+            hurtOne();
+        })
+        
+        </script>
+        <script src="scripts/reactions.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+.deetz{
+    z-index: 5;
+    position: relative;
+    right:0;
+    left:0;
+    /* bottom:170px; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding:7px 5px 7px 5px;
+    text-align: center;
+    color: azure;
+    border:1px solid red;
+    background-color: black;
+    width:200px; 
+    height:650px; 
+    margin:15px 0 45px 0; 
+}
+
+.deetz1A{
+    transform: translate(415px, 0);
+    width: 250px;
+    height:750px;
+    transition: height 500ms ease-in 700ms, width 500ms ease-in 700ms, transform 500ms ease-in 700ms;
+}
+
+.deetz2A{
+    transform: translate(-415px, 0);
+    width: 250px;
+    height:750px;
+    transition: height 500ms ease-in 700ms, width 500ms ease-in 700ms, transform 500ms ease-in 700ms;
+}
+.gridA{
+    opacity: 0;
+    transition: all .5s linear .7s;
+}
+.battleA{
+    opacity: 0;
+    transition: all 300ms ease;
+}
+.goTimeA{
+    height:250px;
+    transition: all 500ms ease-in-out;
+}
+
+
+.canvas2{
+    background-color: rgb(48, 48, 48);
+    z-index: 5;
+    position: relative; 
+    height:200px;
+    width:200px;
+    transform: scale(1.4) translate(0px, -5px)
+}
+.canvas2a{
+    transform: scale(1.4) translate(0px, 15px);
+    transition: all 500ms ease-in-out 700ms;
+}
+.container{
+    position: relative; 
+    bottom:206px;
+    height:200px;
+    width:200px;
+    /* border:chartreuse 2px solid; */
+    overflow:hidden;
+}
+
+.canvas3{
+    background-color: rgb(48, 48, 48);
+    z-index: 5;
+    position: relative; 
+    height:200px;
+    width:200px;
+    transform: scale(1.4) translate(0px, -5px)
+}
+.canvas3a{
+    transform: scale(1.4) translate(0px, 15px);
+    transition: all 500ms ease-in-out 700ms;
+}
+
+.container3{
+    position: relative; 
+    bottom:206px;
+    height:200px;
+    height:200px;
+    width:200px;
+    /* border:chartreuse 2px solid; */
+    overflow:hidden;
+}
+
+.containerA{
+    height:250px;
+    width:250px;
+    bottom:257;
+    transition: all 500ms ease-in-out 700ms;
+    }
+
+    .deetsPanelBottom{
+        position: relative;
+        bottom:200px;
+
+    }
+    .deetsPanelBottomA{
+        position: relative;
+        bottom:250px;
+        transform: translate(0px, 0px);
+        transition: all 500ms ease-in-out 700ms
+    }
+    

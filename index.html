@@ -1,0 +1,133 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animStyles.css">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="scripts/grid.js"></script>
+    <script src="scripts/mines.js"></script>
+    <script src="scripts/move.js"></script>
+    <script src="scripts/movementSpaces.js"></script>
+    <script src="scripts/battle.js"></script>
+    <script src="scripts/main.js"></script>
+
+    <style>
+    #canvas{
+        z-index: 5;
+        height:57px;
+        width:57px;
+        position: relative;
+        bottom:420px;
+        left:491px;   
+    }
+    
+    
+    </style>
+</head>
+
+<body>
+    <div id='wrapper'>
+        <div id='gridBod'>
+
+            <!-- ///POSSIBLE CHANGE
+<p class='deetsHead'>PlayerOne</p>
+<div id='playerImg1'>
+    <div class="goTime goActive1">hi</div>
+</div>
+<div class='goSpace'> -->
+
+
+    <div class='deetz' id='deetz1'>
+        <p class='deetsHead'>PlayerOne</p>
+        <div id='playerImg1' class="goTime goActive1"></div>
+        <div id="container" class="container">
+            <!-- <img src="assets/img/C+C2.jpg" alt="" srcset=""> -->
+            <canvas class='canvas2' id='canvas2'></canvas>
+        </div>
+        <div id='deetsPanelBottomA'class="deetsPanelBottom">
+            <div class='goSpace'>
+            <p id="oneGo">YOUR TURN</p>
+            </div>
+            <hr>
+            <p class='stats' id="p1Health">hi</p>
+            <p class='stats' id="p1Shield">lo</p>
+            <p class='stats' id="p1Hit">hi</p>
+            <hr>
+            <div id="p1Log"></div>
+            <div id="hexPanel" class='hide'>
+                <div class='hexTitle' style="text-align:left; padding-left:15px;">
+                <h5>hexes</h5>
+                </div>
+                <div id='hexFlex2'>
+                <div class='hex' id='hex1'></div>
+                <div class='hex' id='hex2'></div>
+                <div class='hex' id='hex3'></div>
+                </div>
+                <div id='hexFlex'>
+                <div class='attack combatButt'>ATTACK</div>
+                <div class='block combatButt '>BLOCK</div>
+            </div>
+            </div>
+        </div>
+    </div>
+            <div  style='height: 900px;'>
+            <div id='grid' class='grid'></div>
+            
+                <canvas style='border:1px red solid' id='canvas'></canvas>
+            
+               
+            
+            </div>
+
+            <div class='deetz' id='deetz2'>
+                <p class='deetsHead'>PlayerTwo</p>
+                <div id='playerImg2' class="goTime inActive2"></div>
+                <div id="container2" class="container3">
+                    <canvas class='canvas3' id='canvas3'></canvas>
+                </div>
+            <div id='deetsPanelBottomB'class='deetsPanelBottom'>
+               <div class='goSpace'>
+               <p id="twoGo" class='hide'>YOUR TURN</p>
+               </div>
+               <hr>
+               <div class='stats' id="p2Health"></div>
+               <div class='stats' id="p2Shield"></div>
+               <div class='stats' id="p2Hit"></div>
+               <hr>
+               <div id="p2Log"></div>
+               <div id="hexPanel2" class='hide'>
+               <div class='hexTitle' style="text-align:left; padding-left:15px;">
+               <h5>hexes</h5>
+               </div>
+               <div id='hexFlexB2'>
+               <div class='hex' id='hex4'></div>
+               <div class='hex' id='hex5'></div>
+               <div class='hex' id='hex6'></div>
+               </div>
+               <div id='hexFlexB'>
+               <div class='attack combatButt'>ATTACK</div>
+               <div class='block combatButt '>BLOCK</div>
+               </div>
+            </div>
+                </div>
+            </div>
+        </div>
+        <div id='mainMsg'>
+            <h1 class='boom hide'>BOOM!</h1>
+            <h1 id='power' class='power hide'>power up</h1>
+            <h1 id='battle' class='battle hide'>battle</h1>
+            <h1 id='battleBack' class='battleBack hide'>battle</h1>
+            <h6 class='boom2 hide'>you hit a mine</h6>
+        </div>
+        <div class="flex">
+                <div id='go'></div >
+                <div id='blo'></div >
+                <div id='flo'></div >
+                <div id='mlo'></div >
+        </div>
+        
+    </div> 
+    <script src='scripts/animation.js'></script>
+</body>
+
+</html>
