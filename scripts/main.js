@@ -49,14 +49,8 @@ function setBoard() {
         console.log('hola')
         battle()
     })
-    $('#blo').on('click', function(){
-        console.log('hola')
-        c_jumpAttack()
-    })
-    $('#flo').on('click', function(){
-        console.log('hola')
-        potionFlash()
-    })
+   
+   
     $('#mlo').on('click', function(){
         console.log('henlo')
         hurtOne()

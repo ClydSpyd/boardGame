@@ -1,5 +1,19 @@
 function move() {
     
+ ///// MINES /////
+
+
+
+
+ if ($(this).hasClass('mine')) { 
+    activePlayer.health -= 20;
+    var healthStat =document.getElementById(activePlayer.hID);
+    healthStat.innerText='HEALTH: '+playerOne.health;
+    var log = document.getElementById(activePlayer.logID);
+    log.innerHTML+=('<p>you hit a mine: -20 health</p>')
+    mine();
+ }
+
     clickedCol = $(this).data('col');
     clickedRow = $(this).data('row');
     clicked = ('#' + clickedCol + '-' + clickedRow);
@@ -65,19 +79,7 @@ function move() {
 
 
 }
-    ///// MINES /////
-
-
-
-
-     if ($(this).hasClass('mine')) { 
-        activePlayer.health -= 20;
-        var healthStat =document.getElementById(activePlayer.hID);
-        healthStat.innerText='HEALTH: '+playerOne.health;
-        var log = document.getElementById(activePlayer.logID);
-        log.innerHTML+=('<p>you hit a mine: -20 health</p>')
-        mine();
-     }
+   
 
         ///// POTIONS /////
 

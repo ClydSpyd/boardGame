@@ -43,17 +43,21 @@
 
 
 .canvas2{
-    background-color: rgb(48, 48, 48);
+    /* background-color: rgb(73, 73, 73); */
     z-index: 5;
     position: relative; 
     height:200px;
     width:200px;
-    transform: scale(1.4) translate(0px, -5px)
+    transform: scale(1.5) translate(3px, -2px)
 }
 .canvas2a{
     transform: scale(1.4) translate(0px, 15px);
     transition: all 500ms ease-in-out 700ms;
 }
+.canvas2bg{
+    background-image:url('assets/img/demonSML.png');
+}
+
 .container{
     position: relative; 
     bottom:206px;
@@ -64,12 +68,16 @@
 }
 
 .canvas3{
-    background-color: rgb(48, 48, 48);
     z-index: 5;
     position: relative; 
     height:200px;
     width:200px;
-    transform: scale(1.4) translate(0px, -5px)
+    transform: scale(1.4) translate(0px, -5px);
+    
+    background-size: cover;
+}
+.canvas3bg{
+    background-image:url('assets/img/demonSML.png');
 }
 .canvas3a{
     transform: scale(1.4) translate(0px, 15px);
@@ -77,11 +85,14 @@
 }
 
 .container3{
+    background-color: rgb(73, 73, 73);
     position: relative; 
     bottom:206px;
     height:200px;
     height:200px;
     width:200px;
+    background-image:url('assets/img/boofa.png');
+    background-size: cover;
     /* border:chartreuse 2px solid; */
     overflow:hidden;
 }
@@ -153,4 +164,7 @@
     transition: background-color 900ms linear 0s;
     transition: transform 300s linear 0s;
     /* animation: shake 0.5s;  */
+}
+.redFlash{
+    background-color: red;
 }

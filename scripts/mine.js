@@ -7,7 +7,9 @@
             flash(80, 70)
             flash(100, 400)
         } else {
-            console.log('tooBoom')
+            demonFall()
+            flash(80, 70)
+            flash(100, 400)
         }
         $(`${inactivePlayer.locID}`).removeClass('mine')
         $('.boom').removeClass('hide');
@@ -22,7 +24,18 @@
 
 
      var flash = function(del1, del2){
-        setTimeout( function(){ $('#canvas2').css('background-color','red');
+        if(activePlayer==playerOne){
+        setTimeout( function(){ $('#canvas2').addClass('redFlash');
         setTimeout(function(){
-            $('#canvas2').css('background-color','rgb(48, 48, 48)');
+            $('#canvas2').removeClass('redFlash');
+        },del1)}, del2)
+    } else if(activePlayer==playerTwo){
+        setTimeout( function(){ $('#canvas3').addClass('redFlash');
+        setTimeout(function(){
+            $('#canvas3').removeClass('redFlash');
         },del1)}, del2)}
+    
+    
+    
+    } 
+       

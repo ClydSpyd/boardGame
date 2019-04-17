@@ -20,6 +20,8 @@ img{
     position: relative;
     bottom: 9px;
 }
+
+
 .row{
  height:66px;
 }
@@ -191,12 +193,12 @@ h5{
     background-size: cover;
 }
 .goActive2{
-    background-image: url('assets/img/skel2.png');
+    background-image: url('assets/img/demon.png');
     background-size: cover;
 }
 .inActive2{
     opacity: .3;
-    background-image: url('assets/img/skel2.png');
+    background-image: url('assets/img/demon.png');
     background-size: cover;
 }
 .oneActive {
@@ -206,7 +208,7 @@ h5{
 }
 
 .twoActive {
-    background-image: url('assets/img/skel2.png');
+    background-image: url('assets/img/demon.png');
     background-size: cover;
     border:1px  crimson solid;
 }
@@ -222,7 +224,7 @@ h5{
     margin:3px;
 }
 .mine{
-    /* border:3px pink solid; */
+    border:3px pink solid;
 }
 .rune1{
     background-image: url('assets/img/rune1.png');
@@ -283,7 +285,7 @@ h5{
     border: rgba(255, 255, 255, 0.534) 1px solid;
 }
 .possible2{
-    background-image: url('assets/img/skel2.png');
+    background-image: url('assets/img/demon.png');
     opacity: 0.3;
     background-size: cover;
     border: rgba(255, 255, 255, 0.534) 1px solid;
@@ -322,6 +324,7 @@ margin:3px;
     align-content: center;
 }
 #hexFlex2,
+#hexFlex4,
 #hexFlexB2,
 #hexFlexB4{    
     padding:10px 5px;
@@ -466,3 +469,4 @@ margin:3px;
     background-size: contain;
     transition: transform .1s linear;
 }
+

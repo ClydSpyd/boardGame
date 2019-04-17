@@ -121,6 +121,7 @@ var hurtOne = function() {
 }
 
 setInterval(function () {
+    document.getElementById('playerImg1').classList.remove('goActive')
     draw();
 },int);
 ////// PLAYER TWO MAIN IMAGE //////
@@ -134,10 +135,10 @@ var c_srcX = 0;
 var c_srcY = 0;
 var c_vert = 0;
 
-var c_sheetWidth = 21600;
+var c_sheetWidth = 16200;
 var c_sheetHeight = 900;
 
-var c_cols =24 ;
+var c_cols =18 ;
 var c_rows = 1;
 
 var c_width= 900;
@@ -147,7 +148,7 @@ var c_currentFrame=0;
 var c_frameCount=0;
 
 var cSprite = new Image();
-cSprite.src = 'golem.png';
+cSprite.src = 'assets/demon/idle.png';
 
 canvas3.height=c_canHeight;
 canvas3.width=c_canWidth;
@@ -162,6 +163,7 @@ function c_update(){
 
     c_currentFrame++
     c_frameCount++
+    console.log(c_frameCount)
 }
 
 function c_draw(){
@@ -171,6 +173,7 @@ c_ctx.drawImage(cSprite, c_srcX, c_srcY, c_width, c_height, x, y, c_width, c_hei
 
 setInterval(function(){
     c_draw();
+    document.getElementById('canvas3').classList.remove('canvas3bg');
 }, 100);
 
 
@@ -178,15 +181,51 @@ setInterval(function(){
 
 
 
-    var c_jumpAttack = function(){
-        c_frameCount=0
+    function demonIdle(){
+        cSprite.src = 'assets/demon/idle.png';
         c_currentFrame=0;
-        c_vert=1;
-        c_cols = 12;
-        setTimeout(function(){
-            c_vert=0;
+        c_frameCount=0;
+        c_cols=18
+        var interval = setInterval(function(){
+            c_draw();
+            document.getElementById('canvas3').classList.remove('canvas3bg');
+            if(c_frameCount==19){
+                c_currentFrame=0;
+                c_frameCount=0;
+            clearInterval(interval)
+        }
+        return
+        }, 100);
+    }
+
+    var demonFall = function(){
+        
+        c_currentFrame=0;
+        c_frameCount=0;
+        c_cols=15
+        cSprite.src='assets/demon/demonFalling.png'
+        
+       var interval= setInterval(function(){ 
+            if(c_frameCount==15){
+            clearInterval(interval)
+            // document.getElementById('canvas3').classList.add('canvas3bg')
+            c_cols=18;
             c_currentFrame=0;
             c_frameCount=0;
-            c_cols = 18;
-        },1400)
+            cSprite.src = 'assets/demon/idle.png';
+            }
+        c_draw();
+        },60);
+       
     }
+
+
+    $('#flo').on('click', function(){
+        console.log('hola')
+        demonFall()
+    })
+
+    $('#blo').on('click', function(){
+        console.log('hola')
+        demonIdle()
+    })
