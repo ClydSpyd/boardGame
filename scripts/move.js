@@ -86,6 +86,46 @@ function move() {
 
         var potionFlash=function(col){
             var affectedBox=activePlayer.canvasID
+            var par = document.getElementById(`${activePlayer.canvasID}`).parentElement;
+            var pic = document.createElement('img');
+            
+            if(activePlayer==playerOne){
+                pic.src='assets/img/angel.png';
+            }else{
+                pic.src='assets/img/demon.png';
+            }
+            
+            
+            par.appendChild(pic)
+            pic.setAttribute('class','newIMG')
+            setTimeout(function(){
+                pic.classList.add('boost')
+                // var box=document.getElementById(`${inactivePlayer.canvasID}`);
+                // box.classList.add('opaque')
+            },10)
+            setTimeout(function(){
+                pic.classList.remove('boost')
+                pic.classList.add('boost2')
+            },100)
+            setTimeout(function(){
+                pic.classList.remove('boost2')
+                pic.classList.add('boost')
+            },200)
+            setTimeout(function(){
+                pic.classList.remove('boost')
+                pic.classList.add('boost2')
+            },300)
+            setTimeout(function(){
+                pic.classList.remove('boost2')
+                pic.classList.add('boost')
+            },400)
+            setTimeout(function(){
+                par.removeChild(pic)
+                // var box=document.getElementById(`${inactivePlayer.canvasID}`);
+                // box.classList.remove('opaque')
+            },500)
+            console.log(par)
+
             setTimeout(function(){
             $(`#${affectedBox}`).addClass(`potionFlash${col}`);
         },100)

@@ -85,7 +85,7 @@
 }
 
 .container3{
-    background-color: rgb(73, 73, 73);
+    /* background-color: rgb(73, 73, 73); */
     position: relative; 
     bottom:206px;
     height:200px;
@@ -167,4 +167,23 @@
 }
 .redFlash{
     background-color: red;
+}
+
+.newIMG{
+    height:200px;
+    width:200px;
+    position: relative;
+    bottom: 200px;
+    z-index: 10;
+    transform: rotate(0deg);
+    
+}
+
+.boost{
+    transform: rotate(5deg);
+    transition: transform linear;
+}
+.boost2{
+    transform: rotate(-5deg);
+    transition: transform linear;
 }

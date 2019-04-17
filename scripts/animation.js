@@ -54,6 +54,7 @@ function idleUpdate() {
     ctx.clearRect(x, y, widthB, heightB)
 
     if (frameCount == 36) {
+        
         vert=0;
     }
     if (frameCount == 55) {
@@ -121,7 +122,7 @@ var hurtOne = function() {
 }
 
 setInterval(function () {
-    document.getElementById('playerImg1').classList.remove('goActive')
+    document.getElementById('canvas3').classList.remove('canvas3bg')
     draw();
 },int);
 ////// PLAYER TWO MAIN IMAGE //////
@@ -163,7 +164,7 @@ function c_update(){
 
     c_currentFrame++
     c_frameCount++
-    console.log(c_frameCount)
+    // console.log(c_frameCount)
 }
 
 function c_draw(){
@@ -174,7 +175,7 @@ c_ctx.drawImage(cSprite, c_srcX, c_srcY, c_width, c_height, x, y, c_width, c_hei
 setInterval(function(){
     c_draw();
     document.getElementById('canvas3').classList.remove('canvas3bg');
-}, 100);
+}, 70);
 
 
 
@@ -198,7 +199,23 @@ setInterval(function(){
         }, 100);
     }
 
-    var demonFall = function(){
+
+
+
+    var demonFall = function() {
+        cSprite.src='assets/demon/demonFalling.png'
+        c_frameCount = 0
+        c_currentFrame = 0;
+        c_cols = 15;
+        setTimeout(function () {
+            c_cols=18;
+            c_currentFrame=0;
+            c_frameCount=0;
+            cSprite.src = 'assets/demon/idle.png';
+        }, 1000)
+    }
+
+    var demoFall = function(){
         
         c_currentFrame=0;
         c_frameCount=0;
@@ -227,5 +244,5 @@ setInterval(function(){
 
     $('#blo').on('click', function(){
         console.log('hola')
-        demonIdle()
+        jumpAttack()
     })

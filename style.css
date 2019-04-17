@@ -28,6 +28,10 @@ img{
 .hide{
     display:none;
 }
+.opaque{
+    opacity: 0;
+}
+
 .flex{
     display:flex;
 }
@@ -148,8 +152,8 @@ h5{
 .goTime{
     margin:5px 0 5px 0;
     height:200px;
-    background-color: rgb(34, 34, 34);
-    border:1px solid lightslategray;
+    background-color:lightslategray;
+    /* border:1px solid lightslategray; */
 }
 
 /*//POSSIBLE CHANGE//*/
@@ -184,21 +188,21 @@ h5{
     background-size: cover;
 }
 .goActive1{
-    background-image: url('assets/img/angel.png');
+    /* background-image: url('assets/img/angel.png'); */
     background-size: cover;
 }
 .inActive1{
     opacity: .3;
-    background-image: url('assets/img/angel.png');
+    /* background-image: url('assets/img/angel.png'); */
     background-size: cover;
 }
 .goActive2{
-    background-image: url('assets/img/demon.png');
+    /* background-image: url('assets/img/demon.png'); */
     background-size: cover;
 }
 .inActive2{
     opacity: .3;
-    background-image: url('assets/img/demon.png');
+    /* background-image: url('assets/img/demon.png'); */
     background-size: cover;
 }
 .oneActive {
@@ -224,7 +228,7 @@ h5{
     margin:3px;
 }
 .mine{
-    border:3px pink solid;
+    /* border:3px pink solid; */
 }
 .rune1{
     background-image: url('assets/img/rune1.png');
