@@ -5,7 +5,8 @@
     <link rel="stylesheet" href="animStyles.css">
     <script src="jquery-3.3.1.min.js"></script>
     <script src="scripts/grid.js"></script>
-    <script src="scripts/mines.js"></script>
+    <script src="scripts/specialSquares.js"></script>
+    <script src="scripts/mine.js"></script>
     <script src="scripts/move.js"></script>
     <script src="scripts/movementSpaces.js"></script>
     <script src="scripts/battle.js"></script>
@@ -16,9 +17,6 @@
         z-index: 5;
         height:57px;
         width:57px;
-        position: relative;
-        bottom:420px;
-        left:491px;   
     }
     
     
@@ -73,7 +71,7 @@
             <div  style='height: 900px;'>
             <div id='grid' class='grid'></div>
             
-                <canvas style='border:1px red solid' id='canvas'></canvas>
+                <canvas id='canvas'></canvas>
             
                
             
@@ -104,6 +102,11 @@
                <div class='hex' id='hex5'></div>
                <div class='hex' id='hex6'></div>
                </div>
+               <div id='hexFlexB4'>
+                <div class='hex' id='hex4b'></div>
+                <div class='hex' id='hex5b'></div>
+                <div class='hex' id='hex6b'></div>
+                </div>
                <div id='hexFlexB'>
                <div class='attack combatButt'>ATTACK</div>
                <div class='block combatButt '>BLOCK</div>

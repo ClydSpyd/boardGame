@@ -18,6 +18,8 @@ var vert=1;
 var sheetWidth = 16200;
 var sheetHeight = 1800;
 
+
+
 var colsB = 18;
 var rows = 0;
 var widthB = 900;
@@ -34,9 +36,21 @@ canvas2.width = canWidthb;
 canvas2.height = canHeightb;
 var ctx = canvas2.getContext('2d');
 
+function update() {
+    ctx.clearRect(x, y, widthB, heightB)
+
+    currentFrameb = currentFrameb % colsB;
+    srcX = currentFrameb * widthB;
+    srcY = vert*heightB;
+
+    currentFrameb++
+    frameCount++
+// console.log(frameCount)
+
+}
 
 ////idle loop player 1////
-function update() {
+function idleUpdate() {
     ctx.clearRect(x, y, widthB, heightB)
 
     if (frameCount == 36) {
@@ -59,18 +73,19 @@ function update() {
 
     currentFrameb++
     frameCount++
-console.log(frameCount)
+// console.log(frameCount)
 
 }
 
+const func = idleUpdate
+
 function draw() {
-    update();
+    func();
     ctx.drawImage(segundo, srcX, srcY, widthB, heightB, x, y, widthB, heightB);
 }
 
-setInterval(function () {
-    draw();
-}, 100);
+///update interval///
+var int=80
 
 var jumpAttack = function () {
     segundo.src = 'attacc.png';
@@ -78,6 +93,7 @@ var jumpAttack = function () {
     currentFrameb=0;
     vert=0;
     colsB = 12;
+    int=100;
     setTimeout(function () {
         segundo.src = 'tripleSprite.png';
         vert=1;
@@ -88,20 +104,25 @@ var jumpAttack = function () {
 }
 
 var hurtOne = function() {
+    int=1000
     segundo.src = 'angelHurt.png';
     frameCount = 0
     currentFrameb = 0;
     vert = 0;
     colsB = 12;
     setTimeout(function () {
+        int=100;
         segundo.src = 'tripleSprite.png';
         vert = 1;
         currentFrameb = 0;
         frameCount = 0;
         colsB = 18;
-    }, 1250)
+    }, 1000)
 }
 
+setInterval(function () {
+    draw();
+},int);
 ////// PLAYER TWO MAIN IMAGE //////
 
 var canvas3=document.getElementById('canvas3');

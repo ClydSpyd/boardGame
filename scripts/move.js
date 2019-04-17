@@ -67,14 +67,7 @@ function move() {
 }
     ///// MINES /////
 
-    var mine = function () {
-        $(`${inactivePlayer.locID}`).removeClass('mine')
-        $('.boom').removeClass('hide');
-        hurtOne()
-        setTimeout(function () {
-            $('.boom').addClass('hide');
-        }, 500);
-    }
+
 
 
      if ($(this).hasClass('mine')) { 
@@ -86,37 +79,92 @@ function move() {
         mine();
      }
 
-        ///// WEAPONS /////
+        ///// POTIONS /////
+
+
+        var potionFlash=function(col){
+            var affectedBox=activePlayer.canvasID
+            setTimeout(function(){
+            $(`#${affectedBox}`).addClass(`potionFlash${col}`);
+        },100)
+            setTimeout(function(){
+                $(`#${affectedBox}`).removeClass(`potionFlash${col}`)
+                
+            },200)
+            setTimeout(function(){
+                $(`#${affectedBox}`).addClass(`potionFlash${col}`)
+                
+            },300)
+            setTimeout(function(){
+                $(`#${affectedBox}`).removeClass(`potionFlash${col}`)
+                
+            },400)
+            setTimeout(function(){
+                $(`#${affectedBox}`).addClass(`potionFlash${col}`)
+                
+            },500)
+            setTimeout(function(){
+                $(`#${affectedBox}`).removeClass(`potionFlash${col}`)
+                
+            },600)
+        }
+
+        
        
-     if ($(this).hasClass('weapon1')){        
-        $(this).removeClass('weapon1');
+     if ($(this).hasClass('weapon1')){  
+        $('#w1').addClass('weaponG');
+        setTimeout(function(){
+            $('#w1').hide();
+            $(`${inactivePlayer.locID}`).removeClass('weaponFix')
+        },800)
         activePlayer.attack+=30;
         console.log('blue')
         var attackStat = document.getElementById(activePlayer.aID);
         attackStat.innerHTML='ATTACK : ' + activePlayer.attack;
          var log = document.getElementById(activePlayer.logID);
          log.innerHTML += ('<p>Physical fortitude elixir: +30 attack</p>');
+        potionFlash('Blue');
+       
                       
     } else if ($(this).hasClass('weapon2')){    
         $(this).removeClass('weapon2');
+        $('#w2').addClass('weaponG');
+        setTimeout(function(){
+            $('#w2').hide();
+            $(`${inactivePlayer.locID}`).removeClass('weaponFix')
+        },800)
+        
         activePlayer.attack+=30;
-        console.log('red')
+        console.log('yellow')
         var attackStat = document.getElementById(activePlayer.aID);
-        attackStat.innerHTML='ATTACK : ' + activePlayer.attack;
+        attackStat.innerHTML='ATTACK : ' + activePlayer.attack
+        potionFlash('Yellow')
         
      } else if ($(this).hasClass('weapon3')) {    
          $(this).removeClass('weapon3');
+         $('#w3').addClass('weaponG');
+         setTimeout(function(){
+            $('#w3').hide();
+            $(`${inactivePlayer.locID}`).removeClass('weaponFix')
+        },800)
          activePlayer.attack += 30;
          console.log('green')
          var attackStat = document.getElementById(activePlayer.aID);
          attackStat.innerHTML = 'ATTACK : ' + activePlayer.attack;
+         potionFlash('Green')
 
      }else if ($(this).hasClass('weapon4')) {    
          $(this).removeClass('weapon4');
+         $('#w4').addClass('weaponG');
+         setTimeout(function(){
+            $('#w4').hide();
+            $(`${inactivePlayer.locID}`).removeClass('weaponFix')
+        },800)
          activePlayer.attack += 30;
          console.log('purple')
          var attackStat = document.getElementById(activePlayer.aID);
          attackStat.innerHTML = 'ATTACK : ' + activePlayer.attack;
+         potionFlash('Purple');
 
      }
         

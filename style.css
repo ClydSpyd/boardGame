@@ -6,10 +6,23 @@ body{
 }
 
 img{
-    margin: 0;
+    width:50px;
+    height:50px;
+    position: relative;
+    margin: 1;
 }
-
-
+/* .weaponFix{
+    position: relative;
+    bottom: 11px;
+} */
+.weaponFix{
+    background-color: chartreuse;
+    position: relative;
+    bottom: 9px;
+}
+.row{
+ height:66px;
+}
 .hide{
     display:none;
 }
@@ -25,13 +38,16 @@ hr{
     z-index: 0;
     text-align: center;
     margin:20px;
+    padding-top:7px; 
+    padding-left:3px; 
+    padding-right:3px; 
     /*background-image: url('assets/img/mov21.jpg');*/
     background-color: rgb(63, 10, 10);
     background-size: cover;
-    border: rgb(255, 51, 0) 3px solid;
+    border: rgb(255, 51, 0) 5px solid;
     display: block;
-    height:795px;
-    width:795px;
+    height:865px;
+    width:865px;
 }
 .grid{
     opacity: 1;
@@ -76,7 +92,7 @@ h5{
     width:600px;
     height:600px;
     position: relative;
-    bottom:700px;
+    bottom:770px;
 }
 .battle{
     vertical-align: middle;
@@ -166,12 +182,12 @@ h5{
     background-size: cover;
 }
 .goActive1{
-    background-image: url('assets/img/skel1.png');
+    background-image: url('assets/img/angel.png');
     background-size: cover;
 }
 .inActive1{
     opacity: .3;
-    background-image: url('assets/img/skel1.png');
+    background-image: url('assets/img/angel.png');
     background-size: cover;
 }
 .goActive2{
@@ -184,7 +200,7 @@ h5{
     background-size: cover;
 }
 .oneActive {
-    background-image: url('assets/img/skel1.png');
+    background-image: url('assets/img/angel.png');
     background-size: cover;
     border:1px  crimson solid;
 }
@@ -221,26 +237,28 @@ h5{
     background-size: contain;
 }
 .weapon1{
-    background-image: url('assets/img/potion5.png');
-    background-size: contain;
+    /* background-image: url('assets/img/potion5.png');
+    background-size: contain; */
 }
 .weapon2{
-    background-image: url('assets/img/potion4.png');
-    background-size: contain;
+    /* background-image: url('assets/img/potion4.png');
+    background-size: contain; */
 }
 .weapon3{
-    background-image: url('assets/img/potion3.png');
-    background-size: contain;
+    /* background-image: url('assets/img/potion3.png');
+    background-size: contain; */
 }
 .weaponG{
+    z-index: 5;
     opacity:0;
     transform: scale(10);
-    transition: all 1s linear;
+    transition: all 700ms linear;
 }
 
+
 .weapon4{
-    background-image: url('assets/img/potion1.png');
-    background-size: contain;
+    /* background-image: url('assets/img/potion1.png');
+    background-size: contain; */
 }
 .hex1{
     background-image: url('assets/img/hex1.png');
@@ -259,7 +277,7 @@ h5{
 }
 
 .possible{
-    background-image: url('assets/img/skel1.png');
+    background-image: url('assets/img/angel.png');
     opacity: 0.5;
     background-size: cover;
     border: rgba(255, 255, 255, 0.534) 1px solid;
@@ -304,7 +322,8 @@ margin:3px;
     align-content: center;
 }
 #hexFlex2,
-#hexFlexB2{    
+#hexFlexB2,
+#hexFlexB4{    
     padding:10px 5px;
     display: flex;
     align-items: center;
@@ -313,7 +332,7 @@ margin:3px;
 #hexPanel,
 #hexPanel2{
    position: relative;
-   top:135px;
+   top:35px;
 }
 .hex{
     height:75px;

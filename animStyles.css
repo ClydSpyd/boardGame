@@ -16,17 +16,17 @@
 }
 
 .deetz1A{
-    transform: translate(415px, 0);
-    width: 250px;
+    transform: translate(455px, 0);
     height:750px;
-    transition: height 500ms ease-in 700ms, width 500ms ease-in 700ms, transform 500ms ease-in 700ms;
+    width: 250px;
+    transition: height 500ms ease-in 700ms, width 500ms ease-in 700ms, transform 650ms ease-in 700ms;
 }
 
 .deetz2A{
-    transform: translate(-415px, 0);
-    width: 250px;
+    transform: translate(-455px, 0);
     height:750px;
-    transition: height 500ms ease-in 700ms, width 500ms ease-in 700ms, transform 500ms ease-in 700ms;
+    width: 250px;
+    transition: height 500ms ease-in 700ms, width 500ms ease-in 700ms, transform 650ms ease-in 700ms;
 }
 .gridA{
     opacity: 0;
@@ -104,4 +104,53 @@
         transform: translate(0px, 0px);
         transition: all 500ms ease-in-out 700ms
     }
-    
+
+   
+
+    /* When the animation is finished, start again */
+
+  
+  /* @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  } */
+
+
+      
+  .potionFlashBlue{
+    background-color: rgb(23, 162, 255);
+    transform: scale(1.4);
+    transition: background-color 900ms linear 0s;
+    transition: transform 300s linear 0s;
+    /* animation: shake 0.5s;  */
+}
+.potionFlashYellow{
+    background-color: rgb(255, 218, 11);
+    transform: scale(1.4);
+    transition: background-color 900ms linear 0s;
+    transition: transform 300s linear 0s;
+    /* animation: shake 0.5s;  */
+}
+.potionFlashGreen{
+    background-color: chartreuse;
+    transform: scale(1.4);
+    transition: background-color 900ms linear 0s;
+    transition: transform 300s linear 0s;
+    /* animation: shake 0.5s;  */
+}
+.potionFlashPurple{
+    background-color: rgb(168, 8, 168);
+    transform: scale(1.4);
+    transition: background-color 900ms linear 0s;
+    transition: transform 300s linear 0s;
+    /* animation: shake 0.5s;  */
+}

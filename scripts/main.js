@@ -6,7 +6,7 @@ const cellsAtStart = document.getElementsByClassName('col');
 
 function setBoard() {
     
-    const grid = new Grid('#grid', 12, 12);
+    const grid = new Grid('#grid', 13, 13);
     activePlayer=playerOne;
     inactivePlayer=playerTwo;
     for (var i = 0; i < cellsAtStart.length; i++) {
@@ -17,12 +17,12 @@ function setBoard() {
     $('div').removeClass('possible viable adjacent oneActive twoActive myTurn mine red noAccess weapon1 weapon2 rune1 rune2 rune3')
     $('div', '#grid').addClass('empty')
     posOne = '#0-0';
-    posTwo = '#11-11';
+    posTwo = '#12-12';
     $(posOne).addClass('oneActive myTurn').removeClass('cell');
     $(posTwo).addClass('twoActive').removeClass('cell');
     available();
     adjacent();
-    setSpecialSquares(25, 2, 4, 2, 25,4);
+    setSpecialSquares(25, 2, 4, 2, 35,4);
     blockedAvailability();
     var P1D = document.getElementById('p1Health');
     P1D.innerHTML = 'HEALTH: ' + playerOne.health;
@@ -55,7 +55,7 @@ function setBoard() {
     })
     $('#flo').on('click', function(){
         console.log('hola')
-        jumpAttack()
+        potionFlash()
     })
     $('#mlo').on('click', function(){
         console.log('henlo')
@@ -64,7 +64,7 @@ function setBoard() {
     
 }
 class Player {
-    constructor(name,health, shield, attack, activeClass,hoverClass, x,y,locID,logID,hID,sID,aID){
+    constructor(name,health, shield, attack, activeClass,hoverClass, x,y,locID,logID,hID,sID,aID,canvasID){
         
         this.name=name;
         this.health=health;
@@ -78,13 +78,14 @@ class Player {
         this.hID=hID;
         this.sID=sID;
         this.aID=aID;
+        this.canvasID=canvasID
         this.runeCount=0;
         this.hasWeapon=false;
 }
 }
 
-const playerOne = new Player('redFace', 100, 0, 10, 'oneActive' , 'possible',0 ,0,'#0-0','p1Log','p1Health','p1Shield','p1Hit');
-const playerTwo = new Player('pinkFace', 100, 0, 10, 'twoActive' , 'possible2',11 ,11,'#11-11','p2Log','p2Health','p2Shield','p2Hit');
+const playerOne = new Player('redFace', 100, 0, 10, 'oneActive' , 'possible',0 ,0,'#0-0','p1Log','p1Health','p1Shield','p1Hit','canvas2');
+const playerTwo = new Player('pinkFace', 100, 0, 10, 'twoActive' , 'possible2',12 ,12,'#12-12','p2Log','p2Health','p2Shield','p2Hit','canvas3');
 
 var cells = document.getElementsByClassName('cell');
 

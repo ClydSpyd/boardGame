@@ -50,7 +50,7 @@ function battle() {
             $('#p1Log, #p2Log').html('');
             $('#hexPanel, #hexPanel2').slideDown(800);
             $('#hexFlex2,#hexFlexB2').css('border-top','1px solid white')
-            $('#hexFlex2,#hexFlexB2').css('border-bottom','1px solid white')
+            $('#hexFlex4,#hexFlexB4').css('border-bottom','1px solid white')
           },1000)
 
           }
