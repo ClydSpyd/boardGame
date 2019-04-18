@@ -228,7 +228,7 @@ h5{
     margin:3px;
 }
 .mine{
-    /* border:3px pink solid; */
+    border:3px pink solid;
 }
 .rune1{
     background-image: url('assets/img/rune1.png');
@@ -377,7 +377,7 @@ margin:3px;
     background-color: red;
 }
 .block{
-    background-color: rgb(82, 82, 82);
+    background-color: lightslategray;
 }
 #go{
     cursor: crosshair;

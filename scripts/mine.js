@@ -6,10 +6,13 @@
             hurtOne()
             flash(80, 70)
             flash(100, 400)
+            $('#canvasX').fadeIn(10).delay(1000).fadeOut(10);
+           
         } else {
             demonFall()
             flash(80, 70)
             flash(100, 400)
+            $('#canvasY').fadeIn(10).delay(1000).fadeOut(10);
         }
         $(`${inactivePlayer.locID}`).removeClass('mine')
         $('.boom').removeClass('hide');

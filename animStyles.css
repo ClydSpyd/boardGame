@@ -166,7 +166,7 @@
     /* animation: shake 0.5s;  */
 }
 .redFlash{
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.705);
 }
 
 .newIMG{
@@ -180,10 +180,20 @@
 }
 
 .boost{
-    transform: rotate(5deg);
+    transform: scale(1.1) rotate(5deg);
     transition: transform linear;
 }
 .boost2{
-    transform: rotate(-5deg);
+    transform: scale(1.1) rotate(-5deg);
     transition: transform linear;
+}
+#canvasX,
+#canvasY{
+    width:220px;
+    height:220px;
+    z-index: 4;
+    position: relative;
+    bottom: 210px;
+    right:10px;
+}
 }

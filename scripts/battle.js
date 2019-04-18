@@ -78,14 +78,23 @@ for(var i=0;i<hexArr.length;i++){
 }
 
 $('#hex1').on('click', function(){
+  var thisID=this.getAttribute('class')
+  // if($(this).hasClass('hx8')){
+  //   alert('o hai')
+  // } else {
+  //   alert('henlo')
+  // }
 
-  if($(this).hasClass('hx8')){
-    alert('o hai')
-  } else {
-    alert('henlo')
-  }
-
-
+console.log(thisID)
 })
+$('#hex2').on('click', function(){
+  var thisID=this.getAttribute('class')
+  // if($(this).hasClass('hx8')){
+  //   alert('o hai')
+  // } else {
+  //   alert('henlo')
+  // }
 
+console.log(thisID)
+})
 }
