@@ -1,5 +1,15 @@
 function move() {
+ 
     
+    var potionSound = function(){
+        var potion=new Audio('assets/sounds/potion.mov')
+        potion.play();
+        console.log('audio')
+    }
+    if($(this).hasClass('weaponFix')){
+        potionSound();
+    }  
+
  ///// MINES /////
 
 
@@ -11,6 +21,9 @@ function move() {
     healthStat.innerText='HEALTH: '+playerOne.health;
     var log = document.getElementById(activePlayer.logID);
     log.innerHTML+=('<p>you hit a mine: -20 health</p>')
+    var bomb = new Audio('assets/sounds/bomb.mp3');
+    bomb.play();
+
     mine();
  }
 
@@ -76,12 +89,12 @@ function move() {
         var shieldStat = document.getElementById(activePlayer.sID);
         shieldStat.innerText = 'SHIELD: ' + activePlayer.shield;
         $(this).removeClass('rune1 rune2 rune3 powerUp')
-
-
+        
 }
    
 
         ///// POTIONS /////
+
 
 
         var potionFlash=function(col){
@@ -91,13 +104,13 @@ function move() {
             
             if(activePlayer==playerOne){
                 pic.src='assets/img/angel.png';
+                pic.setAttribute('class','newIMG')
             }else{
                 pic.src='assets/img/demon.png';
+                pic.setAttribute('class','newIMG2')
             }
             
-            
             par.appendChild(pic)
-            pic.setAttribute('class','newIMG')
             setTimeout(function(){
                 pic.classList.add('boost')
                 // var box=document.getElementById(`${inactivePlayer.canvasID}`);
@@ -106,49 +119,72 @@ function move() {
             setTimeout(function(){
                 pic.classList.remove('boost')
                 pic.classList.add('boost2')
-            },100)
-            setTimeout(function(){
-                pic.classList.remove('boost2')
-                pic.classList.add('boost')
-            },200)
-            setTimeout(function(){
-                pic.classList.remove('boost')
-                pic.classList.add('boost2')
-            },300)
-            setTimeout(function(){
-                pic.classList.remove('boost2')
-                pic.classList.add('boost')
-            },400)
+            },30)
             setTimeout(function(){
                 par.removeChild(pic)
                 // var box=document.getElementById(`${inactivePlayer.canvasID}`);
-                // box.classList.remove('opaque')
-            },500)
-            console.log(par)
+            //     // box.classList.remove('opaque')
+            },1500)
+
+
+
 
             setTimeout(function(){
-            $(`#${affectedBox}`).addClass(`potionFlash${col}`);
-        },100)
-            setTimeout(function(){
-                $(`#${affectedBox}`).removeClass(`potionFlash${col}`)
+                $(`#${affectedBox}`).addClass(`potionFlash${col}`);
                 
-            },200)
-            setTimeout(function(){
-                $(`#${affectedBox}`).addClass(`potionFlash${col}`)
+            },1)
+                setTimeout(function(){
+                    $(`#${affectedBox}`).addClass(`potionFlash${col}2`)
+                    
+                },30);
+    
+                setTimeout(function(){
+                    $(`#${affectedBox}`).removeClass(`potionFlash${col}`)
+                    $(`#${affectedBox}`).removeClass(`potionFlash${col}2`)
+                },3000);
+            
+            
+
+
+
+
+            // setTimeout(function(){
+            //     pic.classList.remove('boost2')
+            //     pic.classList.add('boost')
+            // },200)
+            // setTimeout(function(){
+            //     pic.classList.remove('boost')
+            //     pic.classList.add('boost2')
+            // },300)
+            // setTimeout(function(){
+            //     pic.classList.remove('boost2')
+            //     pic.classList.add('boost')
+            // },400)
+            // setTimeout(function(){
+            //     par.removeChild(pic)
+            //     // var box=document.getElementById(`${inactivePlayer.canvasID}`);
+            //     // box.classList.remove('opaque')
+            // },500)
+            // console.log(par)
+
+            
+
+            // setTimeout(function(){
+            //     $(`#${affectedBox}`).addClass(`potionFlash${col}`)
                 
-            },300)
-            setTimeout(function(){
-                $(`#${affectedBox}`).removeClass(`potionFlash${col}`)
+            // },300)
+            // setTimeout(function(){
+            //     $(`#${affectedBox}`).removeClass(`potionFlash${col}`)
                 
-            },400)
-            setTimeout(function(){
-                $(`#${affectedBox}`).addClass(`potionFlash${col}`)
+            // },400)
+            // setTimeout(function(){
+            //     $(`#${affectedBox}`).addClass(`potionFlash${col}`)
                 
-            },500)
-            setTimeout(function(){
-                $(`#${affectedBox}`).removeClass(`potionFlash${col}`)
+            // },500)
+            // setTimeout(function(){
+            //     $(`#${affectedBox}`).removeClass(`potionFlash${col}`)
                 
-            },600)
+            // },600)
         }
 
         

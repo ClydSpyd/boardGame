@@ -43,12 +43,11 @@
 
 
 .canvas2{
-    /* background-color: rgb(73, 73, 73); */
     z-index: 5;
     position: relative; 
-    height:200px;
-    width:200px;
-    transform: scale(1.5) translate(3px, -2px)
+    height:300px;
+    width:300px;
+    transform: scale(1) translate(-45px, -53px)
 }
 .canvas2a{
     transform: scale(1.4) translate(0px, 15px);
@@ -72,7 +71,7 @@
     position: relative; 
     height:200px;
     width:200px;
-    transform: scale(1.4) translate(0px, -5px);
+    transform: scale(1.5) translate(-1px, -7px);
     
     background-size: cover;
 }
@@ -139,55 +138,72 @@
       
   .potionFlashBlue{
     background-color: rgb(23, 162, 255);
-    transform: scale(1.4);
-    transition: background-color 900ms linear 0s;
-    transition: transform 300s linear 0s;
     /* animation: shake 0.5s;  */
 }
+.potionFlashBlue2{
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 900ms linear 300ms;
+}
+
 .potionFlashYellow{
     background-color: rgb(255, 218, 11);
-    transform: scale(1.4);
-    transition: background-color 900ms linear 0s;
-    transition: transform 300s linear 0s;
-    /* animation: shake 0.5s;  */
 }
+.potionFlashYellow2{
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 900ms linear 300ms;
+}
+
 .potionFlashGreen{
     background-color: chartreuse;
-    transform: scale(1.4);
-    transition: background-color 900ms linear 0s;
-    transition: transform 300s linear 0s;
-    /* animation: shake 0.5s;  */
+}
+.potionFlashGreen2{
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 900ms linear 300ms;
 }
 .potionFlashPurple{
     background-color: rgb(168, 8, 168);
-    transform: scale(1.4);
-    transition: background-color 900ms linear 0s;
-    transition: transform 300s linear 0s;
-    /* animation: shake 0.5s;  */
+}
+.potionFlashPurple2{
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 900ms linear 300ms;
 }
 .redFlash{
     background-color: rgba(255, 0, 0, 0.705);
 }
 
+
 .newIMG{
+    height:200px;
+    width:200px;
+    position: relative;
+    bottom: 300px;
+    z-index: 10;
+    transform: rotate(0deg); 
+}
+.newIMG2{
     height:200px;
     width:200px;
     position: relative;
     bottom: 200px;
     z-index: 10;
-    transform: rotate(0deg);
-    
+    transform: scale(0.5); 
 }
 
 .boost{
-    transform: scale(1.1) rotate(5deg);
-    transition: transform linear;
+    transform: scale(1.1);
 }
 .boost2{
-    transform: scale(1.1) rotate(-5deg);
-    transition: transform linear;
+    transform: scale(1);
+    transition: transform 1000ms linear;
 }
-#canvasX,
+#canvasX{
+    width:220px;
+    height:220px;
+    z-index: 4;
+    position: relative;
+    bottom: 300px;
+    right:10px;
+}
 #canvasY{
     width:220px;
     height:220px;
@@ -195,5 +211,12 @@
     position: relative;
     bottom: 210px;
     right:10px;
+}
+.newDiv{
+    width:220;
+    height:220;
+    position: relative;
+    bottom:400;
+    border:magenta 1px solid;
 }
 }

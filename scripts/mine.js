@@ -17,8 +17,7 @@
         $(`${inactivePlayer.locID}`).removeClass('mine')
         $('.boom').removeClass('hide');
 
-
-
+        
 
         setTimeout(function () {
             $('.boom').addClass('hide');

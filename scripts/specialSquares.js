@@ -50,7 +50,7 @@ for (let i = 0; i < numNoAccess; i++) {
     thisOne.classList.remove('viable')
     blockedCells.push(thisOne.id);
 }
-    var cellsMinusMinesRunesNoAccess = document.getElementsByClassName('cell')
+    var cellsMinusMinesRunesNoAccess = Array.from(document.getElementsByClassName('cell'));
 
     for (let i = 0; i < numWeapons; i++) {
         
@@ -68,6 +68,8 @@ for (let i = 0; i < numNoAccess; i++) {
         img.setAttribute('id',IDs[i])
         img.src=weaponIMGs[i];
         thisOne.appendChild(img);
+
+        cellsMinusMinesRunesNoAccess.splice(randomNumber,1)
 
         // var weapons = ['weapon1', 'weapon2', 'weapon3', 'weapon4', 'weapon2', 'weapon3'];
         // var randomNumber = Math.floor(Math.random() * cells.length);
