@@ -1,14 +1,6 @@
 function move() {
  
-    
-    var potionSound = function(){
-        var potion=new Audio('assets/sounds/potion.mov')
-        potion.play();
-        console.log('audio')
-    }
-    if($(this).hasClass('weaponFix')){
-        potionSound();
-    }  
+
 
  ///// MINES /////
 
@@ -22,6 +14,7 @@ function move() {
     var log = document.getElementById(activePlayer.logID);
     log.innerHTML+=('<p>you hit a mine: -20 health</p>')
     var bomb = new Audio('assets/sounds/bomb.mp3');
+    bomb.volume=0.1;
     bomb.play();
 
     mine();
@@ -35,6 +28,7 @@ function move() {
     
     $(this).removeClass(activePlayer.hoverClass);
     $(this).removeClass('viable');
+    $(this).removeClass('mine');
     $(this).addClass(activePlayer.activeClass);
     
     $('#playerImg1').toggleClass('goActive1 inActive1');
@@ -59,13 +53,44 @@ function move() {
 
     ////// POWERUPS /////
     var powerUp = function () {
-        $('.power').removeClass('hide');
-        setTimeout(function () {
-            $('.power').addClass('hide');
-        }, 455);
+
+        var charm = new Audio('assets/sounds/charm.mov');
+        charm.volume=0.2;
+        charm.play();
+
+
+        var par2 = document.getElementById(`${activePlayer.canvasID}`).parentElement;
+        var pic2 = document.createElement('img');
+        pic2.src='assets/img/rune1.png'
+        
+        par2.appendChild(pic2) 
+
+        if(activePlayer==playerOne){
+            pic2.classList.add('newIMGrune')
+        }else{
+            pic2.classList.add('newIMGrune2')
+        }
+
+
+
+        setTimeout(function(){
+            pic2.classList.add('fade')
+        },400)
+        setTimeout(function(){
+            par2.removeChild(pic2) 
+        },1500)
+
+        // $('.power').removeClass('hide');
+        // setTimeout(function () {
+        //     $('.power').addClass('hide');
+        // }, 455);
+
+        
     }
 
-    if ($(this).hasClass('powerUp')) {   
+    
+
+    if ($(this).hasClass('powerUp')) {  
         if ($(this).hasClass('rune1')) {
             document.getElementById('power').style.backgroundImage = "url('assets/img/rune1.png')";
             activePlayer.shield += 20;
@@ -95,7 +120,15 @@ function move() {
 
         ///// POTIONS /////
 
-
+        var potionSound = function(){
+            var potion=new Audio('assets/sounds/potion.mov')
+            potion.volume=0.2;
+            potion.play();
+            console.log('audio')
+        }
+        if($(this).hasClass('weaponFix')){
+            potionSound();
+        }  
 
         var potionFlash=function(col){
             var affectedBox=activePlayer.canvasID
@@ -127,17 +160,23 @@ function move() {
             },1500)
 
 
-
-
-            setTimeout(function(){
-                $(`#${affectedBox}`).addClass(`potionFlash${col}`);
-                
-            },1)
+                if(activePlayer==playerOne){
+                    setTimeout(function(){
+                    $(`#${affectedBox}`).addClass(`potionFlash${col}`);
+                    $(`#${affectedBox}`).addClass('shrink');},1)
+                } else if(activePlayer==playerTwo){
+                    setTimeout(function(){
+                    $(`#${affectedBox}`).addClass(`potionFlash${col}`);
+                    $(`#${affectedBox}`).addClass('shrink2');},1)
+                    }
                 setTimeout(function(){
                     $(`#${affectedBox}`).addClass(`potionFlash${col}2`)
                     
                 },30);
-    
+                setTimeout(function(){
+                    $(`#${affectedBox}`).removeClass('shrink');
+                    $(`#${affectedBox}`).removeClass('shrink2');
+                },1500)
                 setTimeout(function(){
                     $(`#${affectedBox}`).removeClass(`potionFlash${col}`)
                     $(`#${affectedBox}`).removeClass(`potionFlash${col}2`)
@@ -195,12 +234,12 @@ function move() {
             $('#w1').hide();
             $(`${inactivePlayer.locID}`).removeClass('weaponFix')
         },800)
-        activePlayer.attack+=30;
+        activePlayer.attack+=10;
         console.log('blue')
         var attackStat = document.getElementById(activePlayer.aID);
         attackStat.innerHTML='ATTACK : ' + activePlayer.attack;
-         var log = document.getElementById(activePlayer.logID);
-         log.innerHTML += ('<p>Physical fortitude elixir: +30 attack</p>');
+        var log = document.getElementById(activePlayer.logID);
+        log.innerHTML += ('<p style="color:rgb(23, 162, 255)">Physical fortitude elixir: <br> +10 attack</p>');
         potionFlash('Blue');
        
                       
@@ -225,10 +264,12 @@ function move() {
             $('#w3').hide();
             $(`${inactivePlayer.locID}`).removeClass('weaponFix')
         },800)
-         activePlayer.attack += 30;
+         activePlayer.attack += 15;
          console.log('green')
          var attackStat = document.getElementById(activePlayer.aID);
          attackStat.innerHTML = 'ATTACK : ' + activePlayer.attack;
+         var log = document.getElementById(activePlayer.logID);
+         log.innerHTML += ('<p style="color:chartreuse">Demon fury elixir: <br> +15 attack</p>');
          potionFlash('Green')
 
      }else if ($(this).hasClass('weapon4')) {    

@@ -32,6 +32,7 @@ img{
     opacity: 0;
 }
 
+
 .flex{
     display:flex;
 }
@@ -474,3 +475,26 @@ margin:3px;
     transition: transform .1s linear;
 }
 
+#p1Log,
+#p2Log{
+    height: 250px;
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #131313; 
+  }
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(75, 75, 75); 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }

@@ -242,7 +242,4 @@ setInterval(function(){
         demonFall()
     })
 
-    $('#blo').on('click', function(){
-        console.log('hola')
-        jumpAttack()
-    })
+   

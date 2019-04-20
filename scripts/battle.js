@@ -62,6 +62,14 @@ console.log('BATTLE')
 hexes()
 
 
+setTimeout(function(){
+$('#p1Log').slideUp(850);
+$('#p2Log').slideUp(850);
+},700)
+// document.getElementById('p1Log').style='height:0px';
+// document.getElementById('p2Log').style='height:0px';
+
+
 /////ATTACK/////
 
 
