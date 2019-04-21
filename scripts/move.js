@@ -12,7 +12,7 @@ function move() {
     var healthStat =document.getElementById(activePlayer.hID);
     healthStat.innerText='HEALTH: '+playerOne.health;
     var log = document.getElementById(activePlayer.logID);
-    log.innerHTML+=('<p>you hit a mine: -20 health</p>')
+    log.innerHTML+=('<p style="color:red">you hit a mine: -20 health</p>')
     var bomb = new Audio('assets/sounds/bomb.mp3');
     bomb.volume=0.1;
     bomb.play();
@@ -55,7 +55,7 @@ function move() {
     var powerUp = function () {
 
         var charm = new Audio('assets/sounds/charm.mov');
-        charm.volume=0.2;
+        charm.volume=0.05;
         charm.play();
 
 
@@ -93,9 +93,9 @@ function move() {
     if ($(this).hasClass('powerUp')) {  
         if ($(this).hasClass('rune1')) {
             document.getElementById('power').style.backgroundImage = "url('assets/img/rune1.png')";
-            activePlayer.shield += 20;
+            activePlayer.shield += 10;
             var log = document.getElementById(activePlayer.logID);
-            log.innerHTML += ('<p>protection rune: +20 shield</p>');
+            log.innerHTML += ('<p>protection rune: +10 shield</p>');
             activePlayer.runeCount++;
         } else if ($(this).hasClass('rune2')) {
             document.getElementById('power').style.backgroundImage = "url('assets/img/rune2.png')";
@@ -105,9 +105,9 @@ function move() {
             activePlayer.runeCount++;
         } else if ($(this).hasClass('rune3')) {
             document.getElementById('power').style.backgroundImage = "url('assets/img/rune3.png')";
-            activePlayer.shield += 30;
+            activePlayer.shield += 5;
             var log = document.getElementById(activePlayer.logID);
-            log.innerHTML += ('<p>protection rune: +30 shield</p>');
+            log.innerHTML += ('<p>protection rune: +5 shield</p>');
             activePlayer.runeCount++;
         }
         powerUp();
@@ -122,8 +122,13 @@ function move() {
 
         var potionSound = function(){
             var potion=new Audio('assets/sounds/potion.mov')
+            var sparkle= new Audio('assets/sounds/sparkle.mov')
             potion.volume=0.2;
             potion.play();
+            setTimeout(function(){
+                sparkle.volume=0.1;
+                sparkle.play()
+            },900)
             console.log('audio')
         }
         if($(this).hasClass('weaponFix')){
@@ -149,10 +154,20 @@ function move() {
                 // var box=document.getElementById(`${inactivePlayer.canvasID}`);
                 // box.classList.add('opaque')
             },10)
+
+
+            if(activePlayer==playerOne){
             setTimeout(function(){
                 pic.classList.remove('boost')
                 pic.classList.add('boost2')
             },30)
+            }else if (activePlayer==playerTwo){
+                setTimeout(function(){
+                    pic.classList.remove('boost')
+                    pic.classList.add('boost2P2')
+                },30)  
+            }
+
             setTimeout(function(){
                 par.removeChild(pic)
                 // var box=document.getElementById(`${inactivePlayer.canvasID}`);
@@ -251,10 +266,12 @@ function move() {
             $(`${inactivePlayer.locID}`).removeClass('weaponFix')
         },800)
         
-        activePlayer.attack+=30;
+        activePlayer.health+=15;
         console.log('yellow')
-        var attackStat = document.getElementById(activePlayer.aID);
-        attackStat.innerHTML='ATTACK : ' + activePlayer.attack
+        var healthStat = document.getElementById(activePlayer.hID);
+        healthStat.innerHTML='HEALTH : ' + activePlayer.health
+        var log = document.getElementById(activePlayer.logID);
+        log.innerHTML += ('<p style="color:rgb(255, 218, 11)">Replenishment elixir: <br> +15 health</p>');
         potionFlash('Yellow')
         
      } else if ($(this).hasClass('weapon3')) {    
@@ -279,10 +296,12 @@ function move() {
             $('#w4').hide();
             $(`${inactivePlayer.locID}`).removeClass('weaponFix')
         },800)
-         activePlayer.attack += 30;
+         activePlayer.shield += 15;
          console.log('purple')
-         var attackStat = document.getElementById(activePlayer.aID);
-         attackStat.innerHTML = 'ATTACK : ' + activePlayer.attack;
+         var shieldStat = document.getElementById(activePlayer.sID);
+         shieldStat.innerHTML = 'SHIELD : ' + activePlayer.shield;
+         var log = document.getElementById(activePlayer.logID);
+         log.innerHTML += ('<p style="color:rgb(168, 8, 168)">Cloak of the Gods elixir: <br> +15 sheild</p>');
          potionFlash('Purple');
 
      }
@@ -315,3 +334,7 @@ $(`${posTwo}`).removeClass('viable')
 }
 roundCount++
 }
+
+$('#mlo').on('click', function(){
+    console.log('henlo')
+})

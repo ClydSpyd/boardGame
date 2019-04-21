@@ -229,7 +229,7 @@ h5{
     margin:3px;
 }
 .mine{
-    border:3px pink solid;
+    /* border:3px pink solid; */
 }
 .rune1{
     background-image: url('assets/img/rune1.png');
@@ -477,7 +477,8 @@ margin:3px;
 
 #p1Log,
 #p2Log{
-    height: 250px;
+    margin-top:5px;
+    height: 245px;
     overflow-y: auto;
 }
 

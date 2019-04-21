@@ -17,7 +17,7 @@ var cellsMinusMines = document.getElementsByClassName('cell')
 
 for (let i=0; i<numRune1 ;i++){
 
-    var randomNumber= Math.floor(Math.random()*cells.length);
+    var randomNumber= Math.floor(Math.random()*cellsMinusMines.length);
     cellsMinusMines[randomNumber].classList.add('rune1','powerUp')
     cellsMinusMines[randomNumber].classList.remove('cell')
 }
@@ -25,7 +25,7 @@ const numRune2 = numRuneTwo;
 
 for (let i=0; i<numRune2 ;i++){
 
-    var randomNumber= Math.floor(Math.random()*cells.length);
+    var randomNumber= Math.floor(Math.random()*cellsMinusMines.length);
     cellsMinusMines[randomNumber].classList.add('rune2','powerUp')
     cellsMinusMines[randomNumber].classList.remove('cell')
 }
@@ -33,7 +33,7 @@ const numRune3 = numRuneThree;
 
 for (let i=0; i<numRune3 ;i++){
 
-    var randomNumber= Math.floor(Math.random()*cells.length);
+    var randomNumber= Math.floor(Math.random()*cellsMinusMines.length);
     cellsMinusMines[randomNumber].classList.add('rune3','powerUp')
     cellsMinusMines[randomNumber].classList.remove('cell')
 }
@@ -43,7 +43,7 @@ var cellsMinusMinesRunes = document.getElementsByClassName('cell')
 
 for (let i = 0; i < numNoAccess; i++) {
 
-    var randomNumber = Math.floor(Math.random() * cells.length);
+    var randomNumber = Math.floor(Math.random() * cellsMinusMinesRunes.length);
     var thisOne=cellsMinusMinesRunes[randomNumber];
     thisOne.classList.add('noAccess')
     thisOne.classList.remove('cell','empty','viable','col')
@@ -59,7 +59,7 @@ for (let i = 0; i < numNoAccess; i++) {
         
         var weaponIMGs = ['assets/img/potionW1.png', 'assets/img/potionW2.png', 'assets/img/potionSMOL.png', 'assets/img/potionW4.png']
         
-        var randomNumber = Math.floor(Math.random() * cells.length);
+        var randomNumber = Math.floor(Math.random() * cellsMinusMinesRunesNoAccess.length);
         var thisOne = cellsMinusMinesRunesNoAccess[randomNumber];
         thisOne.classList.add('weaponFix')
         thisOne.classList.add(weapons[i])

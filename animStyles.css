@@ -178,8 +178,8 @@
     position: relative;
     bottom: 300px;
     z-index: 10;
+    transform: scale(1) translate(2px, -1px);
     /* background-color: lightslategray; */
-    transform: rotate(40deg); 
 }
 
 
@@ -190,9 +190,20 @@
     bottom: 200px;
     z-index: 10;
     /* background-color: lightslategray; */
-    transform: scale(0.5) translate(-500px, -25px);
+    transform: scale(0.5);
     opacity: 1; 
 }
+
+.newIMG3{
+    height:200px;
+    width:200px;
+    position: relative;
+    bottom: 300px;
+    z-index: 10;
+   transform: translate(-3px, 98px)
+}
+
+
 .newIMGrune{
     height:200px;
     width:200px;
@@ -225,7 +236,11 @@
     transform: scale(1.1);
 }
 .boost2{
-    transform: scale(1);
+    transform: scale(1) translate(2px, -1px);
+    transition: transform 1000ms linear;
+}
+.boost2P2{
+    transform: scale(1) translate(-3px, -2px);
     transition: transform 1000ms linear;
 }
 #canvasX{

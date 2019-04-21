@@ -50,12 +50,32 @@ function setBoard() {
         battle()
     })
    
-   
     $('#mlo').on('click', function(){
         console.log('henlo')
-        hurtOne()
+        move();
     })
     
+
+    //fix delay in P1 image appearance//
+    var parOne = document.getElementById(`${playerOne.canvasID}`).parentElement;
+    var picOne = document.createElement('img');
+    picOne.src='assets/img/angel.png';
+    picOne.setAttribute('class','newIMG')
+    parOne.appendChild(picOne)
+    setTimeout(function(){
+        parOne.removeChild(picOne)
+    },500)
+
+
+    var parTwo = document.getElementById(`${playerTwo.canvasID}`).parentElement;
+    var picTwo = document.createElement('img');
+    picTwo.src='assets/img/demon.png';
+    picTwo.setAttribute('class','newIMG3')
+    parTwo.appendChild(picTwo)
+    setTimeout(function(){
+        parTwo.removeChild(picTwo)
+    },500)
+
 }
 class Player {
     constructor(name,health, shield, attack, activeClass,hoverClass, x,y,locID,logID,hID,sID,aID,canvasID){
