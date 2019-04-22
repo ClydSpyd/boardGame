@@ -24,6 +24,7 @@ function setBoard() {
     adjacent();
     setSpecialSquares(25, 2, 4, 2, 35,4);
     blockedAvailability();
+    
     var P1D = document.getElementById('p1Health');
     P1D.innerHTML = 'HEALTH: ' + playerOne.health;
     var P2D = document.getElementById('p2Health');
@@ -50,11 +51,17 @@ function setBoard() {
         battle()
     })
    
+    // $('#mlo').on('click', function(){
+    //     console.log('henlo')
+    //     move();
+    // })
     $('#mlo').on('click', function(){
-        console.log('henlo')
-        move();
+        activePlayer.health = 0;
+        var healthStat =document.getElementById(activePlayer.hID);
+        healthStat.innerText='HEALTH: '+activePlayer.health;
+        var log = document.getElementById(activePlayer.logID);
+        log.innerHTML+=('<p>booooom</p>')
     })
-    
 
     //fix delay in P1 image appearance//
     var parOne = document.getElementById(`${playerOne.canvasID}`).parentElement;

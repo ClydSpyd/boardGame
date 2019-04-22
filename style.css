@@ -21,6 +21,15 @@ img{
     bottom: 9px;
 }
 
+.disabled{
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.disabledHex{
+    pointer-events: none;
+    opacity: 0.5;
+}
 
 .row{
  height:66px;
@@ -35,6 +44,8 @@ img{
 
 .flex{
     display:flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 hr{
     margin:0;
@@ -229,7 +240,7 @@ h5{
     margin:3px;
 }
 .mine{
-    /* border:3px pink solid; */
+    border:3px pink solid;
 }
 .rune1{
     background-image: url('assets/img/rune1.png');
@@ -348,6 +359,12 @@ margin:3px;
     background-size: contain;
     /* border: 1px blue solid; */
 }
+.hex2{
+    height:75px;
+    width:75px;
+    background-size: contain;
+    /* border: 1px blue solid; */
+}
 /* #hex1{
    background-image: url('assets/img/hex1.png') 
 }
@@ -376,9 +393,11 @@ margin:3px;
 .attack{
     color: white;
     background-color: red;
+    cursor: pointer;
 }
 .block{
     background-color: lightslategray;
+    cursor: pointer;
 }
 #go{
     cursor: crosshair;

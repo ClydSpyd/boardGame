@@ -7,9 +7,9 @@
     <script src="scripts/grid.js"></script>
     <script src="scripts/specialSquares.js"></script>
     <script src="scripts/mine.js"></script>
-    <script src="scripts/move.js"></script>
     <script src="scripts/movementSpaces.js"></script>
     <script src="scripts/battle.js"></script>
+    <script src="scripts/move.js"></script>
     <script src="scripts/main.js"></script>
 
     <style>
@@ -53,20 +53,21 @@
                 <div class='hexTitle' style="text-align:left; padding-left:15px;">
                 <h5>hexes</h5>
                 </div>
-                <div id='hexFlex2'>
-                <div class='hex' id='hex1'></div>
-                <div class='hex' id='hex2'></div>
-                <div class='hex' id='hex3'></div>
-                </div>
-                <div id='hexFlex4'>
-                    <div class='hex' id='hex1b'></div>
-                    <div class='hex' id='hex2b'></div>
-                    <div class='hex' id='hex3b'></div>
+                <div class='flex'>
+                    <div id='hexFlex2'>
+                    <div class='hex hexP1 disabled' id='hex1'></div>
+                    <div class='hex hexP1 disabled' id='hex2'></div>
+                    <div class='hex hexP1 disabled' id='hex3'></div>
                     </div>
-
+                    <div id='hexFlex4'>
+                        <div class='hex hexP1 disabled' id='hex1b'></div>
+                        <div class='hex hexP1 disabled' id='hex2b'></div>
+                        <div class='hex hexP1 disabled' id='hex3b'></div>
+                        </div>
+                </div>
                 <div id='hexFlex'>
-                <div class='attack combatButt'>ATTACK</div>
-                <div class='block combatButt '>BLOCK</div>
+                <div id='p1Attack' class='attack combatButt disabled'>ATTACK</div>
+                <div id='p1Block' class='block combatButt disabled'>BLOCK</div>
             </div>
             </div>
         </div>
@@ -102,18 +103,18 @@
                <h5>hexes</h5>
                </div>
                <div id='hexFlexB2'>
-               <div class='hex' id='hex4'></div>
-               <div class='hex' id='hex5'></div>
-               <div class='hex' id='hex6'></div>
+               <div class='hex hexP2 disabled' id='hex4'></div>
+               <div class='hex hexP2 disabled' id='hex5'></div>
+               <div class='hex hexP2 disabled' id='hex6'></div>
                </div>
                <div id='hexFlexB4'>
-                <div class='hex' id='hex4b'></div>
-                <div class='hex' id='hex5b'></div>
-                <div class='hex' id='hex6b'></div>
+                <div class='hex hexP2 disabled' id='hex4b'></div>
+                <div class='hex hexP2 disabled' id='hex5b'></div>
+                <div class='hex hexP2 disabled' id='hex6b'></div>
                 </div>
                <div id='hexFlexB'>
-               <div class='attack combatButt'>ATTACK</div>
-               <div class='block combatButt '>BLOCK</div>
+               <div id='p2Attack'class='attack combatButt disabled'>ATTACK</div>
+               <div id='p2Block'class='block combatButt disabled'>BLOCK</div>
                </div>
             </div>
                 </div>

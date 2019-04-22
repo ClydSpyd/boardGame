@@ -267,4 +267,14 @@
     border:magenta 1px solid;
     background-color: blue;
 }
+
+
+.filt{
+    mix-blend-mode: normal;
+    -webkit-filter: grayscale(30%);
+    filter: grayscale(30%);
+    opacity: .5;
+    object-fit: cover;
+    overflow: hidden;
+    transition: all .3s ease-in;
 }

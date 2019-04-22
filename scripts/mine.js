@@ -36,8 +36,6 @@
         setTimeout(function(){
             $('#canvas3').removeClass('redFlash');
         },del1)}, del2)}
-    
-    
-    
+      
     } 
        

@@ -1,4 +1,12 @@
 function hexes(){
+
+  var activeHex;
+  var thisOne;
+  var activeAttack;
+  var inactiveAttack;
+  var p1Attack = document.getElementById('p1Attack');
+  var p2Attack = document.getElementById('p2Attack');
+
   var hexBoxes=document.getElementsByClassName('hex');
   for (var i=0;i<hexBoxes.length;i++){
     var hexClasses =['hx1','hx2','hx3','hx4','hx5','hx6','hx7','hx8','hx9','hx1','hx2','hx3','hx4','hx5','hx6','hx7','hx8','hx9']
@@ -70,39 +78,103 @@ $('#p2Log').slideUp(850);
 // document.getElementById('p2Log').style='height:0px';
 
 
-/////ATTACK/////
-
 
 ////// HEXES/////
 
-var hexArr = document.querySelectorAll('.hex');
+var hexArr;
 function hexHov(){
   // this.classList.toggle('hHover')
   $(this).toggleClass('hHover')
 }
-for(var i=0;i<hexArr.length;i++){
+
+
+function hexLoop(){
+  if(activePlayer==playerOne){
+    hexArr = Array.from(document.querySelectorAll('.hexP1'));
+    activeAttack=p1Attack;
+  } else if(activePlayer==playerTwo){
+    hexArr = Array.from(document.querySelectorAll('.hexP2'));
+    activeAttack=p2Attack;
+  }
+
+  activeAttack.classList.remove('disabled');
+
+  for(var i=0;i<hexArr.length;i++){
+  hexArr[i].classList.remove('disabled');
   hexArr[i].addEventListener('mouseenter',hexHov);
   hexArr[i].addEventListener('mouseleave',hexHov);
+  hexArr[i].addEventListener('click',function(){
+    thisOne=hexArr.indexOf(this);
+    console.log(thisOne)
+    // hexArr.splice(thisOne,1)
+    console.log(hexArr)
+    this.removeEventListener('mouseenter',hexHov);
+    this.removeEventListener('mouseleave',hexHov);
+    this.classList.remove('hex')
+    this.classList.add('hex2')
+    
+    activeHex=hexArr[thisOne];
+    // var thisID=this.getAttribute('class')
+    // console.log(thisID)
+    for(var i=0;i<hexArr.length;i++){
+      hexArr[i].removeEventListener('mouseenter',hexHov);
+      hexArr[i].removeEventListener('mouseleave',hexHov);
+    }
+  });
+}
+}
+hexLoop()
+
+
+
+
+/////ATTACK/////
+
+
+
+
+activeAttack.addEventListener('click', function(){
+  attack()
+})
+
+// p2Attack.addEventListener('click', function(){
+//   attack()
+// })
+
+
+function attack(){
+  activeHex.classList.add('filt', 'disabledHex');
+  console.log('henlo')
+  hexArr.splice(thisOne,1)
+  hexLoop()
 }
 
-$('#hex1').on('click', function(){
-  var thisID=this.getAttribute('class')
-  // if($(this).hasClass('hx8')){
-  //   alert('o hai')
-  // } else {
-  //   alert('henlo')
-  // }
-
-console.log(thisID)
-})
-$('#hex2').on('click', function(){
-  var thisID=this.getAttribute('class')
-  // if($(this).hasClass('hx8')){
-  //   alert('o hai')
-  // } else {
-  //   alert('henlo')
-  // }
-
-console.log(thisID)
-})
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function checkGameOver(){
+// activePlayer.health = 0;
+// var healthStat =document.getElementById(activePlayer.hID);
+// healthStat.innerText='HEALTH: '+playerOne.health;
+// var log = document.getElementById(activePlayer.logID);
+// log.innerHTML+=('<p>booooom</p>')
+// if(playerOne.health<1){
+//     // alert('game over, man')
+//     console.log('game overrr')
+// } 
+// if (playerTwo.health<1){
+//     // alert('game over, man')
+//     console.log('game overrr')
+// }
+// }

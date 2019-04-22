@@ -10,7 +10,7 @@ function move() {
  if ($(this).hasClass('mine')) { 
     activePlayer.health -= 20;
     var healthStat =document.getElementById(activePlayer.hID);
-    healthStat.innerText='HEALTH: '+playerOne.health;
+    healthStat.innerText='HEALTH: '+activePlayer.health;
     var log = document.getElementById(activePlayer.logID);
     log.innerHTML+=('<p style="color:red">you hit a mine: -20 health</p>')
     var bomb = new Audio('assets/sounds/bomb.mp3');
@@ -196,49 +196,7 @@ function move() {
                     $(`#${affectedBox}`).removeClass(`potionFlash${col}`)
                     $(`#${affectedBox}`).removeClass(`potionFlash${col}2`)
                 },3000);
-            
-            
 
-
-
-
-            // setTimeout(function(){
-            //     pic.classList.remove('boost2')
-            //     pic.classList.add('boost')
-            // },200)
-            // setTimeout(function(){
-            //     pic.classList.remove('boost')
-            //     pic.classList.add('boost2')
-            // },300)
-            // setTimeout(function(){
-            //     pic.classList.remove('boost2')
-            //     pic.classList.add('boost')
-            // },400)
-            // setTimeout(function(){
-            //     par.removeChild(pic)
-            //     // var box=document.getElementById(`${inactivePlayer.canvasID}`);
-            //     // box.classList.remove('opaque')
-            // },500)
-            // console.log(par)
-
-            
-
-            // setTimeout(function(){
-            //     $(`#${affectedBox}`).addClass(`potionFlash${col}`)
-                
-            // },300)
-            // setTimeout(function(){
-            //     $(`#${affectedBox}`).removeClass(`potionFlash${col}`)
-                
-            // },400)
-            // setTimeout(function(){
-            //     $(`#${affectedBox}`).addClass(`potionFlash${col}`)
-                
-            // },500)
-            // setTimeout(function(){
-            //     $(`#${affectedBox}`).removeClass(`potionFlash${col}`)
-                
-            // },600)
         }
 
         
@@ -304,6 +262,18 @@ function move() {
          log.innerHTML += ('<p style="color:rgb(168, 8, 168)">Cloak of the Gods elixir: <br> +15 sheild</p>');
          potionFlash('Purple');
 
+
+         function checkGameOver(){
+            if(playerOne.health<1){
+                // alert('game over, man')
+                console.log('game overrr')
+            } 
+            if (playerTwo.health<1){
+                // alert('game over, man')
+                console.log('game overrr')
+            }
+        }
+
      }
         
 
@@ -333,8 +303,22 @@ $(`${posTwo}`).removeClass('viable')
     battle()                       
 }
 roundCount++
+
+
+///check Game over///
+
+    if(playerOne.health<1){
+        setTimeout(function(){
+        console.log('game over 1')
+        alert('game over, fallen angel mother fucker')
+        },1000)
+    } else if (playerTwo.health<1){
+        setTimeout(function(){
+        console.log('game over 2')
+        alert('game over, demon mother fucker')
+        },1000)
+    }
+
+
 }
 
-$('#mlo').on('click', function(){
-    console.log('henlo')
-})
