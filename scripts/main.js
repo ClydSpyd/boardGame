@@ -105,8 +105,8 @@ class Player {
 }
 }
 
-const playerOne = new Player('redFace', 100, 0, 10, 'oneActive' , 'possible',0 ,0,'#0-0','p1Log','p1Health','p1Shield','p1Hit','canvas2');
-const playerTwo = new Player('pinkFace', 100, 0, 10, 'twoActive' , 'possible2',12 ,12,'#12-12','p2Log','p2Health','p2Shield','p2Hit','canvas3');
+const playerOne = new Player('angel', 100, 0, 10, 'oneActive' , 'possible',0 ,0,'#0-0','p1Log','p1Health','p1Shield','p1Hit','canvas2');
+const playerTwo = new Player('demon', 100, 0, 10, 'twoActive' , 'possible2',12 ,12,'#12-12','p2Log','p2Health','p2Shield','p2Hit','canvas3');
 
 var cells = document.getElementsByClassName('cell');
 

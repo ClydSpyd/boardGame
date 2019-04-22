@@ -6,6 +6,10 @@ function hexes(){
   var inactiveAttack;
   var p1Attack = document.getElementById('p1Attack');
   var p2Attack = document.getElementById('p2Attack');
+  var p1Block = document.getElementById('p1Block');
+  var p2Block = document.getElementById('p2Block');
+  var activeHexClass;
+  var inactiveHexClass;
 
   var hexBoxes=document.getElementsByClassName('hex');
   for (var i=0;i<hexBoxes.length;i++){
@@ -90,38 +94,53 @@ function hexHov(){
 
 function hexLoop(){
   if(activePlayer==playerOne){
-    hexArr = Array.from(document.querySelectorAll('.hexP1'));
+    activeHexClass='.hexP1'
+    inactiveHexClass='.hexP2'
     activeAttack=p1Attack;
+    activeBlock=p1Block;
   } else if(activePlayer==playerTwo){
-    hexArr = Array.from(document.querySelectorAll('.hexP2'));
+    activeHexClass='.hexP2'
+    inactiveHexClass='.hexP1'
     activeAttack=p2Attack;
+    activeBlock=p2Block;
   }
 
-  activeAttack.classList.remove('disabled');
+  
+  activeHexArr=Array.from(document.querySelectorAll(activeHexClass));
+  inactiveHexArr=Array.from(document.querySelectorAll(inactiveHexClass));
 
-  for(var i=0;i<hexArr.length;i++){
-  hexArr[i].classList.remove('disabled');
-  hexArr[i].addEventListener('mouseenter',hexHov);
-  hexArr[i].addEventListener('mouseleave',hexHov);
-  hexArr[i].addEventListener('click',function(){
-    thisOne=hexArr.indexOf(this);
-    console.log(thisOne)
-    // hexArr.splice(thisOne,1)
-    console.log(hexArr)
-    this.removeEventListener('mouseenter',hexHov);
-    this.removeEventListener('mouseleave',hexHov);
-    this.classList.remove('hex')
-    this.classList.add('hex2')
+  activeAttack.classList.remove('disabled');
+  activeBlock.classList.remove('disabled');
+
+  for(var i=0;i<activeHexArr.length;i++){
+  activeHexArr[i].classList.remove('disabled');
+  activeHexArr[i].addEventListener('mouseenter',hexHov);
+  activeHexArr[i].addEventListener('mouseleave',hexHov);
+  activeHexArr[i].addEventListener('click',function(){
+    thisOne=activeHexArr.indexOf(this);
+    // console.log('Hex Selected')
+    // activeHexArr.splice(thisOne,1)
+    // console.log(activeHexArr)
+    // this.removeEventListener('mouseenter',hexHov);
+    // this.removeEventListener('mouseleave',hexHov);
+    // this.classList.remove('hex')
+    // this.classList.add('hex2')
     
-    activeHex=hexArr[thisOne];
+    activeHex=activeHexArr[thisOne];
     // var thisID=this.getAttribute('class')
     // console.log(thisID)
-    for(var i=0;i<hexArr.length;i++){
-      hexArr[i].removeEventListener('mouseenter',hexHov);
-      hexArr[i].removeEventListener('mouseleave',hexHov);
+    for(var i=0;i<activeHexArr.length;i++){
+      activeHexArr[i].removeEventListener('mouseenter',hexHov);
+      activeHexArr[i].removeEventListener('mouseleave',hexHov);
     }
   });
 }
+
+
+activeAttack.addEventListener('click', function(){
+  attack()
+})
+
 }
 hexLoop()
 
@@ -133,20 +152,32 @@ hexLoop()
 
 
 
-activeAttack.addEventListener('click', function(){
-  attack()
-})
-
-// p2Attack.addEventListener('click', function(){
-//   attack()
-// })
 
 
 function attack(){
   activeHex.classList.add('filt', 'disabledHex');
-  console.log('henlo')
-  hexArr.splice(thisOne,1)
-  hexLoop()
+  activeAttack.classList.add('disabled');
+  activeBlock.classList.add('disabled');
+
+  for(var i=0;i<activeHexArr.length;i++){
+    activeHexArr[i].classList.add('disabled');
+  }
+  for(var i=0;i<activeHexArr.length;i++){
+    inactiveHexArr[i].classList.remove('disabled');
+  }
+
+  if(activePlayer==playerOne){
+    activePlayer=playerTwo;
+    hexLoop()
+    console.log('active player: '+activePlayer.name+ '\n'+ 'active hex class: '+activeHexClass)
+  } else {
+    activePlayer=playerOne;
+    hexLoop()
+    console.log('active player: '+activePlayer.name+ '\n'+ 'active hex class: '+activeHexClass)
+  }
+
+
+  
 }
 
 }
