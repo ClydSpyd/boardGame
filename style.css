@@ -26,10 +26,7 @@ img{
     opacity: 0.5;
 }
 
-.disabledHex{
-    pointer-events: none;
-    opacity: 0.5;
-}
+
 
 .row{
  height:66px;
@@ -446,35 +443,63 @@ margin:3px;
     background-size: contain;
     transition: transform .1s linear;
 }
+.hx1:hover{
+    background-image: url('assets/img/hexes/hex1B.png');
+    background-size: contain;
+}
 .hx2{
     background-image: url('assets/img/hexes/hex2.png');
     background-size: contain;
     transition: transform .1s linear;
+}
+.hx2:hover{
+    background-image: url('assets/img/hexes/hex2B.png');
+    background-size: contain;
 }
 .hx3{
     background-image: url('assets/img/hexes/hex3.png');
     background-size: contain;
     transition: transform .1s linear;
 }
+.hx3:hover{
+    background-image: url('assets/img/hexes/hex3B.png');
+    background-size: contain;
+}
 .hx4{
     background-image: url('assets/img/hexes/hex4.png');
     background-size: contain;
     transition: transform .1s linear;
+}
+.hx4:hover{
+    background-image: url('assets/img/hexes/hex4B.png');
+    background-size: contain;
 }
 .hx5{
     background-image: url('assets/img/hexes/hex5.png');
     background-size: contain;
     transition: transform .1s linear;
 }
+.hx5:hover{
+    background-image: url('assets/img/hexes/hex5B.png');
+    background-size: contain;
+}
 .hx6{
     background-image: url('assets/img/hexes/hex6.png');
     background-size: contain;
     transition: transform .1s linear;
 }
+.hx6:hover{
+    background-image: url('assets/img/hexes/hex6B.png');
+    background-size: contain;
+}
 .hx7{
     background-image: url('assets/img/hexes/hex7.png');
     background-size: contain;
     transition: transform .1s linear;
+}
+.hx7:hover{
+    background-image: url('assets/img/hexes/hex7B.png');
+    background-size: contain;
 }
 .hx8{
     background-image: url('assets/img/hexes/hex8.png');
@@ -492,6 +517,10 @@ margin:3px;
     background-image: url('assets/img/hexes/hex9.png');
     background-size: contain;
     transition: transform .1s linear;
+}
+.hx9:hover{
+    background-image: url('assets/img/hexes/hex9B.png');
+    background-size: contain;
 }
 
 #p1Log,

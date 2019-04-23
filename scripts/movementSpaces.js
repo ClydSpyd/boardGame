@@ -77,99 +77,99 @@ function adjacent() {
         
     if(blockedCells.includes(currCol+'-'+(currRow-1))){ //N
         $(`#${currCol}-${currRow-2}`).removeClass('viable')  
-        console.log('BLOCKnorth')
+        // console.log('BLOCKnorth')
     }
 
     if(blockedCells.includes(currCol+'-'+(currRow-1))&&blockedCells.includes(currCol+1+'-'+(currRow-1))){ //N-NE
         $(`#${currCol}-${currRow-2}`).removeClass('viable')
         $(`#${currCol+1}-${currRow-2}`).removeClass('viable');
         $(`#${currCol+2}-${currRow-2}`).removeClass('viable');  
-        console.log('BLOCKnorth-NE')
+        // console.log('BLOCKnorth-NE')
     }
 
     if (blockedCells.includes(currCol+1+'-'+(currRow-1))){ //NE       
         $(`#${currCol+2}-${currRow-2}`).removeClass('viable');        
-        console.log('BLOCKnorth-east')
+        // console.log('BLOCKnorth-east')
      }
 
      if(blockedCells.includes(currCol+1+'-'+(currRow-1))&&blockedCells.includes(currCol+1+'-'+(currRow))){ //NE-E
         $(`#${currCol+2}-${currRow-2}`).removeClass('viable')
         $(`#${currCol+2}-${currRow}`).removeClass('viable');
         $(`#${currCol+2}-${currRow-1}`).removeClass('viable');  
-        console.log('BLOCKnorth-east-EAST')
+        // console.log('BLOCKnorth-east-EAST')
     }
 
     if(blockedCells.includes(currCol+1+'-'+currRow)){ //E
         $(`#${currCol+2}-${currRow}`).removeClass('viable')  
-        console.log('BLOCKeast')
+        // console.log('BLOCKeast')
     } 
     
     if(blockedCells.includes(currCol+1+'-'+(currRow))&&blockedCells.includes(currCol+1+'-'+(currRow+1))){ //E-SE
         $(`#${currCol+2}-${currRow}`).removeClass('viable')
         $(`#${currCol+2}-${currRow+2}`).removeClass('viable');
         $(`#${currCol+2}-${currRow+1}`).removeClass('viable');  
-        console.log('BLOCKeast-SE')
+        // console.log('BLOCKeast-SE')
     }
    
     if (blockedCells.includes(currCol+1+'-'+(currRow+1))){ //SE
        $(`#${currCol+2}-${currRow+2}`).removeClass('viable');
-       console.log('BLOCKsouth-east')
+    //    console.log('BLOCKsouth-east')
     } 
 
     if(blockedCells.includes(currCol+'-'+(currRow+1))&&blockedCells.includes(currCol+1+'-'+(currRow+1))){ //SE-S
         $(`#${currCol+1}-${currRow+2}`).removeClass('viable')
         $(`#${currCol+2}-${currRow+2}`).removeClass('viable');
         $(`#${currCol}-${currRow+2}`).removeClass('viable');  
-        console.log('BLOCKsouth-east-S')
+        // console.log('BLOCKsouth-east-S')
     }
    
     if (blockedCells.includes(currCol+'-'+(currRow+1))){ //S
         $(`#${currCol}-${currRow+2}`).removeClass('viable')
-        console.log('BLOCKsouth')
+        // console.log('BLOCKsouth')
     }
 
     if(blockedCells.includes(currCol+'-'+(currRow+1))&&blockedCells.includes(currCol-1+'-'+(currRow+1))){ //S-SW
         $(`#${currCol-1}-${currRow+2}`).removeClass('viable')
         $(`#${currCol}-${currRow+2}`).removeClass('viable');
         $(`#${currCol-2}-${currRow+2}`).removeClass('viable');  
-        console.log('BLOCKsouth-SE')
+        // console.log('BLOCKsouth-SE')
     }
    
 
     if (blockedCells.includes(currCol-1+'-'+(currRow+1))){ //SW
         $(`#${currCol-2}-${currRow+2}`).removeClass('viable');
-        console.log('BLOCKsouth-west')
+        // console.log('BLOCKsouth-west')
      }
 
      if(blockedCells.includes(currCol-1+'-'+(currRow))&&blockedCells.includes(currCol-1+'-'+(currRow+1))){ //SW-W
         $(`#${currCol-2}-${currRow}`).removeClass('viable')
         $(`#${currCol-2}-${currRow+1}`).removeClass('viable');
         $(`#${currCol-2}-${currRow+2}`).removeClass('viable');  
-        console.log('BLOCKsouth-SE')
+        // console.log('BLOCKsouth-SE')
     }
 
     if (blockedCells.includes(currCol-1+'-'+currRow)){ //w
        $(`#${currCol-2}-${currRow}`).removeClass('viable')
-       console.log('BLOCKwest')
+    //    console.log('BLOCKwest')
     } 
 
     if(blockedCells.includes(currCol-1+'-'+(currRow))&&blockedCells.includes(currCol-1+'-'+(currRow-1))){ //W-NW
         $(`#${currCol-2}-${currRow}`).removeClass('viable')
         $(`#${currCol-2}-${currRow-1}`).removeClass('viable');
         $(`#${currCol-2}-${currRow-2}`).removeClass('viable');  
-        console.log('BLOCKsouth-SE')
+        // console.log('BLOCKsouth-SE')
     }
 
     if (blockedCells.includes(currCol-1+'-'+(currRow-1))){ //NW
         $(`#${currCol-2}-${currRow-2}`).removeClass('viable');
-        console.log('BLOCKnorth-west')
+        // console.log('BLOCKnorth-west')
      }
 
      if(blockedCells.includes(currCol+'-'+(currRow-1))&&blockedCells.includes(currCol-1+'-'+(currRow-1))){ //NW-N
         $(`#${currCol}-${currRow-2}`).removeClass('viable')
         $(`#${currCol-1}-${currRow-2}`).removeClass('viable');
         $(`#${currCol-2}-${currRow-2}`).removeClass('viable');  
-        console.log('BLOCKsouth-SE')
+        // console.log('BLOCKsouth-SE')
     }
 
     // if(blockedCells.includes(currCol+'-'+(currRow-1))&&blockedCells.includes(currCol+1+'-'+(currRow))){ //DIAG-UR

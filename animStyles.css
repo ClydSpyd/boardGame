@@ -90,7 +90,7 @@
     height:200px;
     height:200px;
     width:200px;
-    background-image:url('assets/img/boofa.png');
+    /* background-image:url('assets/img/boofa.png'); */
     background-size: cover;
     /* border:chartreuse 2px solid; */
     overflow:hidden;
@@ -273,8 +273,20 @@
     mix-blend-mode: normal;
     -webkit-filter: grayscale(30%);
     filter: grayscale(30%);
-    opacity: .5;
+    opacity: .9;
     object-fit: cover;
     overflow: hidden;
+    transition: all .3s ease-in;
+}
+
+.disabledHex{
+    mix-blend-mode: normal;
+    -webkit-filter: grayscale(30%);
+    filter: grayscale(30%);
+    opacity: .2;
+    /* object-fit: cover;
+    overflow: hidden; */
+    pointer-events: none;
+    transform: scale(0.9);
     transition: all .3s ease-in;
 }
