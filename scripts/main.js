@@ -126,12 +126,12 @@ function checkWin(){
         
         setTimeout(function(){
         console.log('game over 1')
-        alert('game over, fallen angel mother fucker')
+        alert('game over, fallen angel died')
         },1000)
     } else if (playerTwo.health<1){
         setTimeout(function(){
         console.log('game over 2')
-        alert('game over, demon mother fucker')
+        alert('game over, demon died')
         },1000)
     }
 }
