@@ -123,19 +123,21 @@ function hexLoop(){
   activeHexArr[i].addEventListener('mouseleave',hexHov);
 
   activeHexArr[i].addEventListener('click',function(){
+    ;
     thisOne=activeHexArr.indexOf(this);
     activeHex=activeHexArr[thisOne];
     for(var i=0;i<activeHexArr.length;i++){
-      activeHexArr[i].removeEventListener('mouseenter',hexHov);
-      activeHexArr[i].removeEventListener('mouseleave',hexHov);
+      activeHexArr[i].classList.remove('hHover2');
+      this.classList.add('hHover2','hoverClass')
+      // this.removeEventListener('mouseenter',hexHov);
+      // this.removeEventListener('mouseleave',hexHov);
     }
+    // for(var i=0;i<activeHexArr.length;i++){
+    //   activeHexArr[i].removeEventListener('mouseenter',hexHov);
+    //   activeHexArr[i].removeEventListener('mouseleave',hexHov);
+    // }
   });
 }
-
-
-// activeAttack.addEventListener('click', function(){
-//   attack()
-// })
 
 }///end of hexLoop
 
@@ -163,7 +165,9 @@ function switcheroo(){
 
 
 
+
 function attack(){
+  appendHex();
   activeHex.classList.add('disabledHex');
   activeAttack.classList.add('disabled');
   activeBlock.classList.add('disabled');
@@ -187,7 +191,7 @@ function attack(){
 } else if (inactivePlayer.shield>=activePlayer.attack){
   inactivePlayer.shield-=activePlayer.attack;
   shield.innerHTML='SHIELD: '+inactivePlayer.shield;
-
+  checkWin();
   console.log('sheild points')
 
 }else if (inactivePlayer.shield>1 && inactivePlayer.shield<activePlayer.attack){
@@ -200,12 +204,68 @@ function attack(){
   inactivePlayer.health-=remainder;
   shield.innerHTML='SHIELD: '+inactivePlayer.shield;
   Health.innerHTML='HEALTH: '+inactivePlayer.health;
-
+  checkWin();
   console.log('complicated one')
+}
+
+if (inactivePlayer.health<activePlayer.attack){
+  inactivePlayer.health=0;
+  Health.innerHTML='HEALTH: '+inactivePlayer.health;
+  checkWin();
 }
 
   switcheroo();
 }
+
+function appendHex(){
+var newHexIMG = document.createElement('img');
+
+var actHexClass= $(activeHex).attr('class').split(' ')[2];
+switch(actHexClass){
+  case'hx1':
+  newHexIMG.src='assets/img/hexes/hex1.png'
+  break;
+  case'hx2':
+  newHexIMG.src='assets/img/hexes/hex2.png'
+  break;
+  case'hx3':
+  newHexIMG.src='assets/img/hexes/hex3.png'
+  break;
+  case'hx4':
+  newHexIMG.src='assets/img/hexes/hex4.png'
+  break;
+  case'hx5':
+  newHexIMG.src='assets/img/hexes/hex5.png'
+  break;
+  case'hx6':
+  newHexIMG.src='assets/img/hexes/hex6.png'
+  break;
+  case'hx7':
+  newHexIMG.src='assets/img/hexes/hex7.png'
+  break;
+  case'hx8':
+  newHexIMG.src='assets/img/hexes/hex8.png'
+  break;
+  case'hx9':
+  newHexIMG.src='assets/img/hexes/hex9.png'
+  break;
+}
+activeHex.appendChild(newHexIMG);
+newHexIMG.classList.add('hex2')
+
+var sparkle= new Audio('assets/sounds/sparkle.mov')
+
+
+
+setTimeout(function(){
+  newHexIMG.classList.remove('hex2');
+  newHexIMG.classList.add('weaponG');
+  sparkle.volume=0.03;
+  sparkle.play()
+},100)
+}
+
+
 
 
 

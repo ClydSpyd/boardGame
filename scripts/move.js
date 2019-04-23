@@ -307,18 +307,6 @@ roundCount++
 
 ///check Game over///
 
-    if(playerOne.health<1){
-        setTimeout(function(){
-        console.log('game over 1')
-        alert('game over, fallen angel mother fucker')
-        },1000)
-    } else if (playerTwo.health<1){
-        setTimeout(function(){
-        console.log('game over 2')
-        alert('game over, demon mother fucker')
-        },1000)
-    }
-
 
 }
 

@@ -2,6 +2,8 @@ body{
     background-color: black;
     background-size: 100%;
     height:100vh;
+    font-family: 'Rajdhani', sans-serif;
+
     /* zoom:100%; */
 }
 
@@ -23,7 +25,7 @@ img{
 
 .disabled{
     pointer-events: none;
-    opacity: 0.5;
+    opacity: 0.3;
 }
 
 
@@ -152,11 +154,13 @@ h5{
 }
 
 .deetsHead{
+    font-family: 'Cute Font', cursive;
     height:45px;
     background-color: red;
     margin:0;
     color: whitesmoke;
-    font-size: 2rem;
+    line-height: 48px;
+    font-size: 3rem;
 }
 .goTime{
     margin:5px 0 5px 0;
@@ -187,10 +191,12 @@ h5{
     color: red;
     margin: 0;
     line-height: 45px;
+    font-family: 'Rajdhani', sans-serif;
 }
 .stats{
     font-size: 1.2rem;
     margin:8px;
+    font-family: 'Rajdhani', sans-serif;
 }
 .axe1{
     background-image: url('assets/img/faceOneAxe2.png');
@@ -237,7 +243,7 @@ h5{
     margin:3px;
 }
 .mine{
-    border:3px pink solid;
+    /* border:3px pink solid; */
 }
 .rune1{
     background-image: url('assets/img/rune1.png');
@@ -279,10 +285,10 @@ h5{
     background-image: url('assets/img/hex1.png');
     background-size: contain;
 }
-.hex2{
+/* .hex2{
     background-image: url('assets/img/hex2.png');
     background-size: contain;
-}
+} */
 .powerup{
     
 }
@@ -360,6 +366,8 @@ margin:3px;
     height:75px;
     width:75px;
     background-size: contain;
+    opacity: 1;
+    transform: scale(1)
     /* border: 1px blue solid; */
 }
 /* #hex1{
@@ -512,6 +520,9 @@ margin:3px;
 }
 .hHover{
     transform: scale(1.1);
+}
+.hHover2{
+    transform: scale(1.25);
 }
 .hx9{
     background-image: url('assets/img/hexes/hex9.png');

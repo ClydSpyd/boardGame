@@ -22,7 +22,7 @@ function setBoard() {
     $(posTwo).addClass('twoActive').removeClass('cell');
     available();
     adjacent();
-    setSpecialSquares(25, 2, 4, 2, 35,4);
+    setSpecialSquares(25, 2, 4, 2, 45,4);
     blockedAvailability();
     
     var P1D = document.getElementById('p1Health');
@@ -101,7 +101,6 @@ class Player {
         this.aID=aID;
         this.canvasID=canvasID
         this.runeCount=0;
-        this.hasWeapon=false;
 }
 }
 
@@ -119,7 +118,23 @@ var posTwo ;
 var mines = [];
 var blockedCells = []
 
+var winner;
+var loser;
 
+function checkWin(){
+    if(playerOne.health<1){
+        
+        setTimeout(function(){
+        console.log('game over 1')
+        alert('game over, fallen angel mother fucker')
+        },1000)
+    } else if (playerTwo.health<1){
+        setTimeout(function(){
+        console.log('game over 2')
+        alert('game over, demon mother fucker')
+        },1000)
+    }
+}
 
 // $(document).ready(function(){
 //     const grid = new Grid('#grid', 12, 12);
