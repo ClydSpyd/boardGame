@@ -1,9 +1,12 @@
 body{
     background-color: black;
     background-size: 100%;
-    height:100vh;
+    height:750px;
     font-family: 'Rajdhani', sans-serif;
-
+    /* background-image: url('assets/img/dungeonBG6.png');
+    background-size: 100% 120%; */
+    background-image: url('assets/img/dungeonBG8.png');
+    background-size: 100% 135%;
     /* zoom:100%; */
 }
 
@@ -243,7 +246,7 @@ h5{
     margin:3px;
 }
 .mine{
-    /* border:3px pink solid; */
+    border:3px pink solid;
 }
 .rune1{
     background-image: url('assets/img/rune1.png');

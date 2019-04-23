@@ -101,11 +101,10 @@ var jumpAttack = function () {
         currentFrameb=0;
         frameCount=0;
         colsB = 18;
-    },1400)
+    },900)
 }
 
 var hurtOne = function() {
-    int=1000
     segundo.src = 'angelHurt.png';
     frameCount = 0
     currentFrameb = 0;
@@ -207,6 +206,19 @@ setInterval(function(){
         c_frameCount = 0
         c_currentFrame = 0;
         c_cols = 15;
+        setTimeout(function () {
+            c_cols=18;
+            c_currentFrame=0;
+            c_frameCount=0;
+            cSprite.src = 'assets/demon/idle.png';
+        }, 1100)
+    }
+
+    var demonHurt = function() {
+        cSprite.src='assets/demon/demonHurt.png'
+        c_frameCount = 0
+        c_currentFrame = 0;
+        c_cols = 12;
         setTimeout(function () {
             c_cols=18;
             c_currentFrame=0;

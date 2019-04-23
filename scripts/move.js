@@ -207,12 +207,12 @@ function move() {
             $('#w1').hide();
             $(`${inactivePlayer.locID}`).removeClass('weaponFix')
         },800)
-        activePlayer.attack+=10;
+        activePlayer.attack+=5;
         console.log('blue')
         var attackStat = document.getElementById(activePlayer.aID);
         attackStat.innerHTML='ATTACK : ' + activePlayer.attack;
         var log = document.getElementById(activePlayer.logID);
-        log.innerHTML += ('<p style="color:rgb(23, 162, 255)">Physical fortitude elixir: <br> +10 attack</p>');
+        log.innerHTML += ('<p style="color:rgb(23, 162, 255)">Physical fortitude elixir: <br> +5 attack</p>');
         potionFlash('Blue');
        
                       
@@ -224,12 +224,12 @@ function move() {
             $(`${inactivePlayer.locID}`).removeClass('weaponFix')
         },800)
         
-        activePlayer.health+=15;
+        activePlayer.health+=20;
         console.log('yellow')
         var healthStat = document.getElementById(activePlayer.hID);
         healthStat.innerHTML='HEALTH : ' + activePlayer.health
         var log = document.getElementById(activePlayer.logID);
-        log.innerHTML += ('<p style="color:rgb(255, 218, 11)">Replenishment elixir: <br> +15 health</p>');
+        log.innerHTML += ('<p style="color:rgb(255, 218, 11)">Replenishment elixir: <br> +20 health</p>');
         potionFlash('Yellow')
         
      } else if ($(this).hasClass('weapon3')) {    
@@ -239,12 +239,12 @@ function move() {
             $('#w3').hide();
             $(`${inactivePlayer.locID}`).removeClass('weaponFix')
         },800)
-         activePlayer.attack += 15;
+         activePlayer.attack += 10;
          console.log('green')
          var attackStat = document.getElementById(activePlayer.aID);
          attackStat.innerHTML = 'ATTACK : ' + activePlayer.attack;
          var log = document.getElementById(activePlayer.logID);
-         log.innerHTML += ('<p style="color:chartreuse">Demon fury elixir: <br> +15 attack</p>');
+         log.innerHTML += ('<p style="color:chartreuse">Demon fury elixir: <br> +10 attack</p>');
          potionFlash('Green')
 
      }else if ($(this).hasClass('weapon4')) {    

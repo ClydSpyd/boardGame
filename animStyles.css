@@ -50,8 +50,11 @@
     transform: scale(1) translate(-45px, -53px)
 }
 .canvas2a{
-    transform: scale(1) translate(-15px, -23px);
+    transform: scale(1.08) translate(-15px, -33px);
     transition: all 500ms ease-in-out 700ms;
+}
+.canvas2aB{
+    transform: scale(1) translate(-15px, -23px);
 }
 /* .canvas2bg{
     background-image:url('assets/img/demonSML.png');
@@ -75,11 +78,11 @@
     
     background-size: cover;
 }
-.canvas3bg{
+/* .canvas3bg{
     background-image:url('assets/img/demonSML.png');
-}
+} */
 .canvas3a{
-    transform: scale(1.4) translate(0px, 15px);
+    transform: scale(1.6) translate(-3px, 10px);
     transition: all 500ms ease-in-out 700ms;
 }
 
@@ -101,6 +104,11 @@
     width:250px;
     bottom:257;
     transition: all 500ms ease-in-out 700ms;
+    }
+.containerAB{
+    height:250px;
+    width:250px;
+    bottom:257;
     }
 
     .deetsPanelBottom{
@@ -168,6 +176,14 @@
     transition: background-color 900ms linear 300ms;
 }
 .redFlash{
+    background-color: rgba(255, 0, 0, 0.705);
+}
+.redFlashBattle{
+    
+    background-color: rgb(255, 0, 0);
+}
+.redFlashBattleB{
+    transform: scale(1) translate(-15px, -23px);
     background-color: rgba(255, 0, 0, 0.705);
 }
 

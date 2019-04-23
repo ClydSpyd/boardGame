@@ -1,3 +1,72 @@
+
+
+var flashBattle = function(){
+  
+  clashes=['assets/sounds/clash.mp3','assets/sounds/strike1.mov','assets/sounds/strike2.mov','assets/sounds/strike3.mov','assets/sounds/strike4.mov']
+  var numOne = Math.floor(Math.random()*2);
+  var numTwo = Math.floor(Math.random()*clashes.length)
+  
+  var swoosh=new Audio('assets/sounds/swing.mp3')
+  var clash=new Audio(clashes[numTwo]);
+  
+if(activePlayer==playerTwo){
+  console.log(numOne);
+  document.getElementById('container2').classList.remove('containerA');
+  document.getElementById('container2').classList.add('containerAB');
+  
+  jumpAttack();
+  swoosh.play()
+
+
+  setTimeout(function(){
+    document.getElementById('container2').classList.add('redFlashBattle');
+    clash.play();
+    console.log('delay')
+  },250);
+  
+  setTimeout(function(){
+    document.getElementById('container2').classList.remove('redFlashBattle');
+  },600)
+
+  demonHurt();
+  setTimeout(function(){
+  },200)
+
+  // switch(numOne){
+  //   case 1:
+  //   demonHurt();
+  //   setTimeout(function(){
+  //   },200)
+  //   break;
+  //   case 0:
+  //   demonFall();
+  //   break
+  // }
+  
+
+
+} else if(activePlayer==playerOne){//player2 attack
+  document.getElementById('container').classList.remove('containerA');
+  document.getElementById('container').classList.add('containerAB');
+  
+  hurtOne();
+  swoosh.play()
+  setTimeout(function(){
+    clash.play();
+    document.getElementById('container').classList.add('redFlashBattle');
+  },250)
+  setTimeout(function(){
+    document.getElementById('container').classList.remove('redFlashBattle');
+  },450)
+
+  // document.getElementById('canvas2').classList.remove('canvas2A');
+  // document.getElementById('container').style.backgroundColor='red';
+  console.log('two');
+}
+
+}
+
+
 function hexes(){
 
   var activeHex;
@@ -23,11 +92,16 @@ function hexes(){
   }
 
 function battle() {
-
+  var impact=new Audio('assets/sounds/impact3.mov')
+  impact.volume=0.3;
+  var startSwords=new Audio('assets/sounds/strike3.mov')
+  startSwords.volume=0.2;
+  startSwords.play();
+  impact.play();
 eventListeners()
 
   activeHex=hlo;
-      //Set the correct active player state  
+      //Set the correct active player state
         var adj = document.getElementsByClassName('adjacent');
         if ($('#playerImg1').hasClass('inActive1')){
           activePlayer=playerOne;
@@ -39,10 +113,10 @@ eventListeners()
           // console.log('two')
         };
 
-        
+
         for (var i = 0; i < adj.length; i++) {
-            adj[i].classList.add('red');}  
-            
+            adj[i].classList.add('red');}
+
             function swords(){
             document.getElementById('battle').style.backgroundImage = "url('assets/img/swords2.png')";
             document.getElementById('battle').innerHTML='';
@@ -62,7 +136,7 @@ eventListeners()
           document.getElementById('deetsPanelBottomB').classList.add('deetsPanelBottomA')
           document.getElementById('container2').classList.add('containerA')
           document.getElementById('canvas3').classList.add('canvas3A')
-          
+
           $('#grid').addClass('gridA')
           setTimeout(function(){
             $('#p1Log, #p2Log').html('');
@@ -110,7 +184,7 @@ function hexLoop(){
     activeBlock=p2Block;
   }
 
-  
+
   activeHexArr=Array.from(document.querySelectorAll(activeHexClass));
   inactiveHexArr=Array.from(document.querySelectorAll(inactiveHexClass));
 
@@ -167,6 +241,9 @@ function switcheroo(){
 
 
 function attack(){
+
+
+
   appendHex();
   activeHex.classList.add('disabledHex');
   activeAttack.classList.add('disabled');
@@ -177,7 +254,7 @@ function attack(){
   }
   for(var i=0;i<activeHexArr.length;i++){
     inactiveHexArr[i].classList.remove('disabled');
-  }  
+  }
 
   var Health = document.getElementById(`${inactivePlayer.hID}`);
   var shield = document.getElementById(`${inactivePlayer.sID}`);
@@ -260,7 +337,7 @@ var sparkle= new Audio('assets/sounds/sparkle.mov')
 setTimeout(function(){
   newHexIMG.classList.remove('hex2');
   newHexIMG.classList.add('weaponG');
-  sparkle.volume=0.03;
+  sparkle.volume=0.3;
   sparkle.play()
 },100)
 }
@@ -272,9 +349,13 @@ setTimeout(function(){
 function eventListeners(){
   p1Attack.addEventListener('click', function(){
     attack();
+  setTimeout(flashBattle, 100)
+  // flash(100, 400)
   })
   p2Attack.addEventListener('click', function(){
     attack();
+    setTimeout(flashBattle, 100)
+    // flash(100, 400)
   })
   }
 
