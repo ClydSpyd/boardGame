@@ -6,6 +6,11 @@ const cellsAtStart = document.getElementsByClassName('col');
 
 function setBoard() {
     
+    // var music=new Audio('assets/sounds/test.mp3') 
+    // // .then(data=>data.play())
+    // // bgm.volume=0.5;
+    //     music.play()
+
     const grid = new Grid('#grid', 13, 13);
     activePlayer=playerOne;
     inactivePlayer=playerTwo;
@@ -51,10 +56,10 @@ function setBoard() {
         battle()
     })
    
-    // $('#mlo').on('click', function(){
-    //     console.log('henlo')
-    //     move();
-    // })
+    $('#blo').on('click', function(){
+        console.log('henlo')
+        demonFall()
+    })
     $('#mlo').on('click', function(){
         activePlayer.health = 0;
         var healthStat =document.getElementById(activePlayer.hID);

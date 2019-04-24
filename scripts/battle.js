@@ -14,7 +14,7 @@ if(activePlayer==playerTwo){
   document.getElementById('container2').classList.remove('containerA');
   document.getElementById('container2').classList.add('containerAB');
   
-  jumpAttack();
+  angelAttack();
   swoosh.play()
 
 
@@ -31,18 +31,6 @@ if(activePlayer==playerTwo){
   demonHurt();
   setTimeout(function(){
   },200)
-
-  // switch(numOne){
-  //   case 1:
-  //   demonHurt();
-  //   setTimeout(function(){
-  //   },200)
-  //   break;
-  //   case 0:
-  //   demonFall();
-  //   break
-  // }
-  
 
 
 } else if(activePlayer==playerOne){//player2 attack

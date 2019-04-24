@@ -92,7 +92,7 @@ var jumpAttack = function () {
     segundo.src = 'attacc.png';
     frameCount=0
     currentFrameb=0;
-    vert=0;
+    sheetWidth = 18000;
     colsB = 12;
     int=100;
     setTimeout(function () {
@@ -100,6 +100,7 @@ var jumpAttack = function () {
         vert=1;
         currentFrameb=0;
         frameCount=0;
+        sheetWidth = 16200;
         colsB = 18;
     },900)
 }
@@ -108,14 +109,14 @@ var hurtOne = function() {
     segundo.src = 'angelHurt.png';
     frameCount = 0
     currentFrameb = 0;
-    vert = 0;
+    sheetWidth = 18000;
     colsB = 12;
     setTimeout(function () {
         int=100;
         segundo.src = 'tripleSprite.png';
         vert = 1;
         currentFrameb = 0;
-        frameCount = 0;
+        sheetWidth = 16200;
         colsB = 18;
     }, 1000)
 }
