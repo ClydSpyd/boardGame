@@ -13,7 +13,7 @@ if(activePlayer==playerTwo){
   document.getElementById('container2').classList.remove('containerA');
   document.getElementById('container2').classList.add('containerAB');
 
-  angelJumpAttack();
+  oneAttack();
   swoosh.play()
 
 
@@ -26,16 +26,24 @@ if(activePlayer==playerTwo){
     document.getElementById('container2').classList.remove('redFlashBattle');
   },600)
 
-  demonHurt();
-  setTimeout(function(){
-  },200)
+  
+  if(playerTwo.health>=1){  
+    demonHurt();
+  } else {
+    demonFall()
+      setTimeout(function(){
+      console.log('game over 2')
+      alert('game over, demon died')
+      },1500)
+  }
+
 
 
 } else if(activePlayer==playerOne){//player2 attack
   document.getElementById('container').classList.remove('containerA');
   document.getElementById('container').classList.add('containerAB');
 
-  hurtOne();
+  
   swoosh.play()
   setTimeout(function(){
     clash.play();
@@ -44,6 +52,18 @@ if(activePlayer==playerTwo){
   setTimeout(function(){
     document.getElementById('container').classList.remove('redFlashBattle');
   },450)
+
+  if(playerOne.health>=1){  
+    hurtOne();
+  } else {
+    angelFall();
+      setTimeout(function(){
+      console.log('game over 1')
+      alert('game over, Fallen Angel died')
+      },1500)
+  }
+
+
 }
 
 }
@@ -323,27 +343,27 @@ function attack(){
     shield.innerHTML='SHIELD: '+inactivePlayer.shield;
     console.log('case3');
 
-    checkWin();
+    // checkWin();
   }else if(shieldPiercer==true){
   inactivePlayer.health-=activePlayer.attack;
   Health.innerHTML='HEALTH: '+inactivePlayer.health;
   console.log('case1.5');
-  checkWin();
+  // checkWin();
 }else if (inactivePlayer.health+activePlayer.shield<activePlayer.attack){
   inactivePlayer.health=0;
   Health.innerHTML='HEALTH: '+inactivePlayer.health;
   console.log('case4');
-  checkWin();
+  // checkWin();
 }else if(inactivePlayer.shield<1){
   inactivePlayer.health-=activePlayer.attack;
   Health.innerHTML='HEALTH: '+inactivePlayer.health;
   console.log('case1');
-  checkWin();
+  // checkWin();
 } else if (inactivePlayer.shield>=activePlayer.attack){
   inactivePlayer.shield-=activePlayer.attack;
   shield.innerHTML='SHIELD: '+inactivePlayer.shield;
   console.log('case2');
-  checkWin();
+  // checkWin();
 
 }else if (inactivePlayer.shield>1 && inactivePlayer.shield<activePlayer.attack){
 
@@ -353,7 +373,7 @@ function attack(){
   shield.innerHTML='SHIELD: '+inactivePlayer.shield;
   Health.innerHTML='HEALTH: '+inactivePlayer.health;
   console.log('case3');
-  checkWin();
+  // checkWin();
 } 
 hexStatReset();
   setTimeout(function(){

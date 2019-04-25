@@ -8,11 +8,11 @@ function move() {
 
 
  if ($(this).hasClass('mine')) { 
-    activePlayer.health -= 20;
+    activePlayer.health -= 10;
     var healthStat =document.getElementById(activePlayer.hID);
     healthStat.innerText='HEALTH: '+activePlayer.health;
     var log = document.getElementById(activePlayer.logID);
-    log.innerHTML+=('<p style="color:red">you hit a mine: -20 health</p>')
+    log.innerHTML+=('<p style="color:red">you hit a mine: -10 health</p>')
     var bomb = new Audio('assets/sounds/bomb.mp3');
     bomb.volume=0.4;
     bomb.play();
@@ -263,16 +263,6 @@ function move() {
          potionFlash('Purple');
 
 
-         function checkGameOver(){
-            if(playerOne.health<1){
-                // alert('game over, man')
-                console.log('game overrr')
-            } 
-            if (playerTwo.health<1){
-                // alert('game over, man')
-                console.log('game overrr')
-            }
-        }
 
      }
         
@@ -306,7 +296,7 @@ roundCount++
 
 
 ///check Game over///
-
+checkWin();
 
 }
 
