@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title><script src="jquery-3.3.1.min.js"></script>
+    <title>[isolation]</title><script src="jquery-3.3.1.min.js"></script>
 
     <style>
     .flex{
@@ -54,7 +54,7 @@
     <div id="container" class="container">
         <!-- <img src="assets/img/C+C2.jpg" alt="" srcset=""> -->
         <canvas  id='canvas2'></canvas>
-        <h1>henlo</h1>
+        <h1></h1>
     </div>
     <div class="flex">
         <div id='glo'></div>
@@ -66,14 +66,20 @@
        
 
         function funcGen() {
-            var numOne = Math.floor((Math.random()) * 2);
-            console.log('selected: '+numOne)
-            switch (numOne) {
+            var numOne = Math.random();
+            var numTwo = numOne * 2;
+            var numThree = Math.floor(numTwo);
+            console.log('original: '+numOne)
+            console.log('Multiplied, unrounded: '+numTwo)
+            console.log('selected: '+numThree)
+            switch (numThree) {
                 case 1:
                     hurtOne();
+                    console.log('hurtOne()')
                     break;
                 case 0:
                     angelAttack();
+                    console.log('angelAttack()')
                     break
             }
         }
