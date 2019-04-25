@@ -31,6 +31,16 @@
     color: white;
     border:2px black solid;
 }
+#vlo{
+    cursor: crosshair;
+    line-height: 25px;
+    text-align: center;
+    width:50px;
+    height:25px;
+    background-color: rgb(0, 60, 255);
+    color: white;
+    border:2px black solid;
+}
 
 #canvas2{
     border:red 1px solid;
@@ -49,15 +59,34 @@
     <div class="flex">
         <div id='glo'></div>
         <div id='mlo'></div>
+        <div id='vlo'></div>
     </div>
     <script src="scripts/anims.js"></script>
     <script>
+       
+
+        function funcGen() {
+            var numOne = Math.floor((Math.random()) * 2);
+            console.log('selected: '+numOne)
+            switch (numOne) {
+                case 1:
+                    hurtOne();
+                    break;
+                case 0:
+                    angelAttack();
+                    break
+            }
+        }
+        
         
         $('#glo').on('click', function () {
             angelAttack();
         })
         $('#mlo').on('click', function () {
             hurtOne();
+        })
+        $('#vlo').on('click', function () {
+            funcGen();
         })
         
         </script>
