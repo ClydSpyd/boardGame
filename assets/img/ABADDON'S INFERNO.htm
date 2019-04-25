@@ -1,0 +1,163 @@
+
+<!-- saved from url=(0051)file:///Users/dave/Documents/GitHub/game/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>ABADDON'S INFERNO</title>
+    <link href="./ABADDON&#39;S INFERNO_files/css" rel="stylesheet">
+    <link rel="stylesheet" href="file:///Users/dave/Documents/GitHub/game/style.css">
+    <link rel="stylesheet" href="file:///Users/dave/Documents/GitHub/game/animStyles.css">
+    <script src="file:///Users/dave/Documents/GitHub/game/jquery-3.3.1.min.js"></script>
+    <script src="file:///Users/dave/Documents/GitHub/game/scripts/grid.js"></script>
+    <script src="file:///Users/dave/Documents/GitHub/game/scripts/specialSquares.js"></script>
+    <script src="file:///Users/dave/Documents/GitHub/game/scripts/mine.js"></script>
+    <script src="file:///Users/dave/Documents/GitHub/game/scripts/movementSpaces.js"></script>
+    <script src="file:///Users/dave/Documents/GitHub/game/scripts/battle.js"></script>
+    <script src="file:///Users/dave/Documents/GitHub/game/scripts/move.js"></script>
+    <script src="file:///Users/dave/Documents/GitHub/game/scripts/main.js"></script>
+
+    <style>
+
+
+
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="gridBod">
+            
+            <!-- ///POSSIBLE CHANGE
+                <p class='deetsHead'>PlayerOne</p>
+                <div id='playerImg1'>
+                    <div class="goTime goActive1">hi</div>
+                </div>
+                <div class='goSpace'> -->
+                    
+                    
+        <div class="deetz deetz1A" id="deetz1">
+            <p class="deetsHead">Valal</p>
+            <div id="playerImg1" class="goTime goActive1 goTimeA"></div>
+            <div id="container" class="container containerA">
+                <!-- <img src="assets/img/C+C2.jpg" alt="" srcset=""> -->
+                <canvas class="canvas2 canvas2bg canvas2A" id="canvas2" width="900" height="900"></canvas>
+                <canvas id="canvasX" class="hide" width="200" height="200"></canvas>
+        </div>
+        <div id="deetsPanelBottomA" class="deetsPanelBottom deetsPanelBottomA">
+            <div class="goSpace" style="display: none;">
+            <p id="oneGo" class="hide">YOUR TURN</p>
+            </div>
+            <hr>
+            <p class="stats" id="p1Health">HEALTH: 100</p>
+            <p class="stats" id="p1Shield">SHIELD: 0</p>
+            <p class="stats" id="p1Hit">ATTACK : 10</p>
+            <hr>
+            <div id="p1Log" style="display: none;"></div>
+            <div id="hexPanel" class="hide" style="display: block;">
+                <div class="hexTitle" style="text-align:left; padding-left:15px;">
+                <h5>hexes</h5>
+                </div>
+
+                <div class="flex">
+                    <div id="hexFlex2" style="border-top: 1px solid white;">
+                    <div class="hex hexP1 tooltip hx5 hHover2 hoverClass disabledHex disabled" id="hex1"><span id="hx1TT" class="tooltiptext"><span>double attack[1]</span></span><img src="file:///Users/dave/Documents/GitHub/game/assets/img/hexes/hex5.png" class="weaponG"></div>
+                    <div class="hex hexP1 tooltip hx5 disabled" id="hex2"><span id="hx2TT" class="tooltiptext"><span>double attack[1]</span></span></div>
+                    <div class="hex hexP1 tooltip hx5 disabled" id="hex3"><span id="hx2TT" class="tooltiptext"><span>double attack[1]</span></span></div>
+                    </div>
+                    <div id="hexFlex4" style="border-bottom: 1px solid white;">
+                        <div class="hex hexP1 tooltip hx5 disabled" id="hex1b"><span id="hx2TT" class="tooltiptext"><span>double attack[1]</span></span></div>
+                        <div class="hex hexP1 tooltip hx5 disabled" id="hex2b"><span id="hx2TT" class="tooltiptext"><span>double attack[1]</span></span></div>
+                        <div class="hex hexP1 tooltip hx5 disabled" id="hex3b"><span id="hx2TT" class="tooltiptext"><span>double attack[1]</span></span></div>
+                        </div>
+                </div>
+                <div id="hexFlex">
+                <div id="p1Attack" class="attack combatButt disabled">ATTACK</div>
+                <div id="p1Block" class="block combatButt disabled">BLOCK</div>
+            </div>
+            </div>
+        </div>
+    </div>
+            <div style="height: 900px;">
+            <div id="grid" class="grid gridA"><div class="row empty"><div class="col empty emptyCell" data-col="0" data-row="0" id="0-0"></div><div class="emptyCell noAccess" data-col="1" data-row="0" id="1-0"></div><div class="col cell empty emptyCell" data-col="2" data-row="0" id="2-0"></div><div class="col cell empty emptyCell" data-col="3" data-row="0" id="3-0"></div><div class="col empty emptyCell mine" data-col="4" data-row="0" id="4-0"></div><div class="col cell empty emptyCell" data-col="5" data-row="0" id="5-0"></div><div class="emptyCell noAccess" data-col="6" data-row="0" id="6-0"></div><div class="col cell empty emptyCell" data-col="7" data-row="0" id="7-0"></div><div class="col empty emptyCell mine" data-col="8" data-row="0" id="8-0"></div><div class="col cell empty emptyCell" data-col="9" data-row="0" id="9-0"></div><div class="col cell empty emptyCell" data-col="10" data-row="0" id="10-0"></div><div class="col empty emptyCell mine" data-col="11" data-row="0" id="11-0"></div><div class="col empty emptyCell mine" data-col="12" data-row="0" id="12-0"></div></div><div class="row empty"><div class="emptyCell noAccess" data-col="0" data-row="1" id="0-1"></div><div class="col empty emptyCell mine" data-col="1" data-row="1" id="1-1"></div><div class="col cell empty emptyCell" data-col="2" data-row="1" id="2-1"></div><div class="emptyCell noAccess" data-col="3" data-row="1" id="3-1"></div><div class="col cell empty emptyCell" data-col="4" data-row="1" id="4-1"></div><div class="emptyCell noAccess" data-col="5" data-row="1" id="5-1"></div><div class="col cell empty emptyCell" data-col="6" data-row="1" id="6-1"></div><div class="col cell empty emptyCell" data-col="7" data-row="1" id="7-1"></div><div class="col cell empty emptyCell" data-col="8" data-row="1" id="8-1"></div><div class="col cell empty emptyCell" data-col="9" data-row="1" id="9-1"></div><div class="col cell empty emptyCell" data-col="10" data-row="1" id="10-1"></div><div class="col cell empty emptyCell" data-col="11" data-row="1" id="11-1"></div><div class="col empty emptyCell rune1 powerUp" data-col="12" data-row="1" id="12-1"></div></div><div class="row empty"><div class="col cell empty emptyCell weaponFix weapon3" data-col="0" data-row="2" id="0-2"><img id="w3" src="file:///Users/dave/Documents/GitHub/game/assets/img/potionSMOL.png"></div><div class="col cell empty emptyCell oneActive" data-col="1" data-row="2" id="1-2"></div><div class="col cell empty emptyCell" data-col="2" data-row="2" id="2-2"></div><div class="emptyCell noAccess" data-col="3" data-row="2" id="3-2"></div><div class="emptyCell noAccess" data-col="4" data-row="2" id="4-2"></div><div class="col cell empty emptyCell" data-col="5" data-row="2" id="5-2"></div><div class="col cell empty emptyCell" data-col="6" data-row="2" id="6-2"></div><div class="emptyCell noAccess" data-col="7" data-row="2" id="7-2"></div><div class="col cell empty emptyCell" data-col="8" data-row="2" id="8-2"></div><div class="emptyCell noAccess" data-col="9" data-row="2" id="9-2"></div><div class="emptyCell noAccess" data-col="10" data-row="2" id="10-2"></div><div class="col cell empty emptyCell" data-col="11" data-row="2" id="11-2"></div><div class="emptyCell noAccess" data-col="12" data-row="2" id="12-2"></div></div><div class="row empty"><div class="col cell empty emptyCell" data-col="0" data-row="3" id="0-3"></div><div class="emptyCell noAccess" data-col="1" data-row="3" id="1-3"></div><div class="emptyCell noAccess" data-col="2" data-row="3" id="2-3"></div><div class="emptyCell noAccess" data-col="3" data-row="3" id="3-3"></div><div class="col cell empty emptyCell" data-col="4" data-row="3" id="4-3"></div><div class="col empty emptyCell mine" data-col="5" data-row="3" id="5-3"></div><div class="col cell empty emptyCell" data-col="6" data-row="3" id="6-3"></div><div class="emptyCell noAccess" data-col="7" data-row="3" id="7-3"></div><div class="col cell empty emptyCell" data-col="8" data-row="3" id="8-3"></div><div class="emptyCell noAccess" data-col="9" data-row="3" id="9-3"></div><div class="col cell empty emptyCell" data-col="10" data-row="3" id="10-3"></div><div class="emptyCell noAccess" data-col="11" data-row="3" id="11-3"></div><div class="emptyCell noAccess" data-col="12" data-row="3" id="12-3"></div></div><div class="row empty"><div class="col cell empty emptyCell" data-col="0" data-row="4" id="0-4"></div><div class="col empty emptyCell mine" data-col="1" data-row="4" id="1-4"></div><div class="emptyCell noAccess" data-col="2" data-row="4" id="2-4"></div><div class="col cell empty emptyCell" data-col="3" data-row="4" id="3-4"></div><div class="col cell empty emptyCell" data-col="4" data-row="4" id="4-4"></div><div class="col cell empty emptyCell" data-col="5" data-row="4" id="5-4"></div><div class="col empty emptyCell mine" data-col="6" data-row="4" id="6-4"></div><div class="emptyCell noAccess" data-col="7" data-row="4" id="7-4"></div><div class="emptyCell noAccess" data-col="8" data-row="4" id="8-4"></div><div class="emptyCell noAccess" data-col="9" data-row="4" id="9-4"></div><div class="col cell empty emptyCell" data-col="10" data-row="4" id="10-4"></div><div class="col cell empty emptyCell" data-col="11" data-row="4" id="11-4"></div><div class="emptyCell noAccess" data-col="12" data-row="4" id="12-4"></div></div><div class="row empty"><div class="col empty emptyCell mine" data-col="0" data-row="5" id="0-5"></div><div class="col empty emptyCell mine" data-col="1" data-row="5" id="1-5"></div><div class="col empty emptyCell mine" data-col="2" data-row="5" id="2-5"></div><div class="col cell empty emptyCell" data-col="3" data-row="5" id="3-5"></div><div class="emptyCell noAccess" data-col="4" data-row="5" id="4-5"></div><div class="col cell empty emptyCell" data-col="5" data-row="5" id="5-5"></div><div class="col cell empty emptyCell" data-col="6" data-row="5" id="6-5"></div><div class="col cell empty emptyCell" data-col="7" data-row="5" id="7-5"></div><div class="col cell empty emptyCell" data-col="8" data-row="5" id="8-5"></div><div class="col empty emptyCell mine" data-col="9" data-row="5" id="9-5"></div><div class="col cell empty emptyCell" data-col="10" data-row="5" id="10-5"></div><div class="emptyCell noAccess" data-col="11" data-row="5" id="11-5"></div><div class="emptyCell noAccess" data-col="12" data-row="5" id="12-5"></div></div><div class="row empty"><div class="col cell empty emptyCell" data-col="0" data-row="6" id="0-6"></div><div class="col cell empty emptyCell" data-col="1" data-row="6" id="1-6"></div><div class="emptyCell noAccess" data-col="2" data-row="6" id="2-6"></div><div class="emptyCell noAccess" data-col="3" data-row="6" id="3-6"></div><div class="col cell empty emptyCell" data-col="4" data-row="6" id="4-6"></div><div class="emptyCell noAccess" data-col="5" data-row="6" id="5-6"></div><div class="col cell empty emptyCell" data-col="6" data-row="6" id="6-6"></div><div class="col cell empty emptyCell" data-col="7" data-row="6" id="7-6"></div><div class="col cell empty emptyCell" data-col="8" data-row="6" id="8-6"></div><div class="col cell empty emptyCell" data-col="9" data-row="6" id="9-6"></div><div class="col empty emptyCell mine" data-col="10" data-row="6" id="10-6"></div><div class="col cell empty emptyCell weaponFix weapon4" data-col="11" data-row="6" id="11-6"><img id="w4" src="file:///Users/dave/Documents/GitHub/game/assets/img/potionW4.png"></div><div class="col cell empty emptyCell" data-col="12" data-row="6" id="12-6"></div></div><div class="row empty"><div class="emptyCell noAccess" data-col="0" data-row="7" id="0-7"></div><div class="col cell empty emptyCell" data-col="1" data-row="7" id="1-7"></div><div class="col empty emptyCell rune3 powerUp" data-col="2" data-row="7" id="2-7"></div><div class="emptyCell noAccess" data-col="3" data-row="7" id="3-7"></div><div class="emptyCell noAccess" data-col="4" data-row="7" id="4-7"></div><div class="col cell empty emptyCell" data-col="5" data-row="7" id="5-7"></div><div class="col empty emptyCell rune2 powerUp" data-col="6" data-row="7" id="6-7"></div><div class="emptyCell noAccess" data-col="7" data-row="7" id="7-7"></div><div class="col cell empty emptyCell" data-col="8" data-row="7" id="8-7"></div><div class="emptyCell noAccess" data-col="9" data-row="7" id="9-7"></div><div class="emptyCell noAccess" data-col="10" data-row="7" id="10-7"></div><div class="col cell empty emptyCell" data-col="11" data-row="7" id="11-7"></div><div class="col cell empty emptyCell" data-col="12" data-row="7" id="12-7"></div></div><div class="row empty"><div class="col cell empty emptyCell" data-col="0" data-row="8" id="0-8"></div><div class="col cell empty emptyCell" data-col="1" data-row="8" id="1-8"></div><div class="col cell empty emptyCell" data-col="2" data-row="8" id="2-8"></div><div class="col cell empty emptyCell" data-col="3" data-row="8" id="3-8"></div><div class="col empty emptyCell rune2 powerUp" data-col="4" data-row="8" id="4-8"></div><div class="col cell empty emptyCell" data-col="5" data-row="8" id="5-8"></div><div class="col cell empty emptyCell" data-col="6" data-row="8" id="6-8"></div><div class="col cell empty emptyCell" data-col="7" data-row="8" id="7-8"></div><div class="col cell empty emptyCell" data-col="8" data-row="8" id="8-8"></div><div class="emptyCell noAccess" data-col="9" data-row="8" id="9-8"></div><div class="col cell empty emptyCell" data-col="10" data-row="8" id="10-8"></div><div class="emptyCell noAccess" data-col="11" data-row="8" id="11-8"></div><div class="emptyCell noAccess" data-col="12" data-row="8" id="12-8"></div></div><div class="row empty"><div class="emptyCell noAccess" data-col="0" data-row="9" id="0-9"></div><div class="col cell empty emptyCell" data-col="1" data-row="9" id="1-9"></div><div class="col cell empty emptyCell weaponFix weapon2" data-col="2" data-row="9" id="2-9"><img id="w2" src="file:///Users/dave/Documents/GitHub/game/assets/img/potionW2.png"></div><div class="col cell empty emptyCell" data-col="3" data-row="9" id="3-9"></div><div class="col empty emptyCell mine" data-col="4" data-row="9" id="4-9"></div><div class="col cell empty emptyCell" data-col="5" data-row="9" id="5-9"></div><div class="col cell empty emptyCell" data-col="6" data-row="9" id="6-9"></div><div class="col cell empty emptyCell" data-col="7" data-row="9" id="7-9"></div><div class="col cell empty emptyCell" data-col="8" data-row="9" id="8-9"></div><div class="col empty emptyCell rune2 powerUp" data-col="9" data-row="9" id="9-9"></div><div class="col cell empty emptyCell" data-col="10" data-row="9" id="10-9"></div><div class="col cell empty emptyCell" data-col="11" data-row="9" id="11-9"></div><div class="col cell empty emptyCell" data-col="12" data-row="9" id="12-9"></div></div><div class="row empty"><div class="col cell empty emptyCell" data-col="0" data-row="10" id="0-10"></div><div class="col cell empty emptyCell" data-col="1" data-row="10" id="1-10"></div><div class="col empty emptyCell mine" data-col="2" data-row="10" id="2-10"></div><div class="emptyCell noAccess" data-col="3" data-row="10" id="3-10"></div><div class="col empty emptyCell mine" data-col="4" data-row="10" id="4-10"></div><div class="col cell empty emptyCell" data-col="5" data-row="10" id="5-10"></div><div class="col cell empty emptyCell" data-col="6" data-row="10" id="6-10"></div><div class="col empty emptyCell mine" data-col="7" data-row="10" id="7-10"></div><div class="col empty emptyCell mine" data-col="8" data-row="10" id="8-10"></div><div class="col cell empty emptyCell" data-col="9" data-row="10" id="9-10"></div><div class="col cell empty emptyCell viable" data-col="10" data-row="10" id="10-10"></div><div class="emptyCell noAccess" data-col="11" data-row="10" id="11-10"></div><div class="col cell empty emptyCell viable" data-col="12" data-row="10" id="12-10"></div></div><div class="row empty"><div class="emptyCell noAccess" data-col="0" data-row="11" id="0-11"></div><div class="col cell empty emptyCell" data-col="1" data-row="11" id="1-11"></div><div class="col empty emptyCell mine" data-col="2" data-row="11" id="2-11"></div><div class="emptyCell noAccess" data-col="3" data-row="11" id="3-11"></div><div class="col cell empty emptyCell" data-col="4" data-row="11" id="4-11"></div><div class="emptyCell noAccess" data-col="5" data-row="11" id="5-11"></div><div class="col empty emptyCell mine" data-col="6" data-row="11" id="6-11"></div><div class="col cell empty emptyCell weaponFix weapon1" data-col="7" data-row="11" id="7-11"><img id="w1" src="file:///Users/dave/Documents/GitHub/game/assets/img/potionW1.png"></div><div class="emptyCell noAccess" data-col="8" data-row="11" id="8-11"></div><div class="col empty emptyCell mine" data-col="9" data-row="11" id="9-11"></div><div class="col empty emptyCell mine viable" data-col="10" data-row="11" id="10-11"></div><div class="col cell empty emptyCell viable adjacent red" data-col="11" data-row="11" id="11-11"></div><div class="col empty emptyCell rune2 powerUp viable adjacent red" data-col="12" data-row="11" id="12-11"></div></div><div class="row empty"><div class="col empty emptyCell rune1 powerUp" data-col="0" data-row="12" id="0-12"></div><div class="col cell empty emptyCell" data-col="1" data-row="12" id="1-12"></div><div class="col cell empty emptyCell" data-col="2" data-row="12" id="2-12"></div><div class="col cell empty emptyCell" data-col="3" data-row="12" id="3-12"></div><div class="col cell empty emptyCell" data-col="4" data-row="12" id="4-12"></div><div class="col empty emptyCell mine" data-col="5" data-row="12" id="5-12"></div><div class="col cell empty emptyCell" data-col="6" data-row="12" id="6-12"></div><div class="col empty emptyCell rune3 powerUp" data-col="7" data-row="12" id="7-12"></div><div class="col cell empty emptyCell" data-col="8" data-row="12" id="8-12"></div><div class="col cell empty emptyCell" data-col="9" data-row="12" id="9-12"></div><div class="col empty emptyCell mine viable" data-col="10" data-row="12" id="10-12"></div><div class="col empty emptyCell mine viable adjacent red" data-col="11" data-row="12" id="11-12"></div><div class="col empty emptyCell twoActive myTurn" data-col="12" data-row="12" id="12-12"></div></div></div>
+
+                <canvas id="canvas"></canvas>
+
+
+
+            </div>
+
+            <div class="deetz deetz2A" id="deetz2">
+                <p class="deetsHead">Abaddon</p>
+                <div id="playerImg2" class="goTime goActive2 goTimeA"></div>
+                <div id="container2" class="container3 containerAB">
+                    <canvas class="canvas3 canvas3A" id="canvas3" height="900" width="900"></canvas>
+                    <canvas id="canvasY" class="hide" width="200" height="200"></canvas>
+                </div>
+            <div id="deetsPanelBottomB" class="deetsPanelBottom deetsPanelBottomA">
+               <div class="goSpace" style="display: none;">
+               <p id="twoGo" class="">YOUR TURN</p>
+               </div>
+               <hr>
+               <div class="stats" id="p2Health">HEALTH: 50</div>
+               <div class="stats" id="p2Shield">SHIELD: 0</div>
+               <div class="stats" id="p2Hit">ATTACK : 10</div>
+               <hr>
+               <div id="p2Log" style="display: none;"></div>
+               <div id="hexPanel2" class="hide" style="display: block;">
+               <div class="hexTitle" style="text-align:left; padding-left:15px;">
+               <h5>hexes</h5>
+               </div>
+               <div id="hexFlexB2" style="border-top: 1px solid white;">
+               <div class="hex hexP2 tooltip hx5" id="hex4"><span id="hx2TT" class="tooltiptext"><span>double attack[1]</span></span></div>
+               <div class="hex hexP2 tooltip hx5" id="hex5"><span id="hx2TT" class="tooltiptext"><span>double attack[1]</span></span></div>
+               <div class="hex hexP2 tooltip hx5" id="hex6"><span id="hx2TT" class="tooltiptext"><span>double attack[1]</span></span></div>
+               </div>
+               <div id="hexFlexB4" style="border-bottom: 1px solid white;">
+                <div class="hex hexP2 tooltip hx5" id="hex4b"><span id="hx2TT" class="tooltiptext"><span>double attack[1]</span></span></div>
+                <div class="hex hexP2 tooltip hx5" id="hex5b"><span id="hx2TT" class="tooltiptext"><span>double attack[1]</span></span></div>
+                <div class="hex hexP2 tooltip hx5" id="hex6b"><span id="hx2TT" class="tooltiptext"><span>double attack[1]</span></span></div>
+                </div>
+               <div id="hexFlexB">
+               <div id="p2Attack" class="attack combatButt">ATTACK</div>
+               <div id="p2Block" class="block combatButt">BLOCK</div>
+               </div>
+            </div>
+                </div>
+            </div>
+        </div>
+        <div id="mainMsg">
+            <h1 class="boom hide">BOOM!</h1>
+            <h1 id="power" class="power hide">power up</h1>
+            <h1 id="battle" class="battle battleA" style="background-image: url(&quot;assets/img/swords2.png&quot;);"></h1>
+            <h1 id="battleBack" class="battleBack hide">battle</h1>
+            <h6 class="boom2 hide">you hit a mine</h6>
+        </div>
+        <div class="flex">
+                <div id="go"></div>
+                <div id="blo"></div>
+                <div id="flo"></div>
+                <div id="mlo"></div>
+
+
+                <div id="hlo"></div>
+        </div>
+
+        <!-- <audio id='potionAudio' src="assets/sounds/potion.mp3"></audio> -->
+    </div>
+    <iframe src="./ABADDON&#39;S INFERNO_files/test.html" allow="autoplay" style="display:none" id="iframeAudio">
+    </iframe> 
+    <script>
+        document.getElementById('iframeAudio').volume=0;
+     $('#playAudio').remove()
+     </script>
+     
+    <!-- <audio src="assets/sounds/dungeonMusic.mov" id="my_audio" loop="loop"></audio>
+    <script type="text/javascript">
+        window.onload=function(){
+        document.getElementById("my_audio").play();
+      }
+    </script> -->
+    <script src="file:///Users/dave/Documents/GitHub/game/scripts/player1.js"></script>
+    <script src="file:///Users/dave/Documents/GitHub/game/scripts/player2.js"></script>
+    <script src="file:///Users/dave/Documents/GitHub/game/scripts/expl.js"></script>
+
+
+</body></html>

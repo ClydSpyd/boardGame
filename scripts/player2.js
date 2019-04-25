@@ -69,7 +69,6 @@ var demonHurt = function(){
     c_frameCount = 0;
     c_cols=12;
     demonSheet=sheetDemonHurt;
-    console.log('demonHurt')
 }
 
 setInterval(function(){

@@ -10,7 +10,6 @@ var flashBattle = function(){
   var clash=new Audio(clashes[numTwo]);
 
 if(activePlayer==playerTwo){
-  console.log(numOne);
   document.getElementById('container2').classList.remove('containerA');
   document.getElementById('container2').classList.add('containerAB');
 
@@ -21,7 +20,6 @@ if(activePlayer==playerTwo){
   setTimeout(function(){
     document.getElementById('container2').classList.add('redFlashBattle');
     clash.play();
-    console.log('delay')
   },250);
 
   setTimeout(function(){
@@ -46,13 +44,12 @@ if(activePlayer==playerTwo){
   setTimeout(function(){
     document.getElementById('container').classList.remove('redFlashBattle');
   },450)
-
-  // document.getElementById('canvas2').classList.remove('canvas2A');
-  // document.getElementById('container').style.backgroundColor='red';
-  console.log('two');
 }
 
 }
+var shieldPiercer=false;
+var shieldDrain=false
+var doubleAttack=false;
 
 var activeHex=null;
 var activeHexClass;
@@ -71,10 +68,64 @@ function hexes(){
 
   var hexBoxes=document.getElementsByClassName('hex');
   for (var i=0;i<hexBoxes.length;i++){
-    var hexClasses =['hx1','hx2','hx3','hx4','hx5','hx6','hx7','hx8','hx9','hx1','hx2','hx3','hx4','hx5','hx6','hx7','hx8','hx9']
+    var hexClasses =['hx1','hx2','hx3','hx4','hx6','hx7','hx8','hx9','hx1','hx2','hx3','hx4','hx5','hx6','hx7','hx9','hx1','hx3','hx6','hx1','hx3','hx6','hx1','hx3','hx6']
+    // var hexClasses =['hx5']
+    var thisOne=hexBoxes[i]
     var j = Math.floor(Math.random()*hexClasses.length)
+    var newClass=hexClasses[j]
     hexBoxes[i].classList.remove('hx1','hx2','hx3','hx4','hx5','hx6','hx7','hx8','hx9')
-    hexBoxes[i].classList.add(hexClasses[j])
+    hexBoxes[i].classList.add(newClass)
+
+    
+
+    switch(newClass){
+      case'hx1':
+      thisOne.childNodes[0].innerHTML='<span>+5 attack</span>'
+      // console.log('hex one')
+      this.innerHTML='<h1>hola</h1>'
+      break;
+      case'hx2':
+      thisOne.childNodes[0].innerHTML='<span>shield piercer[1]</span>'
+      
+      // console.log('hex two')
+      break;
+      case'hx3':
+      thisOne.childNodes[0].innerHTML='<span>+10 attack</span>'
+      
+      // console.log('hex three')
+      break;
+      case'hx4':
+      thisOne.childNodes[0].innerHTML='<span>shield drain[1]</span>'
+      
+      // console.log('hex four')
+      break;
+      case'hx5':
+      thisOne.childNodes[0].innerHTML='<span>double attack[1]</span>'
+      
+      // console.log('hex five')
+      break;
+      case'hx6':
+      thisOne.childNodes[0].innerHTML='<span>+10 shield</span>'
+      
+      // console.log('hex six')
+      break;
+      case'hx7':
+      thisOne.childNodes[0].innerHTML='<span>+15 attack</span>'
+      
+      // console.log('hex seven')
+      break;
+      case'hx8':
+      thisOne.childNodes[0].innerHTML='<span>revive[1]</span>'
+      
+      // console.log('hex eight')
+      break;
+      case'hx9':
+      thisOne.childNodes[0].innerHTML='<span>+20 attack</span>'
+      
+      // console.log('hex nine')
+      break;
+    }
+
   }
   }
 
@@ -135,7 +186,6 @@ eventListeners()
 swords();
 sceneChange()
 setTimeout(function(){ $('.battle').toggleClass('battleA')},1200)
-console.log('BATTLE')
 
 hexes()
 
@@ -185,19 +235,11 @@ function hexLoop(){
   activeHexArr[i].addEventListener('click',function(){
     ;
     thisOne=activeHexArr.indexOf(this);
-    console.log(thisOne);
     activeHex=activeHexArr[thisOne];
-    console.log(activeHex);
     for(var i=0;i<activeHexArr.length;i++){
       activeHexArr[i].classList.remove('hHover2');
       this.classList.add('hHover2','hoverClass')
-      // this.removeEventListener('mouseenter',hexHov);
-      // this.removeEventListener('mouseleave',hexHov);
     }
-    // for(var i=0;i<activeHexArr.length;i++){
-    //   activeHexArr[i].removeEventListener('mouseenter',hexHov);
-    //   activeHexArr[i].removeEventListener('mouseleave',hexHov);
-    // }
   });
 }
 
@@ -216,12 +258,12 @@ function switcheroo(){
     activePlayer=playerTwo;
     inactivePlayer=playerOne;
     hexLoop()
-    console.log('active player: '+activePlayer.name+ '\n'+ 'active hex class: '+activeHexClass)
+    // console.log('active player: '+activePlayer.name+ '\n'+ 'active hex class: '+activeHexClass)
   } else {
     activePlayer=playerOne;
     inactivePlayer=playerTwo;
     hexLoop()
-    console.log('active player: '+activePlayer.name+ '\n'+ 'active hex class: '+activeHexClass)
+    // console.log('active player: '+activePlayer.name+ '\n'+ 'active hex class: '+activeHexClass)
   }
 }
 
@@ -230,9 +272,12 @@ function switcheroo(){
 
 function attack(){
 
-
-
-  
+  if(activeHex!==null){
+    hexEffect()
+  }
+  console.log(shieldPiercer)
+  // console.log(shieldPiercer)
+  // shieldPiercer==true
   activeAttack.classList.add('disabled');
   activeBlock.classList.add('disabled');
 
@@ -245,110 +290,167 @@ function attack(){
 
   var Health = document.getElementById(`${inactivePlayer.hID}`);
   var shield = document.getElementById(`${inactivePlayer.sID}`);
-
-  if(inactivePlayer.shield<1){
+  if (doubleAttack==true && inactivePlayer.shield<1){
+    inactivePlayer.health-=(activePlayer.attack*2);
+    Health.innerHTML='HEALTH: '+inactivePlayer.health;
+    console.log('caseDub1')
+  
+  } else if (doubleAttack==true && inactivePlayer.shield>=activePlayer.attack*2){
+    inactivePlayer.shield-=(activePlayer.attack*2);
+    shield.innerHTML='SHIELD: '+inactivePlayer.shield;
+    console.log('caseDub2')
+    checkWin();
+  
+  }else if (doubleAttack==true && inactivePlayer.shield>1 && inactivePlayer.shield<(activePlayer.attack*2)){
+    var remainder= (activePlayer.attack*2)-inactivePlayer.shield;
+    inactivePlayer.shield=0;
+    inactivePlayer.health-=remainder;
+    shield.innerHTML='SHIELD: '+inactivePlayer.shield;
+    Health.innerHTML='HEALTH: '+inactivePlayer.health;
+    console.log('caseDub3')
+    checkWin();
+  } else if (shieldDrain==true){
+    inactivePlayer.shield=0;
+    inactivePlayer.health-=activePlayer.attack;
+    Health.innerHTML='HEALTH: '+inactivePlayer.health;
+    shield.innerHTML='SHIELD: '+inactivePlayer.shield;
+    console.log('case3')
+    checkWin();
+  }else if(inactivePlayer.shield<1 || shieldPiercer==true){
   inactivePlayer.health-=activePlayer.attack;
   Health.innerHTML='HEALTH: '+inactivePlayer.health;
-
-  console.log('no sheild')
+  console.log('case1')
 
 } else if (inactivePlayer.shield>=activePlayer.attack){
   inactivePlayer.shield-=activePlayer.attack;
   shield.innerHTML='SHIELD: '+inactivePlayer.shield;
+  console.log('case2')
   checkWin();
-  console.log('sheild points')
 
 }else if (inactivePlayer.shield>1 && inactivePlayer.shield<activePlayer.attack){
-  // attack-shield=remainder
-  // shield=0
-  // health-remainder
 
   var remainder= activePlayer.attack-inactivePlayer.shield;
   inactivePlayer.shield=0;
   inactivePlayer.health-=remainder;
   shield.innerHTML='SHIELD: '+inactivePlayer.shield;
   Health.innerHTML='HEALTH: '+inactivePlayer.health;
+  console.log('case3')
   checkWin();
-  console.log('complicated one')
-}
-
-if (inactivePlayer.health<activePlayer.attack){
+} else if (inactivePlayer.health<activePlayer.attack){
   inactivePlayer.health=0;
   Health.innerHTML='HEALTH: '+inactivePlayer.health;
+  console.log('case4')
   checkWin();
 }
-if(activeHex!==null){
-  appendHex()
-}
+
   switcheroo();
-}
 
-function appendHex(){
+shieldPiercer=false;
+shieldDrain=false
+doubleAttack=false;
+} // END OF ATTACK FUNCTION
+
+
+function hexEffect(){
   activeHex.classList.add('disabledHex');
-  console.log('append')
-  // if(!activeHex==null){
-var newHexIMG = document.createElement('img');
-var actHexClass= $(activeHex).attr('class').split(' ')[2];
-switch(actHexClass){
-  case'hx1':
-  newHexIMG.src='assets/img/hexes/hex1.png'
-  break;
-  case'hx2':
-  newHexIMG.src='assets/img/hexes/hex2.png'
-  break;
-  case'hx3':
-  newHexIMG.src='assets/img/hexes/hex3.png'
-  break;
-  case'hx4':
-  newHexIMG.src='assets/img/hexes/hex4.png'
-  break;
-  case'hx5':
-  newHexIMG.src='assets/img/hexes/hex5.png'
-  break;
-  case'hx6':
-  newHexIMG.src='assets/img/hexes/hex6.png'
-  break;
-  case'hx7':
-  newHexIMG.src='assets/img/hexes/hex7.png'
-  break;
-  case'hx8':
-  newHexIMG.src='assets/img/hexes/hex8.png'
-  break;
-  case'hx9':
-  newHexIMG.src='assets/img/hexes/hex9.png'
-  break;
+  var newHexIMG = document.createElement('img');
+  // console.log($(activeHex))
+  // console.log($(activeHex).attr('class'))
+  var actHexClass= $(activeHex).attr('class').split(' ')[3];
+  switch(actHexClass){
+    case'hx1':
+    newHexIMG.src='assets/img/hexes/hex1.png'
+    activePlayer.attack+=5;
+    $(`#${activePlayer.aID}`).text('ATTACK: '+activePlayer.attack)
+
+    console.log('hex one')
+    break;
+
+    case'hx2':
+    newHexIMG.src='assets/img/hexes/hex2.png'
+    shieldPiercer=true;
+    console.log('pierce')
+    
+    console.log('hex two')
+    break;
+
+    case'hx3':
+    newHexIMG.src='assets/img/hexes/hex3.png'
+    activePlayer.attack+=10;
+    $(`#${activePlayer.aID}`).text('ATTACK: '+activePlayer.attack)
+    console.log('hex three')
+    break;
+
+    case'hx4':
+    newHexIMG.src='assets/img/hexes/hex4.png'
+    shieldDrain=true;
+    // console.log('hex four')
+    break;
+
+    case'hx5':
+    newHexIMG.src='assets/img/hexes/hex5.png'
+    doubleAttack=true;
+    
+    console.log('hex five')
+    break;
+
+    case'hx6':
+    newHexIMG.src='assets/img/hexes/hex6.png'
+    activePlayer.shield+=10;
+    $(`#${activePlayer.sID}`).text('SHEILD: '+activePlayer.shield)
+    
+    console.log('hex six')
+    break;
+
+    case'hx7':
+    newHexIMG.src='assets/img/hexes/hex7.png'
+    activePlayer.attack+=15;
+    $(`#${activePlayer.aID}`).text('ATTACK: '+activePlayer.attack)
+    console.log('hex seven')
+    break;
+
+    case'hx8':
+    newHexIMG.src='assets/img/hexes/hex8.png'
+    if(activePlayer.health<100){
+      activePlayer.health=100;
+      $(`#${activePlayer.hID}`).text('HEALTH: '+activePlayer.health)
+    }
+    console.log('hex eight')
+    break;
+
+    case'hx9':
+    newHexIMG.src='assets/img/hexes/hex9.png'
+    activePlayer.attack+=20;
+    $(`#${activePlayer.aID}`).text('ATTACK: '+activePlayer.attack)
+    console.log('hex nine')
+    break;
+
+  }
+  activeHex.appendChild(newHexIMG);
+  newHexIMG.classList.add('hex2')
+
+  var sparkle= new Audio('assets/sounds/sparkle.mov')
+
+
+
+  setTimeout(function(){
+    newHexIMG.classList.remove('hex2');
+    newHexIMG.classList.add('weaponG');
+    sparkle.volume=0.3;
+    sparkle.play()
+    activeHex=null;
+  },100)
 }
-activeHex.appendChild(newHexIMG);
-newHexIMG.classList.add('hex2')
-
-var sparkle= new Audio('assets/sounds/sparkle.mov')
-
-
-
-setTimeout(function(){
-  newHexIMG.classList.remove('hex2');
-  newHexIMG.classList.add('weaponG');
-  sparkle.volume=0.3;
-  sparkle.play()
-  activeHex=null;
-},100)
-// }
-}
-
-
-
-
 
 function eventListeners(){
   p1Attack.addEventListener('click', function(){
     attack();
   setTimeout(flashBattle, 100)
-  // flash(100, 400)
   })
   p2Attack.addEventListener('click', function(){
     attack();
+    // hexEffect();
     setTimeout(flashBattle, 100)
-    // flash(100, 400)
   })
   }
 

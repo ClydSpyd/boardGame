@@ -14,7 +14,7 @@ function move() {
     var log = document.getElementById(activePlayer.logID);
     log.innerHTML+=('<p style="color:red">you hit a mine: -20 health</p>')
     var bomb = new Audio('assets/sounds/bomb.mp3');
-    bomb.volume=0.1;
+    bomb.volume=0.4;
     bomb.play();
 
     mine();
@@ -55,7 +55,7 @@ function move() {
     var powerUp = function () {
 
         var charm = new Audio('assets/sounds/charm.mov');
-        charm.volume=0.05;
+        charm.volume=0.3;
         charm.play();
 
 
@@ -123,7 +123,7 @@ function move() {
         var potionSound = function(){
             var potion=new Audio('assets/sounds/potion.mov')
             var sparkle= new Audio('assets/sounds/sparkle.mov')
-            potion.volume=0.2;
+            potion.volume=0.5;
             potion.play();
             setTimeout(function(){
                 sparkle.volume=0.1;
