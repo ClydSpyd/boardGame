@@ -58,7 +58,7 @@ function draw() {
 
 
 
-var angelAttack = function(){
+var angelJumpAttack = function(){
     currentFrame=0;
     frameCount = 0;
     cols=12;
