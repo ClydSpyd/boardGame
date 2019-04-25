@@ -1,19 +1,19 @@
 
 
 var flashBattle = function(){
-  
+
   clashes=['assets/sounds/clash.mp3','assets/sounds/strike1.mov','assets/sounds/strike2.mov','assets/sounds/strike3.mov','assets/sounds/strike4.mov']
   var numOne = Math.floor(Math.random()*2);
   var numTwo = Math.floor(Math.random()*clashes.length)
-  
+
   var swoosh=new Audio('assets/sounds/swing.mp3')
   var clash=new Audio(clashes[numTwo]);
-  
+
 if(activePlayer==playerTwo){
   console.log(numOne);
   document.getElementById('container2').classList.remove('containerA');
   document.getElementById('container2').classList.add('containerAB');
-  
+
   angelAttack();
   swoosh.play()
 
@@ -23,7 +23,7 @@ if(activePlayer==playerTwo){
     clash.play();
     console.log('delay')
   },250);
-  
+
   setTimeout(function(){
     document.getElementById('container2').classList.remove('redFlashBattle');
   },600)
@@ -36,7 +36,7 @@ if(activePlayer==playerTwo){
 } else if(activePlayer==playerOne){//player2 attack
   document.getElementById('container').classList.remove('containerA');
   document.getElementById('container').classList.add('containerAB');
-  
+
   hurtOne();
   swoosh.play()
   setTimeout(function(){
@@ -54,11 +54,12 @@ if(activePlayer==playerTwo){
 
 }
 
+var activeHex=null;
+var activeHexClass;
+var inactiveHexClass;
+var inactivePlayer;
 
 function hexes(){
-
-  var activeHex;
-  var hlo=document.getElementById('hlo');;
   var thisOne;
   var activeAttack;
   var inactiveAttack;
@@ -66,9 +67,7 @@ function hexes(){
   var p2Attack = document.getElementById('p2Attack');
   var p1Block = document.getElementById('p1Block');
   var p2Block = document.getElementById('p2Block');
-  var activeHexClass;
-  var inactiveHexClass;
-  var inactivePlayer;
+
 
   var hexBoxes=document.getElementsByClassName('hex');
   for (var i=0;i<hexBoxes.length;i++){
@@ -88,7 +87,6 @@ function battle() {
   impact.play();
 eventListeners()
 
-  activeHex=hlo;
       //Set the correct active player state
         var adj = document.getElementsByClassName('adjacent');
         if ($('#playerImg1').hasClass('inActive1')){
@@ -187,7 +185,9 @@ function hexLoop(){
   activeHexArr[i].addEventListener('click',function(){
     ;
     thisOne=activeHexArr.indexOf(this);
+    console.log(thisOne);
     activeHex=activeHexArr[thisOne];
+    console.log(activeHex);
     for(var i=0;i<activeHexArr.length;i++){
       activeHexArr[i].classList.remove('hHover2');
       this.classList.add('hHover2','hoverClass')
@@ -232,8 +232,7 @@ function attack(){
 
 
 
-  appendHex();
-  activeHex.classList.add('disabledHex');
+  
   activeAttack.classList.add('disabled');
   activeBlock.classList.add('disabled');
 
@@ -278,13 +277,17 @@ if (inactivePlayer.health<activePlayer.attack){
   Health.innerHTML='HEALTH: '+inactivePlayer.health;
   checkWin();
 }
-
+if(activeHex!==null){
+  appendHex()
+}
   switcheroo();
 }
 
 function appendHex(){
+  activeHex.classList.add('disabledHex');
+  console.log('append')
+  // if(!activeHex==null){
 var newHexIMG = document.createElement('img');
-
 var actHexClass= $(activeHex).attr('class').split(' ')[2];
 switch(actHexClass){
   case'hx1':
@@ -327,7 +330,9 @@ setTimeout(function(){
   newHexIMG.classList.add('weaponG');
   sparkle.volume=0.3;
   sparkle.play()
+  activeHex=null;
 },100)
+// }
 }
 
 

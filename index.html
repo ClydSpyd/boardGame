@@ -138,8 +138,21 @@
                 <div id='hlo'></div >
         </div>
 
-        <audio id='potionAudio' src="assets/sounds/potion.mp3"></audio>
+        <!-- <audio id='potionAudio' src="assets/sounds/potion.mp3"></audio> -->
     </div>
+    <iframe src="assets/sounds/test.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+    </iframe> 
+    <script>
+        document.getElementById('iframeAudio').volume=0;
+     $('#playAudio').remove()
+     </script>
+     
+    <!-- <audio src="assets/sounds/dungeonMusic.mov" id="my_audio" loop="loop"></audio>
+    <script type="text/javascript">
+        window.onload=function(){
+        document.getElementById("my_audio").play();
+      }
+    </script> -->
     <script src='scripts/player1.js'></script>
     <script src='scripts/player2.js'></script>
     <script src='scripts/expl.js'></script>
