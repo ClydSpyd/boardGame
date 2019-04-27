@@ -27,8 +27,8 @@ var sheetJumpAttack = new Image();
 sheetJumpAttack.src = 'assets/angelJumpAttack.png';
 var sheetHurt = new Image();
 sheetHurt.src = 'assets/angelHurt.png';
-var angelFall = new Image();
-angelFall.src = 'assets/angelFall.png';
+var sheetAngelFall = new Image();
+sheetAngelFall.src = 'assets/angelFall.png';
 
 
 var sheet = sheetIdle;
@@ -97,7 +97,7 @@ var angelJumpAttack = function(){
     currentFrame=0;
     frameCount = 0;
     cols=15;
-    sheet=sangelFall;
+    sheet=sheetAngelFall;
  }
 
  setInterval(function(){
