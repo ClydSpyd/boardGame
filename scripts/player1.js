@@ -60,6 +60,10 @@ function draw() {
     } else if(sheet==sheetAngelAttack && frameCount==12){
         sheet=sheetIdle;
         cols = 54;
+    }else if(sheet==sheetAngelFall && frameCount==15){
+        clearInterval(draw1);
+        sheet=sheetIdle;
+        cols = 54;
     }
 }
 
@@ -93,13 +97,21 @@ var angelJumpAttack = function(){
     cols=12;
     sheet=sheetHurt;
  }
- var angelFall = function(){
+ var angelDeath = function(){
     currentFrame=0;
     frameCount = 0;
     cols=15;
     sheet=sheetAngelFall;
+    var frameAudio=document.getElementById('iframeAudio')
+    setTimeout(function(){
+        console.log('game over 1')
+        alert('game over, Fallen Angel died')
+        },1500)
+    // frameAudio.muted=true;
  }
 
- setInterval(function(){
-    draw()
-},70)
+//  setInterval(function(){
+//     draw()
+// },70)
+
+var draw1 = setInterval(draw,70);

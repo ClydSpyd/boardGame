@@ -19,12 +19,20 @@ var c_height= 900;
 var c_currentFrame=0;
 var c_frameCount=0;
 
+
+
 var demonIdle = new Image();
 demonIdle.src = 'assets/demonIdle.png';
+var sheetDemonDeath = new Image();
+sheetDemonDeath.src = 'assets/demonFalling.png';
 var demonFalling = new Image();
 demonFalling.src = 'assets/demonFalling.png';
 var sheetDemonHurt = new Image();
 sheetDemonHurt.src = 'assets/demonHurt.png';
+var sheetDemonAttack = new Image();
+sheetDemonAttack.src = 'assets/demonAttack.png';
+var sheetDemonJumpAttack = new Image();
+sheetDemonJumpAttack.src = 'assets/demonJumpAttack.png';
 
 
 var demonSheet = demonIdle;
@@ -47,15 +55,51 @@ function c_update(){
 function c_draw(){
 c_update();
 c_ctx.drawImage(demonSheet, c_srcX, c_srcY, c_width, c_height, x, y, c_width, c_height);
-if(demonSheet==demonFalling && c_frameCount==15){
+if(demonSheet==sheetDemonDeath && c_frameCount==15){
     demonSheet=demonIdle;
     c_cols = 18;
+    clearInterval(draw2)
 } else if(demonSheet==sheetDemonHurt && c_frameCount==12){
     demonSheet=demonIdle;
     c_cols = 18;
-}
+}else if(demonSheet==sheetDemonAttack && c_frameCount==12){
+    demonSheet=demonIdle;
+    c_cols = 18;
+}else if(demonSheet==sheetDemonJumpAttack && c_frameCount==12){
+    demonSheet=demonIdle;
+    c_cols = 18;
+} else if(demonSheet==demonFalling && c_frameCount==15){
+    demonSheet=demonIdle;
+    c_cols = 18;
+} 
 }
 
+
+var twoAttack = function(){
+    var choice2= Math.floor(Math.random()*2);
+    switch(choice2){
+        case 1:
+        demonAttack();
+        break;
+        case 0:
+        demonJumpAttack();
+        break;
+    }
+}
+
+var demonAttack = function (){
+    c_currentFrame=0;
+    c_frameCount = 0;
+    c_cols=12;
+    demonSheet=sheetDemonAttack;
+}
+
+var demonJumpAttack = function (){
+    c_currentFrame=0;
+    c_frameCount = 0;
+    c_cols=12;
+    demonSheet=sheetDemonJumpAttack;
+}
 
 var demonFall = function(){
     c_currentFrame=0;
@@ -71,12 +115,21 @@ var demonHurt = function(){
     demonSheet=sheetDemonHurt;
 }
 
-setInterval(function(){
-    c_draw();
-}, 60);
+// setInterval(function(){
+//     c_draw();
+// }, 60);
+var draw2 = setInterval(c_draw,70)
 
-
-
+var demonDeath = function(){
+    c_currentFrame=0;
+    c_frameCount = 0;
+    c_cols=15;
+    demonSheet=sheetDemonDeath;
+    setTimeout(function(){
+    console.log('game over 2')
+    alert('game over, demon died')
+    },1500)
+}
 
 
 

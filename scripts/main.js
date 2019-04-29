@@ -1,11 +1,29 @@
 $(document).ready(function(){
     setBoard();
-    
+    draw1
+    draw2
 }); 
 const cellsAtStart = document.getElementsByClassName('col');
 
 function setBoard() {
     
+    opener=new Audio('assets/sounds/bg1.mp3');
+    ambiance=new Audio('assets/sounds/ambiance.mp3');
+    battleAudio=new Audio('assets/sounds/battle.mp3');
+    battleAudio.volume=0.1;
+    ambiance.volume=0.5;
+    opener.volume=1;
+    setTimeout(function(){
+        opener.play()
+        opener.addEventListener('ended',function(){
+            ambiance.play();
+            console.log('second audio')
+        })
+        ambiance.addEventListener('ended',function(){
+            ambiance.play();
+            console.log('loop')
+        })
+    },1000)
     // var music=new Audio('assets/sounds/test.mp3') 
     // // .then(data=>data.play())
     // // bgm.volume=0.5;
@@ -128,12 +146,13 @@ var loser;
 
 function checkWin(){
     if(playerOne.health<1){
-        
+        angelDeath();
         setTimeout(function(){
         console.log('game over 1')
         alert('game over, fallen angel died')
         },1000)
     } else if (playerTwo.health<1){
+        demonDeath();
         setTimeout(function(){
         console.log('game over 2')
         alert('game over, demon died')

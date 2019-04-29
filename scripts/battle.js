@@ -30,11 +30,7 @@ if(activePlayer==playerTwo){
   if(playerTwo.health>=1){  
     demonHurt();
   } else {
-    demonFall()
-      setTimeout(function(){
-      console.log('game over 2')
-      alert('game over, demon died')
-      },1500)
+    demonDeath()
   }
 
 
@@ -43,7 +39,7 @@ if(activePlayer==playerTwo){
   document.getElementById('container').classList.remove('containerA');
   document.getElementById('container').classList.add('containerAB');
 
-  
+  twoAttack();
   swoosh.play()
   setTimeout(function(){
     clash.play();
@@ -56,11 +52,7 @@ if(activePlayer==playerTwo){
   if(playerOne.health>=1){  
     hurtOne();
   } else {
-    angelFall();
-      setTimeout(function(){
-      console.log('game over 1')
-      alert('game over, Fallen Angel died')
-      },1500)
+    angelDeath();
   }
 
 
@@ -175,6 +167,18 @@ function hexes(){
   }
 
 function battle() {
+  
+  setTimeout(function(){
+    ambiance.pause(); 
+    ambiance.currentTime=0;
+  },300)
+  setTimeout(function(){
+    battleAudio.play();
+  },500)
+  battleAudio.addEventListener('ended',function(){
+    battleAudio.play();
+  })
+
   var impact=new Audio('assets/sounds/impact3.mov')
   impact.volume=0.3;
   var startSwords=new Audio('assets/sounds/strike3.mov')
