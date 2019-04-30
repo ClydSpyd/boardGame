@@ -87,6 +87,22 @@ var twoAttack = function(){
     }
 }
 
+var twoHurtSound = function(){
+    var audio1Choice= Math.floor(Math.random()*2);
+    var demonHurtSound = new Audio('assets/sounds/demonHurtSound.mp3')
+    demonHurtSound.volume=0.7;
+    var demonHurtSound2 = new Audio('assets/sounds/demonHurtSound2.mp3')
+    demonHurtSound2.volume=0.7;
+    switch(audio1Choice){
+        case 1:
+        demonHurtSound.play();
+        break;
+        case 0:
+        demonHurtSound2.play();
+        break;
+    }
+}
+
 var demonAttack = function (){
     c_currentFrame=0;
     c_frameCount = 0;
@@ -125,10 +141,18 @@ var demonDeath = function(){
     c_frameCount = 0;
     c_cols=15;
     demonSheet=sheetDemonDeath;
+    document.getElementById('death').classList.remove('hide');
+    document.getElementById('death').classList.add('death');
     setTimeout(function(){
-    console.log('game over 2')
-    alert('game over, demon died')
-    },1500)
+        var angelWinIMG = document.createElement('img');
+        document.getElementById('deathInner').prepend(angelWinIMG)
+        angelWinIMG.classList.add('deathIMGstart2');
+        setTimeout(function(){
+        angelWinIMG.classList.add('deathIMGgo');
+        $('#deetz1').fadeOut();
+        $('#deetz2').fadeOut();
+        },10)
+    },1300)
 }
 
 

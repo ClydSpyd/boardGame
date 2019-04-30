@@ -28,8 +28,17 @@ if(activePlayer==playerTwo){
 
   
   if(playerTwo.health>=1){  
+
+    setTimeout(function(){
+      twoHurtSound()
+    
+    },400)
+
     demonHurt();
   } else {
+    setTimeout(function(){
+      scream.play()
+    },400)
     demonDeath()
   }
 
@@ -50,8 +59,18 @@ if(activePlayer==playerTwo){
   },450)
 
   if(playerOne.health>=1){  
+    
+    setTimeout(function(){
+      oneHurtSound()
+      
+    },400)
+    
     hurtOne();
   } else {
+
+    setTimeout(function(){
+      scream.play()
+    },400)
     angelDeath();
   }
 
@@ -84,7 +103,7 @@ function hexes(){
 
   var hexBoxes=document.getElementsByClassName('hex');
   for (var i=0;i<hexBoxes.length;i++){
-    var hexClasses =['hx1','hx2','hx3','hx4','hx6','hx7','hx8','hx9','hx1','hx2','hx3','hx4','hx5','hx6','hx7','hx9','hx1','hx3','hx6']
+    var hexClasses =['hx1','hx2','hx3','hx3','hx3','hx4','hx6','hx5','hx7','hx9','hx7','hx7','hx7','hx8','hx9','hx1','hx3','hx1','hx3','hx4','hx5','hx6','hx7','hx1','hx3','hx6']
     // var hexClasses =['hx1','hx2','hx3','hx4','hx6','hx7','hx8','hx9','hx9','hx9','hx9','hx9','hx9','hx9','hx9','hx9','hx9','hx9','hx1','hx2','hx3','hx4','hx5','hx6','hx7','hx9','hx1','hx3','hx6','hx1','hx3','hx6','hx1','hx3','hx6']
     // var hexClasses =['hx1','hx2','hx9']
     var thisOne=hexBoxes[i]
@@ -102,7 +121,7 @@ function hexes(){
       this.innerHTML='<h1>hola</h1>'
       break;
       case'hx2':
-      thisOne.childNodes[0].innerHTML='<span>shield piercer[1]</span>'
+      thisOne.childNodes[0].innerHTML='<span>shield piercer</span>'
       
       // console.log('hex two')
       break;
@@ -112,12 +131,12 @@ function hexes(){
       // console.log('hex three')
       break;
       case'hx4':
-      thisOne.childNodes[0].innerHTML='<span>shield drain[1]</span>'
+      thisOne.childNodes[0].innerHTML='<span>shield drain</span>'
       
       // console.log('hex four')
       break;
       case'hx5':
-      thisOne.childNodes[0].innerHTML='<span>double attack[1]</span>'
+      thisOne.childNodes[0].innerHTML='<span>double attack</span>'
       
       // console.log('hex five')
       break;
@@ -132,7 +151,7 @@ function hexes(){
       // console.log('hex seven')
       break;
       case'hx8':
-      thisOne.childNodes[0].innerHTML='<span>revive[1]</span>'
+      thisOne.childNodes[0].innerHTML='<span>revive</span>'
       
       // console.log('hex eight')
       break;

@@ -78,6 +78,21 @@ var oneAttack = function(){
         break;
     }
 }
+var oneHurtSound = function(){
+    var audio1Choice= Math.floor(Math.random()*2);
+    var angelHurtSound = new Audio('assets/sounds/angelHurtSound.mp3')
+    angelHurtSound.volume=0.5;
+    var angelHurtSound2 = new Audio('assets/sounds/angelHurtSound2.mp3')
+    angelHurtSound2.volume=1;
+    switch(audio1Choice){
+        case 1:
+        angelHurtSound.play();
+        break;
+        case 0:
+        angelHurtSound2.play();
+        break;
+    }
+}
 
 var angelAttack = function(){
     currentFrame=0;
@@ -102,13 +117,24 @@ var angelJumpAttack = function(){
     frameCount = 0;
     cols=15;
     sheet=sheetAngelFall;
-    var frameAudio=document.getElementById('iframeAudio')
+    document.getElementById('death').classList.remove('hide');
+    document.getElementById('death').classList.add('death');
     setTimeout(function(){
-        console.log('game over 1')
-        alert('game over, Fallen Angel died')
-        },1500)
-    // frameAudio.muted=true;
- }
+        var demonWinIMG = document.createElement('img');
+        document.getElementById('deathInner').prepend(demonWinIMG)
+        demonWinIMG.classList.add('deathIMGstart');
+        setTimeout(function(){
+        demonWinIMG.classList.add('deathIMGgo');
+        $('#deetz1').fadeOut();
+        $('#deetz2').fadeOut();
+        },10)
+    },1300)
+}
+        // setTimeout(function(){
+        //     console.log('game over 1')
+        //     alert('game over, Fallen Angel died')
+        //     },1500)
+        // frameAudio.muted=true;
 
 //  setInterval(function(){
 //     draw()

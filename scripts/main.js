@@ -10,20 +10,17 @@ function setBoard() {
     opener=new Audio('assets/sounds/bg1.mp3');
     ambiance=new Audio('assets/sounds/ambiance.mp3');
     battleAudio=new Audio('assets/sounds/battle.mp3');
+    scream=new Audio('assets/sounds/scream2.mp3');
     battleAudio.volume=0.1;
     ambiance.volume=0.5;
     opener.volume=1;
     setTimeout(function(){
-        opener.play()
-        opener.addEventListener('ended',function(){
-            ambiance.play();
-            console.log('second audio')
-        })
-        ambiance.addEventListener('ended',function(){
             ambiance.play();
             console.log('loop')
+        ambiance.addEventListener('ended',function(){
+            ambiance.play();
         })
-    },1000)
+    },23000)
     // var music=new Audio('assets/sounds/test.mp3') 
     // // .then(data=>data.play())
     // // bgm.volume=0.5;
@@ -76,14 +73,10 @@ function setBoard() {
    
     $('#blo').on('click', function(){
         console.log('henlo')
-        demonFall()
+        angelDeath()
     })
     $('#mlo').on('click', function(){
-        activePlayer.health = 0;
-        var healthStat =document.getElementById(activePlayer.hID);
-        healthStat.innerText='HEALTH: '+activePlayer.health;
-        var log = document.getElementById(activePlayer.logID);
-        log.innerHTML+=('<p>booooom</p>')
+        demonDeath();
     })
 
     //fix delay in P1 image appearance//
@@ -147,18 +140,28 @@ var loser;
 function checkWin(){
     if(playerOne.health<1){
         angelDeath();
+        scream.play()
         setTimeout(function(){
         console.log('game over 1')
         alert('game over, fallen angel died')
         },1000)
     } else if (playerTwo.health<1){
         demonDeath();
+        scream.play()
         setTimeout(function(){
         console.log('game over 2')
         alert('game over, demon died')
         },1000)
     }
 }
+
+window.setInterval(function() {
+    var elem = document.getElementById('p1Log');
+    elem.scrollTop = elem.scrollHeight;
+    var elem2 = document.getElementById('p2Log');
+    elem2.scrollTop = elem2.scrollHeight;
+  }, 10);
+
 
 // $(document).ready(function(){
 //     const grid = new Grid('#grid', 12, 12);
