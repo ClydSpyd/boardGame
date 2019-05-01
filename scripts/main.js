@@ -12,6 +12,8 @@ function setBoard() {
     battleAudio=new Audio('assets/sounds/battle.mp3');
     scream=new Audio('assets/sounds/scream2.mp3');
     fanfare =new Audio('assets/sounds/fanfare2.mp3');
+    victory =new Audio('assets/sounds/victory3.mp3');
+    victory.volume=0.5;
     battleAudio.volume=0.3;
     ambiance.volume=0.5;
     opener.volume=1;

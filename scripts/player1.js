@@ -120,6 +120,9 @@ var angelJumpAttack = function(){
     document.getElementById('death').classList.remove('hide');
     document.getElementById('death').classList.add('death');
     setTimeout(function(){
+        victory.play();
+    },1200)
+    setTimeout(function(){
         var demonWinIMG = document.createElement('img');
         var deathAppend=document.getElementById('deathInner').parentNode;
         deathAppend.prepend(demonWinIMG)
@@ -143,7 +146,7 @@ var angelJumpAttack = function(){
         },800)
         setTimeout(function(){
             battleAudio.pause();
-            fanfare.play();
+            // fanfare.play();
         })
     },1600)
 }

@@ -7,7 +7,8 @@ body{
     background-size: 100% 120%; */
     background-image: url('assets/img/dungeonBG8.png');
     background-size: 100% 135%;
-    /* zoom:100%; */
+    zoom:80%;
+    padding-top: 15px;
 }
 
 img{
@@ -252,7 +253,7 @@ h5{
     margin:3px;
 }
 .mine{
-    border:3px pink solid;
+    /* border:3px pink solid; */
 }
 .rune1{
     background-image: url('assets/img/rune1.png');

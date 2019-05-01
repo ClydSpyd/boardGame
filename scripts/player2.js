@@ -144,15 +144,14 @@ var demonDeath = function(){
     document.getElementById('death').classList.remove('hide');
     document.getElementById('death').classList.add('death');
     setTimeout(function(){
+        victory.play();
+    },1200)
+    setTimeout(function(){
         
         var angelWinIMG = document.createElement('img');
         document.getElementById('deathInner').prepend(angelWinIMG)
         angelWinIMG.classList.add('deathIMGstart2');
 
-        
-            
-        
-        
         setTimeout(function(){
             angelWinIMG.classList.add('deathIMGgo');
             angelWinIMG.classList.add('deathIMGgo2');
@@ -173,7 +172,7 @@ var demonDeath = function(){
         },800)
         setTimeout(function(){
             battleAudio.pause();
-            fanfare.play();
+            // fanfare.play();
         })
     },1600)
 }
