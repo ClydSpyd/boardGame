@@ -144,15 +144,38 @@ var demonDeath = function(){
     document.getElementById('death').classList.remove('hide');
     document.getElementById('death').classList.add('death');
     setTimeout(function(){
+        
         var angelWinIMG = document.createElement('img');
         document.getElementById('deathInner').prepend(angelWinIMG)
         angelWinIMG.classList.add('deathIMGstart2');
+
+        
+            
+        
+        
         setTimeout(function(){
-        angelWinIMG.classList.add('deathIMGgo');
-        $('#deetz1').fadeOut();
-        $('#deetz2').fadeOut();
+            angelWinIMG.classList.add('deathIMGgo');
+            angelWinIMG.classList.add('deathIMGgo2');
+            $('#deetz1').fadeOut();
+            $('#deetz2').fadeOut();
         },10)
-    },1300)
+
+        setTimeout(function(){
+            angelWinIMG.classList.remove('deathIMGgo2');
+        },400)
+        
+        
+        setInterval(function(){
+            angelWinIMG.classList.add('deathIMGgo2');
+            setTimeout(function(){
+                angelWinIMG.classList.remove('deathIMGgo2');
+            },400)
+        },800)
+        setTimeout(function(){
+            battleAudio.pause();
+            fanfare.play();
+        })
+    },1600)
 }
 
 

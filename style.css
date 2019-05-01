@@ -33,6 +33,7 @@ img{
 
 
 
+
 .row{
  height:66px;
 }
@@ -402,6 +403,7 @@ margin:3px;
     height:30px;
     width: 240px;
     border-radius: 2px;
+    transition: all 0.2s linear;
 }
 .attack{
     color: white;
@@ -412,6 +414,20 @@ margin:3px;
     background-color: lightslategray;
     cursor: pointer;
 }
+.disabled2{
+    color: lightslategray;
+    /* pointer-events: none; */
+    background-color: rgb(224, 224, 224);
+    transform: scale(1.03)
+}
+.bHover{
+    transform: scale(1.02);
+}
+.boxShadow{
+    box-shadow: inset 0 0 40px 10px rgb(11, 88, 255);
+    transition: all 0.1s linear;
+}
+
 #go{
     cursor: crosshair;
     line-height: 25px;

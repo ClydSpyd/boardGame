@@ -1,11 +1,7 @@
 function move() {
  
 
-
  ///// MINES /////
-
-
-
 
  if ($(this).hasClass('mine')) { 
     activePlayer.health -= 10;
@@ -51,7 +47,7 @@ function move() {
 
 
 
-    ////// POWERUPS /////
+    ////// RUNES /////
     var powerUp = function () {
 
         var charm = new Audio('assets/sounds/charm.mov');

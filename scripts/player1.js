@@ -121,14 +121,31 @@ var angelJumpAttack = function(){
     document.getElementById('death').classList.add('death');
     setTimeout(function(){
         var demonWinIMG = document.createElement('img');
-        document.getElementById('deathInner').prepend(demonWinIMG)
+        var deathAppend=document.getElementById('deathInner').parentNode;
+        deathAppend.prepend(demonWinIMG)
         demonWinIMG.classList.add('deathIMGstart');
         setTimeout(function(){
         demonWinIMG.classList.add('deathIMGgo');
         $('#deetz1').fadeOut();
         $('#deetz2').fadeOut();
         },10)
-    },1300)
+        
+        setTimeout(function(){
+            demonWinIMG.classList.add('deathIMGgo2');
+        },400)
+        
+        
+        setInterval(function(){
+            demonWinIMG.classList.remove('deathIMGgo2');
+            setTimeout(function(){
+                demonWinIMG.classList.add('deathIMGgo2');
+            },400)
+        },800)
+        setTimeout(function(){
+            battleAudio.pause();
+            fanfare.play();
+        })
+    },1600)
 }
         // setTimeout(function(){
         //     console.log('game over 1')

@@ -7,11 +7,12 @@ const cellsAtStart = document.getElementsByClassName('col');
 
 function setBoard() {
     
-    opener=new Audio('assets/sounds/bg1.mp3');
+    opener=new Audio('assets/sounds/bg3.mp3');
     ambiance=new Audio('assets/sounds/ambiance.mp3');
     battleAudio=new Audio('assets/sounds/battle.mp3');
     scream=new Audio('assets/sounds/scream2.mp3');
-    battleAudio.volume=0.1;
+    fanfare =new Audio('assets/sounds/fanfare2.mp3');
+    battleAudio.volume=0.3;
     ambiance.volume=0.5;
     opener.volume=1;
     setTimeout(function(){
@@ -20,7 +21,7 @@ function setBoard() {
         ambiance.addEventListener('ended',function(){
             ambiance.play();
         })
-    },23000)
+    },17000)
     // var music=new Audio('assets/sounds/test.mp3') 
     // // .then(data=>data.play())
     // // bgm.volume=0.5;
@@ -79,7 +80,7 @@ function setBoard() {
         demonDeath();
     })
 
-    //fix delay in P1 image appearance//
+    //fix delay in player image appearance//
     var parOne = document.getElementById(`${playerOne.canvasID}`).parentElement;
     var picOne = document.createElement('img');
     picOne.src='assets/img/angel.png';
@@ -100,6 +101,8 @@ function setBoard() {
     },500)
 
 }
+///create player objects ///
+
 class Player {
     constructor(name,health, shield, attack, activeClass,hoverClass, x,y,locID,logID,hID,sID,aID,canvasID){
         
@@ -116,7 +119,7 @@ class Player {
         this.sID=sID;
         this.aID=aID;
         this.canvasID=canvasID
-        this.runeCount=0;
+        this.shieldUp=false;
 }
 }
 

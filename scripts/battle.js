@@ -204,7 +204,7 @@ function battle() {
   startSwords.volume=0.2;
   startSwords.play();
   impact.play();
-eventListeners()
+  eventListeners()
 
       //Set the correct active player state
         var adj = document.getElementsByClassName('adjacent');
@@ -359,7 +359,48 @@ function attack(){
   var Health = document.getElementById(`${inactivePlayer.hID}`);
   var shield = document.getElementById(`${inactivePlayer.sID}`);
   
-  if (shieldDrain==true){
+ if (inactivePlayer.shieldUp==true || activePlayer.shieldUp==true){
+    if (shieldDrain==true){
+      inactivePlayer.shield=0;
+      inactivePlayer.health-=(activePlayer.attack/2);
+      Health.innerHTML='HEALTH: '+inactivePlayer.health;
+      shield.innerHTML='SHIELD: '+inactivePlayer.shield;
+      console.log('case3');
+  
+      // checkWin();
+    }else if(shieldPiercer==true){
+      inactivePlayer.health-=(activePlayer.attack/2);
+      Health.innerHTML='HEALTH: '+inactivePlayer.health;
+      console.log('case1.5');
+      // checkWin();
+    }else if (inactivePlayer.health+inactivePlayer.shield<(activePlayer.attack/2)){
+      inactivePlayer.health=0;
+      Health.innerHTML='HEALTH: '+inactivePlayer.health;
+      console.log('case4');
+      // checkWin();
+    }else if(inactivePlayer.shield<1){
+      inactivePlayer.health-=(activePlayer.attack/2);
+      Health.innerHTML='HEALTH: '+inactivePlayer.health;
+      console.log('case1');
+      // checkWin();
+    } else if (inactivePlayer.shield>=(activePlayer.attack/2)){
+      inactivePlayer.shield-=(activePlayer.attack/2);
+      shield.innerHTML='SHIELD: '+inactivePlayer.shield;
+      console.log('case2');
+      // checkWin();
+    
+    }else if (inactivePlayer.shield>1 && inactivePlayer.shield<(activePlayer.attack/2)){
+    
+      var remainder= (activePlayer.attack/2)-inactivePlayer.shield;
+      inactivePlayer.shield=0;
+      inactivePlayer.health-=remainder;
+      shield.innerHTML='SHIELD: '+inactivePlayer.shield;
+      Health.innerHTML='HEALTH: '+inactivePlayer.health;
+      console.log('case3');
+      // checkWin();
+    } 
+
+  } else if (shieldDrain==true){
     inactivePlayer.shield=0;
     inactivePlayer.health-=activePlayer.attack;
     Health.innerHTML='HEALTH: '+inactivePlayer.health;
@@ -372,7 +413,7 @@ function attack(){
   Health.innerHTML='HEALTH: '+inactivePlayer.health;
   console.log('case1.5');
   // checkWin();
-}else if (inactivePlayer.health+activePlayer.shield<activePlayer.attack){
+}else if (inactivePlayer.health+inactivePlayer.shield<activePlayer.attack){
   inactivePlayer.health=0;
   Health.innerHTML='HEALTH: '+inactivePlayer.health;
   console.log('case4');
@@ -415,6 +456,16 @@ hexStatReset();
   console.log('+20: '+plus20)
   console.log('double: '+doubleAttack)
 
+  p1Block.classList.remove('disabled2')
+  p2Block.classList.remove('disabled2')
+
+
+  if(activePlayer==playerOne && playerTwo.shieldUp==true){
+    setTimeout(function(){$('#container2').removeClass('boxShadow')},1000)
+  } else if (activePlayer==playerTwo && playerOne.shieldUp==true){
+    setTimeout(function(){$('#container').removeClass('boxShadow')},1000)
+  }
+  
 shieldPiercer=false;
 shieldDrain=false
 doubleAttack=false;
@@ -516,14 +567,64 @@ function hexEffect(){
 }
 
 function eventListeners(){
+
+  var battButts= Array.from(document.querySelectorAll('.combatButt'))
+
+  for(var i=0;i<battButts.length;i++){
+    battButts[i].addEventListener('mouseenter',function(){
+      this.classList.add('bHover');
+    })
+    battButts[i].addEventListener('mouseleave',function(){
+      this.classList.remove('bHover');
+    })
+  }
+
+
+  p1Block.addEventListener('click', function(){
+    if(playerOne.shieldUp==false){
+    playerOne.shieldUp=true;
+    $('#container').addClass('boxShadow')
+    p1Block.classList.add('disabled2')
+  }else{
+    playerOne.shieldUp=false;
+    $('#container').removeClass('boxShadow')
+    p1Block.classList.remove('disabled2')
+  }
+    // attack();
+    // setTimeout(flashBattle, 300)
+  })
+
+  p2Block.addEventListener('click', function(){
+    if(playerTwo.shieldUp==false){
+    playerTwo.shieldUp=true;
+    $('#container2').addClass('boxShadow')
+    p2Block.classList.add('disabled2')
+  }else{
+    playerTwo.shieldUp=false;
+    $('#container2').removeClass('boxShadow')
+    p2Block.classList.remove('disabled2')
+  }
+    // attack();
+    // setTimeout(flashBattle, 300)
+  })
+
+
   p1Attack.addEventListener('click', function(){
     attack();
   setTimeout(flashBattle, 300)
+  setTimeout(function(){
+    playerTwo.shieldUp=false;
+  },600)
   })
+
+
   p2Attack.addEventListener('click', function(){
     attack();
     // hexEffect();
     setTimeout(flashBattle, 300)
+    setTimeout(function(){
+      playerOne.shieldUp=false;
+    },600)
   })
   }
 
