@@ -583,3 +583,51 @@ margin:3px;
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
   }
+
+  #rules{
+      z-index: 5;
+      border:white 1px solid;
+      height:940px;
+      width:1400px;
+      position: relative;
+      bottom:890px;
+      left: 200px;
+      background-image: url('assets/rules.png')
+  }
+
+  #rulesGo{
+    margin: 5px;
+    line-height: 30px;
+    height:30px;
+    width: 140px;
+    border-radius: 2px;
+    transition: all 0.2s linear;
+    background-color: red;
+    color: aliceblue;
+    text-align: center;
+    position: relative;
+    left: 1240px;
+    top: 895;
+    cursor: pointer;
+    transform: all .5s linear;
+}
+
+#rulesGo:hover{
+    background-color: aliceblue;
+    color: red;
+    transform: scale(1.06)
+}
+
+.zero{
+    opacity: 0;
+    /* transition: all 600ms linear; */
+}
+.one{
+    opacity: 1;
+    transition: all 600ms linear;
+}
+
+.rulesGoPulse{
+    transform: scale(1.1);
+    transform: all .5s linear;
+}

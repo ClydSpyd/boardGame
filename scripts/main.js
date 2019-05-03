@@ -1,5 +1,6 @@
 $(document).ready(function(){
     setBoard();
+    $('#wrapper').addClass('one');
     draw1
     draw2
 }); 
@@ -102,6 +103,28 @@ function setBoard() {
         parTwo.removeChild(picTwo)
     },500)
 
+
+
+    var rulesGo = document.getElementById('rulesGo');
+
+
+    var pulse = function(){
+        rulesGo.classList.add('rulesGoPulse');
+        setTimeout(function(){
+            rulesGo.classList.remove('rulesGoPulse');
+        },1000);
+    }
+
+    // setInterval(function(){
+    //     pulse();
+    // },2000)
+    
+    rulesGo.addEventListener('click', function(){
+    $('#rules').fadeOut(600);
+    $('#wrapper').show();
+    console.log('henlo')
+})
+
 }
 ///create player objects ///
 
@@ -166,6 +189,9 @@ window.setInterval(function() {
     var elem2 = document.getElementById('p2Log');
     elem2.scrollTop = elem2.scrollHeight;
   }, 10);
+
+
+
 
 
 // $(document).ready(function(){
