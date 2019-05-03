@@ -136,6 +136,9 @@ var angelJumpAttack = function(){
         setTimeout(function(){
             demonWinIMG.classList.add('deathIMGgo2');
         },400)
+        setTimeout(function(){
+            $('#playAgain').addClass('one');
+        },700)
         
         
         setInterval(function(){

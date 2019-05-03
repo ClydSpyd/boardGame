@@ -1,6 +1,6 @@
 $(document).ready(function(){
     setBoard();
-    setTimeout(function(){$('#wrapper').addClass('one')},1000)
+    // setTimeout(function(){$('#wrapper').addClass('one')},1000)
     draw1
     draw2
 }); 
@@ -121,8 +121,9 @@ function setBoard() {
 
     
     rulesGo.addEventListener('click', function(){
-    $('#rules').fadeOut(600);
-    $('#wrapper').show();
+    $('#wrapper').addClass('one');
+    $('#rules').fadeOut(1000);
+    // $('#wrapper').show();
     console.log('henlo')
 })
 

@@ -1,14 +1,14 @@
 body{
     background-color: black;
     background-size: 100%;
-    max-height:1000px;
+    /* max-height:1000px; */
     font-family: 'Rajdhani', sans-serif;
     /* background-image: url('assets/img/dungeonBG6.png');
     background-size: 100% 120%; */
     background-image: url('assets/img/dungeonBG8.png');
     background-size: 100% 135%;
     zoom:80%;
-    padding-top: 15px;
+    padding-top: 35px;
 }
 
 img{
@@ -611,6 +611,21 @@ margin:3px;
     cursor: pointer;
     transform: all .5s linear;
 }
+  #playAgain{
+    margin: 5px;
+    line-height: 30px;
+    height: 30px;
+    width: 140px;
+    border-radius: 2px;
+    transition: all 0.2s linear;
+    background-color: red;
+    color: aliceblue;
+    text-align: center;
+    position: relative;
+    left: 820px;
+    bottom: 40;
+    cursor: pointer;
+}
 
 #rulesGo:hover{
     background-color: aliceblue;
@@ -620,7 +635,7 @@ margin:3px;
 
 .zero{
     opacity: 0;
-    /* transition: all 600ms linear; */
+    transition: all 600ms linear;
 }
 .one{
     opacity: 1;
@@ -630,4 +645,8 @@ margin:3px;
 .rulesGoPulse{
     transform: scale(1.1);
     transform: all .5s linear;
+}
+#buttons{
+    position: relative;
+    bottom:800px;
 }

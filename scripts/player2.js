@@ -162,7 +162,9 @@ var demonDeath = function(){
         setTimeout(function(){
             angelWinIMG.classList.remove('deathIMGgo2');
         },400)
-        
+        setTimeout(function(){
+            $('#playAgain').addClass('one');
+        },700)
         
         setInterval(function(){
             angelWinIMG.classList.add('deathIMGgo2');
