@@ -1,7 +1,7 @@
 body{
     background-color: black;
     background-size: 100%;
-    max-height:1000px;
+    max-height:1200px;
     font-family: 'Rajdhani', sans-serif;
     /* background-image: url('assets/img/dungeonBG6.png');
     background-size: 100% 120%; */
@@ -622,6 +622,7 @@ margin:3px;
     transform: all .5s linear;
 }
   #playAgain{
+      z-index: 10;
     margin: 5px;
     line-height: 30px;
     height: 30px;
@@ -631,10 +632,10 @@ margin:3px;
     background-color: red;
     color: aliceblue;
     text-align: center;
-    position: relative;
-    left: 820px;
-    bottom: 40;
+    position: absolute;
+    left: 690px;
     cursor: pointer;
+    top: 750;
 }
 
 #rulesGo:hover{
@@ -658,5 +659,6 @@ margin:3px;
 }
 #buttons{
     position: relative;
-    bottom:800px;
+    bottom:100px;
+    width:100px;
 }

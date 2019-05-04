@@ -13,6 +13,7 @@
     width:200px; 
     height:650px; 
     margin:15px 0 45px 0; 
+    opacity: 1;
 }
 
 .deetz1A{
@@ -41,7 +42,10 @@
     transition: all 500ms ease-in-out;
 }
 
-
+.zerow{
+    opacity: 0;
+    transition: all 100ms linear;
+}
 .canvas2{
     z-index: 5;
     position: relative; 

@@ -149,18 +149,19 @@ var demonDeath = function(){
     setTimeout(function(){
         
         var angelWinIMG = document.createElement('img');
-        document.getElementById('deathInner').prepend(angelWinIMG)
+        document.getElementById('deathInner').appendChild(angelWinIMG)
         angelWinIMG.classList.add('deathIMGstart2');
 
         setTimeout(function(){
             angelWinIMG.classList.add('deathIMGgo');
             angelWinIMG.classList.add('deathIMGgo2');
-            $('#deetz1').fadeOut();
-            $('#deetz2').fadeOut();
+            
         },10)
 
         setTimeout(function(){
             angelWinIMG.classList.remove('deathIMGgo2');
+            $('#deetz1').addClass('zerow');
+            $('#deetz2').addClass('zerow');
         },400)
         setTimeout(function(){
             $('#playAgain').addClass('one');
