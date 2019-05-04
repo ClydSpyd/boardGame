@@ -1,6 +1,17 @@
 function setSpecialSquares (num,numRuneOne,numRuneTwo,numRuneThree,noAccess,numWeapons){
     
-    
+    $('#0-1').removeClass('cell');
+    $('#1-0').removeClass('cell');
+    $('#2-0').removeClass('cell');
+    $('#3-0').removeClass('cell');
+    $('#2-1').removeClass('cell');
+    $('#3-1').removeClass('cell');
+    $('#12-11').removeClass('cell');
+    $('#11-12').removeClass('cell');
+    $('#10-12').removeClass('cell');
+    $('#9-12').removeClass('cell');
+    $('#10-11').removeClass('cell');
+    $('#9-11').removeClass('cell');
     const numMines = num;
     blockedCells = []
     for (let i=0; i<numMines ;i++){

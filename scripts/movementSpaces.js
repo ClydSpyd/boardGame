@@ -8,41 +8,24 @@ function available(){
     
     
     // apply class to inner ring
-var $ringOne= [$(`#${currCol+1}-${currRow-1}`),
-        $(`#${currCol}-${currRow-1}`),
-        $(`#${currCol-1}-${currRow-1}`),
+var $ringOne= [$(`#${currCol+1}-${currRow}`),
+        $(`#${currCol+2}-${currRow}`),
+        $(`#${currCol+3}-${currRow}`),
         $(`#${currCol-1}-${currRow}`),
-        $(`#${currCol-1}-${currRow+1}`),
+        $(`#${currCol-2}-${currRow}`),
+        $(`#${currCol-3}-${currRow}`),
+        $(`#${currCol}-${currRow-1}`),
+        $(`#${currCol}-${currRow-2}`),
+        $(`#${currCol}-${currRow-3}`),
         $(`#${currCol}-${currRow+1}`),
-        $(`#${currCol+1}-${currRow}`),
-        $(`#${currCol+1}-${currRow+1}`)];
+        $(`#${currCol}-${currRow+2}`),
+        $(`#${currCol}-${currRow+3}`)];
 for(let i=0;i<$ringOne.length;i++){
     if(!$ringOne[i].hasClass('noAccess')){
     $ringOne[i].addClass('viable')}
 }
 
-    // apply class to outer ring
-var $ringTwo= [$(`#${currCol+2}-${currRow-2}`),
-        $(`#${currCol+2}-${currRow-1}`),
-        $(`#${currCol-1}-${currRow-2}`),
-        $(`#${currCol+1}-${currRow-2}`),
-        $(`#${currCol}-${currRow-2}`),
-        $(`#${currCol-2}-${currRow+1}`),
-        $(`#${currCol-2}-${currRow-1}`),
-        $(`#${currCol-2}-${currRow-2}`),
-        $(`#${currCol-2}-${currRow}`),
-        $(`#${currCol-2}-${currRow+2}`),
-        $(`#${currCol-1}-${currRow+2}`),
-        $(`#${currCol+1}-${currRow+2}`),
-        $(`#${currCol}-${currRow+2}`),
-        $(`#${currCol+2}-${currRow+1}`),
-        $(`#${currCol+2}-${currRow}`),
-        $(`#${currCol+2}-${currRow+2}`)];
-    for (let i = 0; i < $ringTwo.length; i++) {
-        if (!$ringTwo[i].hasClass('noAccess')) {
-            $ringTwo[i].addClass('viable')
-        }
-    }
+
 
 
 }
@@ -77,6 +60,11 @@ function adjacent() {
         
     if(blockedCells.includes(currCol+'-'+(currRow-1))){ //N
         $(`#${currCol}-${currRow-2}`).removeClass('viable')  
+        $(`#${currCol}-${currRow-3}`).removeClass('viable')  
+        // console.log('BLOCKnorth')
+    }
+    if(blockedCells.includes(currCol+'-'+(currRow-2))){ //NN
+        $(`#${currCol}-${currRow-3}`).removeClass('viable')  
         // console.log('BLOCKnorth')
     }
 
@@ -101,6 +89,11 @@ function adjacent() {
 
     if(blockedCells.includes(currCol+1+'-'+currRow)){ //E
         $(`#${currCol+2}-${currRow}`).removeClass('viable')  
+        $(`#${currCol+3}-${currRow}`).removeClass('viable')  
+        // console.log('BLOCKeast')
+    } 
+    if(blockedCells.includes(currCol+2+'-'+currRow)){ //EE 
+        $(`#${currCol+3}-${currRow}`).removeClass('viable')  
         // console.log('BLOCKeast')
     } 
     
@@ -125,6 +118,11 @@ function adjacent() {
    
     if (blockedCells.includes(currCol+'-'+(currRow+1))){ //S
         $(`#${currCol}-${currRow+2}`).removeClass('viable')
+        $(`#${currCol}-${currRow+3}`).removeClass('viable')
+        // console.log('BLOCKsouth')
+    }
+    if (blockedCells.includes(currCol+'-'+(currRow+2))){ //SS
+        $(`#${currCol}-${currRow+3}`).removeClass('viable')
         // console.log('BLOCKsouth')
     }
 
@@ -150,6 +148,11 @@ function adjacent() {
 
     if (blockedCells.includes(currCol-1+'-'+currRow)){ //w
        $(`#${currCol-2}-${currRow}`).removeClass('viable')
+       $(`#${currCol-3}-${currRow}`).removeClass('viable')
+    //    console.log('BLOCKwest')
+    } 
+    if (blockedCells.includes(currCol-2+'-'+currRow)){ //wW
+       $(`#${currCol-3}-${currRow}`).removeClass('viable')
     //    console.log('BLOCKwest')
     } 
 

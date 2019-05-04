@@ -125,17 +125,22 @@ var angelJumpAttack = function(){
     setTimeout(function(){
         var demonWinIMG = document.createElement('img');
         var deathAppend=document.getElementById('deathInner').parentNode;
-        deathAppend.prepend(demonWinIMG)
+        deathAppend.appendChild(demonWinIMG)
         demonWinIMG.classList.add('deathIMGstart');
         setTimeout(function(){
         demonWinIMG.classList.add('deathIMGgo');
-        $('#deetz1').fadeOut();
-        $('#deetz2').fadeOut();
+        $('#deetz1').addClass('zerow');
+        $('#deetz2').addClass('zerow');
         },10)
         
         setTimeout(function(){
             demonWinIMG.classList.add('deathIMGgo2');
+        //     $('#deetz1').addClass('zerow');
+        // $('#deetz2').addClass('zerow');
         },400)
+        setTimeout(function(){
+            $('#playAgain').addClass('one');
+        },700)
         
         
         setInterval(function(){

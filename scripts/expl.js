@@ -21,7 +21,7 @@ var x_currentFrame=0;
 var x_frameCount=0;
 
 var xsheet = new Image();
-xsheet.src ='xplsn.png';
+xsheet.src ='assets/xplsn.png';
 
 canvasX.width=xcanWidth;
 canvasX.height=xcanHeight;

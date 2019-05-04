@@ -1,6 +1,6 @@
 $(document).ready(function(){
     setBoard();
-    $('#wrapper').addClass('one');
+    // setTimeout(function(){$('#wrapper').addClass('one')},1000)
     draw1
     draw2
 }); 
@@ -106,23 +106,23 @@ function setBoard() {
 
 
     var rulesGo = document.getElementById('rulesGo');
-
-
-    var pulse = function(){
-        rulesGo.classList.add('rulesGoPulse');
-        setTimeout(function(){
-            rulesGo.classList.remove('rulesGoPulse');
-        },1000);
-    }
+    setTimeout(function(){
+        $('#wrapper').addClass('one')
+    },1500)
 
     // setInterval(function(){
     //     pulse();
     // },2000)
+
     
     rulesGo.addEventListener('click', function(){
-    $('#rules').fadeOut(600);
-    $('#wrapper').show();
+    $('#rules').fadeOut(1000);
+    // $('#wrapper').show();
     console.log('henlo')
+})
+
+document.getElementById('playAgain').addEventListener('click',function(){
+    location.reload();
 })
 
 }

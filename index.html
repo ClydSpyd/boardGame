@@ -22,123 +22,129 @@
 </head>
 
 <body>
-   
-    <div id='wrapper' class='zero'>
-        <div id='gridBod'>
-            
-            <!-- ///POSSIBLE CHANGE
-                <p class='deetsHead'>PlayerOne</p>
-                <div id='playerImg1'>
-                    <div class="goTime goActive1">hi</div>
+   <div id='allWrap'>
+        <div id='rules'>
+                <div id="rulesInner">
+                    <div id='rulesGo'>Begin</div>
                 </div>
-                <div class='goSpace'> -->      
-        <div class='deetz' id='deetz1'>
-            <p class='deetsHead'>Valal</p>
-            <div id='playerImg1' class="goTime goActive1"></div>
-            <div id="container" class="container">
-                <!-- <img src="assets/img/C+C2.jpg" alt="" srcset=""> -->
-                <canvas class='canvas2 canvas2bg' id='canvas2'></canvas>
-                <canvas id='canvasX' class='hide'></canvas>
-        </div>
-        <div id='deetsPanelBottomA'class="deetsPanelBottom">
-            <div class='goSpace'>
-            <p id="oneGo">YOUR TURN</p>
             </div>
-            <hr>
-            <p class='stats' id="p1Health"></p>
-            <p class='stats' id="p1Shield"></p>
-            <p class='stats' id="p1Hit"></p>
-            <hr>
-            <div id="p1Log"></div>
-            <div id="hexPanel" class='hide'>
-                <div class='hexTitle' style="text-align:left; padding-left:15px;">
-                <h5>hexes</h5>
-                </div>
-
-                <div class='flex'>
-                    <div id='hexFlex2'>
-                    <div class='hex hexP1 disabled tooltip' id='hex1'><span id='hx1TT'class="tooltiptext">+10 attack</span></div>
-                    <div class='hex hexP1 disabled tooltip' id='hex2'><span id='hx2TT'class="tooltiptext">shield piercer</span></div>
-                    <div class='hex hexP1 disabled tooltip' id='hex3'><span id='hx3TT'class="tooltiptext">shield piercer</span></div>
+        <div id='wrapper' class='zero'>
+            <div id='gridBod'>
+                
+                <!-- ///POSSIBLE CHANGE
+                    <p class='deetsHead'>PlayerOne</p>
+                    <div id='playerImg1'>
+                        <div class="goTime goActive1">hi</div>
                     </div>
-                    <div id='hexFlex4'>
-                        <div class='hex hexP1 disabled tooltip' id='hex1b'><span id='hx4TT'class="tooltiptext">shield piercer</span></div>
-                        <div class='hex hexP1 disabled tooltip' id='hex2b'><span id='hx5TT'class="tooltiptext">shield piercer</span></div>
-                        <div class='hex hexP1 disabled tooltip' id='hex3b'><span id='hx6TT'class="tooltiptext">shield piercer</span></div>
+                    <div class='goSpace'> -->      
+            <div class='deetz' id='deetz1'>
+                <p class='deetsHead'>Valal</p>
+                <div id='playerImg1' class="goTime goActive1"></div>
+                <div id="container" class="container">
+                    <!-- <img src="assets/img/C+C2.jpg" alt="" srcset=""> -->
+                    <canvas class='canvas2 canvas2bg' id='canvas2'></canvas>
+                    <canvas id='canvasX' class='hide'></canvas>
+            </div>
+            <div id='deetsPanelBottomA'class="deetsPanelBottom">
+                <div class='goSpace'>
+                <p id="oneGo">YOUR TURN</p>
+                </div>
+                <hr>
+                <p class='stats' id="p1Health"></p>
+                <p class='stats' id="p1Shield"></p>
+                <p class='stats' id="p1Hit"></p>
+                <hr>
+                <div id="p1Log"></div>
+                <div id="hexPanel" class='hide'>
+                    <div class='hexTitle' style="text-align:left; padding-left:15px;">
+                    <h5>hexes</h5>
+                    </div>
+    
+                    <div class='flex'>
+                        <div id='hexFlex2'>
+                        <div class='hex hexP1 disabled tooltip' id='hex1'><span id='hx1TT'class="tooltiptext">+10 attack</span></div>
+                        <div class='hex hexP1 disabled tooltip' id='hex2'><span id='hx2TT'class="tooltiptext">shield piercer</span></div>
+                        <div class='hex hexP1 disabled tooltip' id='hex3'><span id='hx3TT'class="tooltiptext">shield piercer</span></div>
                         </div>
+                        <div id='hexFlex4'>
+                            <div class='hex hexP1 disabled tooltip' id='hex1b'><span id='hx4TT'class="tooltiptext">shield piercer</span></div>
+                            <div class='hex hexP1 disabled tooltip' id='hex2b'><span id='hx5TT'class="tooltiptext">shield piercer</span></div>
+                            <div class='hex hexP1 disabled tooltip' id='hex3b'><span id='hx6TT'class="tooltiptext">shield piercer</span></div>
+                            </div>
+                    </div>
+                    <div id='hexFlex'>
+                    <div id='p1Attack' class='attack combatButt disabled'>ATTACK</div>
+                    <div id='p1Block' class='block combatButt disabled'>BLOCK</div>
                 </div>
-                <div id='hexFlex'>
-                <div id='p1Attack' class='attack combatButt disabled'>ATTACK</div>
-                <div id='p1Block' class='block combatButt disabled'>BLOCK</div>
-            </div>
-            </div>
-        </div>
-    </div>
-            <div  style='height: 900px;'>
-            <div id='grid' class='grid'></div>
-            <div id='death' class='hide'>
-                <div id='deathInner'></div>
-            </div>   
-            </div>
-
-            <div class='deetz' id='deetz2'>
-                <p class='deetsHead'>Astaroth</p>
-                <div id='playerImg2' class="goTime inActive2"></div>
-                <div id="container2" class="container3">
-                    <canvas class='canvas3' id='canvas3'></canvas>
-                    <canvas id='canvasY' class='hide'></canvas>
-                </div>
-            <div id='deetsPanelBottomB'class='deetsPanelBottom'>
-               <div class='goSpace'>
-               <p id="twoGo" class='hide'>YOUR TURN</p>
-               </div>
-               <hr>
-               <div class='stats' id="p2Health"></div>
-               <div class='stats' id="p2Shield"></div>
-               <div class='stats' id="p2Hit"></div>
-               <hr>
-               <div id="p2Log"></div>
-               <div id="hexPanel2" class='hide'>
-               <div class='hexTitle' style="text-align:left; padding-left:15px;">
-               <h5>hexes</h5>
-               </div>
-               <div id='hexFlexB2'>
-               <div class='hex hexP2 disabled tooltip' id='hex4'><span id='hx2TT'class="tooltiptext">shield piercer</span></div>
-               <div class='hex hexP2 disabled tooltip' id='hex5'><span id='hx2TT'class="tooltiptext">shield piercer</span></div>
-               <div class='hex hexP2 disabled tooltip' id='hex6'><span id='hx2TT'class="tooltiptext">shield piercer</span></div>
-               </div>
-               <div id='hexFlexB4'>
-                <div class='hex hexP2 disabled tooltip' id='hex4b'><span id='hx2TT'class="tooltiptext">shield piercer</span></div>
-                <div class='hex hexP2 disabled tooltip' id='hex5b'><span id='hx2TT'class="tooltiptext">shield piercer</span></div>
-                <div class='hex hexP2 disabled tooltip' id='hex6b'><span id='hx2TT'class="tooltiptext">shield piercer</span></div>
-                </div>
-               <div id='hexFlexB'>
-               <div id='p2Attack'class='attack combatButt disabled'>ATTACK</div>
-               <div id='p2Block'class='block combatButt disabled'>BLOCK</div>
-               </div>
-            </div>
                 </div>
             </div>
         </div>
-        <div id='mainMsg'>
-            <h1 class='boom hide'>BOOM!</h1>
-            <h1 id='power' class='power hide'>power up</h1>
-            <h1 id='battle' class='battle hide'>battle</h1>
-            <h1 id='battleBack' class='battleBack hide'>battle</h1>
-            <h6 class='boom2 hide'>you hit a mine</h6>
+                <div  style='height: 900px;'>
+                <div id='grid' class='grid'></div>
+                <div id='death' class=''>
+                    <div id='deathInner'></div>
+                </div>   
+                </div>
+    
+                <div class='deetz' id='deetz2'>
+                    <p class='deetsHead'>Astaroth</p>
+                    <div id='playerImg2' class="goTime inActive2"></div>
+                    <div id="container2" class="container3">
+                        <canvas class='canvas3' id='canvas3'></canvas>
+                        <canvas id='canvasY' class='hide'></canvas>
+                    </div>
+                <div id='deetsPanelBottomB'class='deetsPanelBottom'>
+                   <div class='goSpace'>
+                   <p id="twoGo" class='hide'>YOUR TURN</p>
+                   </div>
+                   <hr>
+                   <div class='stats' id="p2Health"></div>
+                   <div class='stats' id="p2Shield"></div>
+                   <div class='stats' id="p2Hit"></div>
+                   <hr>
+                   <div id="p2Log"></div>
+                   <div id="hexPanel2" class='hide'>
+                   <div class='hexTitle' style="text-align:left; padding-left:15px;">
+                   <h5>hexes</h5>
+                   </div>
+                   <div id='hexFlexB2'>
+                   <div class='hex hexP2 disabled tooltip' id='hex4'><span id='hx2TT'class="tooltiptext">shield piercer</span></div>
+                   <div class='hex hexP2 disabled tooltip' id='hex5'><span id='hx2TT'class="tooltiptext">shield piercer</span></div>
+                   <div class='hex hexP2 disabled tooltip' id='hex6'><span id='hx2TT'class="tooltiptext">shield piercer</span></div>
+                   </div>
+                   <div id='hexFlexB4'>
+                    <div class='hex hexP2 disabled tooltip' id='hex4b'><span id='hx2TT'class="tooltiptext">shield piercer</span></div>
+                    <div class='hex hexP2 disabled tooltip' id='hex5b'><span id='hx2TT'class="tooltiptext">shield piercer</span></div>
+                    <div class='hex hexP2 disabled tooltip' id='hex6b'><span id='hx2TT'class="tooltiptext">shield piercer</span></div>
+                    </div>
+                   <div id='hexFlexB'>
+                   <div id='p2Attack'class='attack combatButt disabled'>ATTACK</div>
+                   <div id='p2Block'class='block combatButt disabled'>BLOCK</div>
+                   </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+            <div id='mainMsg'>
+                <h1 class='boom hide'>BOOM!</h1>
+                <h1 id='power' class='power hide'>power up</h1>
+                <h1 id='battle' class='battle hide'>battle</h1>
+                <h1 id='battleBack' class='battleBack hide'>battle</h1>
+                <h6 class='boom2 hide'>you hit a mine</h6>
+            </div>
+            <!-- <div id='buttons'class="flex">
+                    <div id='go'></div >
+                    <div id='blo'></div >
+                    <div id='flo'></div >
+                    <div id='mlo'></div >
+    
+    
+                    <div id='hlo'></div >
+            </div> -->
+    
+            <!-- <audio id='potionAudio' src="assets/sounds/potion.mp3"></audio> -->
         </div>
-        <!-- <div class="flex">
-                <div id='go'></div >
-                <div id='blo'></div >
-                <div id='flo'></div >
-                <div id='mlo'></div >
-
-
-                <div id='hlo'></div >
-        </div> -->
-
-        <!-- <audio id='potionAudio' src="assets/sounds/potion.mp3"></audio> -->
-    </div>
+   </div>
     <!-- <iframe src="assets/sounds/test.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe>  -->
     <iframe src="assets/sounds/bg3.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe> 
     <script>
@@ -155,11 +161,7 @@
     <script src='scripts/player1.js'></script>
     <script src='scripts/player2.js'></script>
     <script src='scripts/expl.js'></script>
-    <div id='rules'>
-        <div id="rulesInner">
-            <div id='rulesGo'>Begin</div>
-        </div>
-    </div>
+    <div id='playAgain' class='zero'>Play Again</div>
 </body>
 
 </html>
