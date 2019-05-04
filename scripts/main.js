@@ -46,7 +46,7 @@ function setBoard() {
     $(posTwo).addClass('twoActive').removeClass('cell');
     available();
     adjacent();
-    setSpecialSquares(25, 2, 4, 2, 45,4);
+    setSpecialSquares(25, 2, 4, 2, 40,4);
     blockedAvailability();
     
     var P1D = document.getElementById('p1Health');
