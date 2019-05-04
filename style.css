@@ -9,6 +9,7 @@ body{
     background-size: 100% 135%;
     /* zoom:80%; */
     padding-top: 35px;
+    
 }
 
 #allWrap{
@@ -635,7 +636,7 @@ margin:3px;
     position: absolute;
     left: 690px;
     cursor: pointer;
-    top: 750;
+    top: 720;
 }
 
 #rulesGo:hover{

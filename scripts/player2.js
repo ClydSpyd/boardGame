@@ -155,13 +155,14 @@ var demonDeath = function(){
         setTimeout(function(){
             angelWinIMG.classList.add('deathIMGgo');
             angelWinIMG.classList.add('deathIMGgo2');
-            
+            $('#deetz1').addClass('zerow');
+            $('#deetz2').addClass('zerow');
         },10)
 
         setTimeout(function(){
             angelWinIMG.classList.remove('deathIMGgo2');
-            $('#deetz1').addClass('zerow');
-            $('#deetz2').addClass('zerow');
+            // $('#deetz1').addClass('zerow');
+            // $('#deetz2').addClass('zerow');
         },400)
         setTimeout(function(){
             $('#playAgain').addClass('one');

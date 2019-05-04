@@ -129,13 +129,14 @@ var angelJumpAttack = function(){
         demonWinIMG.classList.add('deathIMGstart');
         setTimeout(function(){
         demonWinIMG.classList.add('deathIMGgo');
-        
+        $('#deetz1').addClass('zerow');
+        $('#deetz2').addClass('zerow');
         },10)
         
         setTimeout(function(){
             demonWinIMG.classList.add('deathIMGgo2');
-            $('#deetz1').addClass('zerow');
-        $('#deetz2').addClass('zerow');
+        //     $('#deetz1').addClass('zerow');
+        // $('#deetz2').addClass('zerow');
         },400)
         setTimeout(function(){
             $('#playAgain').addClass('one');
