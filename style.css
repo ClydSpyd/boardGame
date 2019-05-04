@@ -8,7 +8,11 @@ body{
     background-image: url('assets/img/dungeonBG8.png');
     background-size: 100% 135%;
     /* zoom:80%; */
+<<<<<<< HEAD
     /* padding-top: 35px; */
+=======
+    padding-top: 35px;
+>>>>>>> cba0cb3f781948ecef2d5f0b7fbed52f3bcde4af
     
 }
 
@@ -16,7 +20,10 @@ body{
     position: relative;
 }
 #wrapper{
+<<<<<<< HEAD
     padding-top: 15px;
+=======
+>>>>>>> cba0cb3f781948ecef2d5f0b7fbed52f3bcde4af
     position: absolute;
     left: 220;
     z-index: 1;
