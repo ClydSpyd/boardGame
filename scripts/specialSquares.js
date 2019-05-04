@@ -1,6 +1,9 @@
 function setSpecialSquares (num,numRuneOne,numRuneTwo,numRuneThree,noAccess,numWeapons){
     
-    
+    $('#0-1').removeClass('cell');
+    $('#1-0').removeClass('cell');
+    $('#12-11').removeClass('cell');
+    $('#11-12').removeClass('cell');
     const numMines = num;
     blockedCells = []
     for (let i=0; i<numMines ;i++){
