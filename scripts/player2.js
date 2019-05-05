@@ -149,9 +149,12 @@ var demonDeath = function(){
     setTimeout(function(){
         
         var angelWinIMG = document.createElement('img');
-        document.getElementById('deathInner').appendChild(angelWinIMG)
+        var deathAppend=document.getElementById('deathInner').parentNode;
+        var button = document.createElement('div');
+        
+        deathAppend.appendChild(angelWinIMG)
+        
         angelWinIMG.classList.add('deathIMGstart2');
-
         setTimeout(function(){
             angelWinIMG.classList.add('deathIMGgo');
             angelWinIMG.classList.add('deathIMGgo2');
@@ -165,7 +168,13 @@ var demonDeath = function(){
             // $('#deetz2').addClass('zerow');
         },400)
         setTimeout(function(){
-            $('#playAgain').addClass('one');
+            button.innerText='Play Again'
+            deathAppend.appendChild(button);
+            button.classList.add('playAgain')
+            button.setAttribute('id','playAgain')
+            document.getElementById('playAgain').addEventListener('click',function(){
+            location.reload();
+            })
         },700)
         
         setInterval(function(){

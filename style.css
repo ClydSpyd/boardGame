@@ -12,16 +12,7 @@ body{
     
 }
 
-#allWrap{
-    position: relative;
-}
-#wrapper{
-    padding-top: 15px;
-    position: absolute;
-    left: 220;
-    z-index: 1;
-    zoom:80%;
-}
+
 img{
     width:50px;
     height:50px;
@@ -595,14 +586,27 @@ margin:3px;
     background: #555; 
   }
 
+#allWrap{
+    position: relative;
+    max-width: 1120px;
+    margin: auto;
+}
+#wrapper{
+    padding-top: 15px;
+    position: absolute;
+    /* left: 220; */
+    z-index: 1;
+    zoom:80%;
+}
+
   #rules{
       z-index: 5;
       border:white 1px solid;
       height:752px;
       width:1120px;
       position: absolute;
-      bottom:;
-      left: 150px;
+      /* bottom:; */
+      /* left: 150px; */
       background-image: url('assets/rules.png');
       background-size: contain;
   }
@@ -623,8 +627,8 @@ margin:3px;
     cursor: pointer;
     transform: all .5s linear;
 }
-  #playAgain{
-      z-index: 10;
+  .playAgain{
+    z-index: 10;
     margin: 5px;
     line-height: 30px;
     height: 30px;
@@ -635,9 +639,9 @@ margin:3px;
     color: aliceblue;
     text-align: center;
     position: absolute;
-    left: 690px;
+    /* left: 690px; */
     cursor: pointer;
-    top: 700;
+    top: 800;
 }
 
 #rulesGo:hover{

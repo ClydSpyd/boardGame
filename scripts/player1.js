@@ -125,7 +125,10 @@ var angelJumpAttack = function(){
     setTimeout(function(){
         var demonWinIMG = document.createElement('img');
         var deathAppend=document.getElementById('deathInner').parentNode;
+        var button = document.createElement('div');
+
         deathAppend.appendChild(demonWinIMG)
+       
         demonWinIMG.classList.add('deathIMGstart');
         setTimeout(function(){
         demonWinIMG.classList.add('deathIMGgo');
@@ -139,7 +142,13 @@ var angelJumpAttack = function(){
         // $('#deetz2').addClass('zerow');
         },400)
         setTimeout(function(){
-            $('#playAgain').addClass('one');
+            button.innerText='Play Again'
+            deathAppend.appendChild(button);
+            button.classList.add('playAgain')
+            button.setAttribute('id','playAgain')
+            document.getElementById('playAgain').addEventListener('click',function(){
+            location.reload();
+            })
         },700)
         
         
