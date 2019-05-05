@@ -41,12 +41,12 @@ function setBoard() {
     $('div').removeClass('possible viable adjacent oneActive twoActive myTurn mine red noAccess weapon1 weapon2 rune1 rune2 rune3')
     $('div', '#grid').addClass('empty')
     posOne = '#0-0';
-    posTwo = '#3-3';
+    posTwo = '#12-12';
     $(posOne).addClass('oneActive myTurn').removeClass('cell');
     $(posTwo).addClass('twoActive').removeClass('cell');
     available();
     adjacent();
-    setSpecialSquares(25, 2, 4, 2, 40,4);
+    setSpecialSquares(25, 2, 4, 2, 45,4);
     blockedAvailability();
     
     var P1D = document.getElementById('p1Health');
@@ -121,7 +121,9 @@ function setBoard() {
     console.log('henlo')
 })
 
-
+document.getElementById('playAgain').addEventListener('click',function(){
+    location.reload();
+})
 
 }
 ///create player objects ///
@@ -147,7 +149,7 @@ class Player {
 }
 
 const playerOne = new Player('angel', 100, 0, 10, 'oneActive' , 'possible',0 ,0,'#0-0','p1Log','p1Health','p1Shield','p1Hit','canvas2');
-const playerTwo = new Player('demon', 100, 0, 10, 'twoActive' , 'possible2',3 ,3,'#3-3','p2Log','p2Health','p2Shield','p2Hit','canvas3');
+const playerTwo = new Player('demon', 100, 0, 10, 'twoActive' , 'possible2',12 ,12,'#12-12','p2Log','p2Health','p2Shield','p2Hit','canvas3');
 
 var cells = document.getElementsByClassName('cell');
 
@@ -181,19 +183,24 @@ function checkWin(){
     }
 }
 
-window.setInterval(function() {
+// window.setInterval(function() {
+//     var elem = document.getElementById('p1Log');
+//     elem.scrollTop = elem.scrollHeight;
+//     var elem2 = document.getElementById('p2Log');
+//     elem2.scrollTop = elem2.scrollHeight;
+//   }, 10);
+
+
+  var scrollDownLog = function(){
     var elem = document.getElementById('p1Log');
     elem.scrollTop = elem.scrollHeight;
     var elem2 = document.getElementById('p2Log');
     elem2.scrollTop = elem2.scrollHeight;
-  }, 10);
-
-
-
+}
 
 
 // $(document).ready(function(){
-//     const grid = new Grid('#grid', 3, 3);
+//     const grid = new Grid('#grid', 12, 12);
 //     start();
   
 // }); 

@@ -292,6 +292,7 @@ roundCount++
 
 
 ///check Game over///
+scrollDownLog()
 checkWin();
 
 }
