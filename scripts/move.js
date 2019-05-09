@@ -257,7 +257,7 @@ function move() {
          var shieldStat = document.getElementById(activePlayer.sID);
          shieldStat.innerHTML = 'SHIELD : ' + activePlayer.shield;
          var log = document.getElementById(activePlayer.logID);
-         log.innerHTML += ('<p style="color:rgb(168, 8, 168)">Cloak of the Gods elixir: <br> +15 sheild</p>');
+         log.innerHTML += ('<p style="color:rgb(168, 8, 168)">Cloak of the Gods elixir: <br> +15 shield</p>');
          potionFlash('Purple');
 
 
