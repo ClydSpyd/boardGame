@@ -116,9 +116,12 @@ function setBoard() {
 
     
     rulesGo.addEventListener('click', function(){
-    $('#rules').fadeOut(1000);
-    // $('#wrapper').show();
-    console.log('henlo')
+        var startSound = new Audio ('assets/sounds/startSound.mp3');
+        startSound.volume=1
+        startSound.play();
+        $('#rules').fadeOut(1000);
+        // $('#wrapper').show();
+        console.log('henlo')
 })
 
 document.getElementById('playAgain').addEventListener('click',function(){

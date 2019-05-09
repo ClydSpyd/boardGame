@@ -1,6 +1,8 @@
 function move() {
  
-
+// var move = new Audio ('assets/sounds/move.mp3')
+// move.volume=0.4;
+// move.play();
  ///// MINES /////
 
  if ($(this).hasClass('mine')) { 
